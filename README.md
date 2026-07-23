@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TG Exploret Web — Developer Guide
 
-## Getting Started
+## Architecture conformance
 
-First, run the development server:
+Implementation follows frozen Skill Phase 2 (`project/ARCHITECTURE-FREEZE.md`) and Skill Phase 3 design tokens.
+
+**Local exception:** Prisma uses **SQLite** (`file:./dev.db`) so the RFQ vertical slice runs without Supabase credentials. Staging/production must use **PostgreSQL / Supabase** — see [`docs/POSTGRES-STAGING.md`](./docs/POSTGRES-STAGING.md).
+
+## Setup
 
 ```bash
+cd tg-exploret-web
+cp .env.example .env
+npm install
+npx prisma migrate dev
+npx tsx prisma/seed.ts
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- http://localhost:3000 — Home
+- http://localhost:3000/request-quote — RFQ form
+- http://localhost:3000/products/sugar/icumsa-45-white-refined — product leaf + gallery
+- http://localhost:3000/dealer-registration · `/distributor-registration`
+- http://localhost:3000/admin/login — Auth.js admin login
+- http://localhost:3000/admin — dashboard widgets
+- http://localhost:3000/admin/products — product CMS (specs / packaging / images)
+- http://localhost:3000/admin/certifications · `/admin/pages`
+- http://localhost:3000/admin/quotes · `/admin/quotes/[id]` · `/admin/inquiries` · `/admin/dealers` · `/admin/distributors`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Default seed admin (change immediately in shared envs):
 
-## Learn More
+- Email: `sales@tgetradecoltd.com`
+- Password: `ChangeMeAdmin123!` (or `SEED_ADMIN_PASSWORD`)
+- Role: `SUPER_ADMIN` (write mutations require ADMIN or SUPER_ADMIN)
 
-To learn more about Next.js, take a look at the following resources:
+Production site: `https://www.tgetradecoltd.com`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Staging Postgres
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+See [`docs/POSTGRES-STAGING.md`](./docs/POSTGRES-STAGING.md) and [`docs/POSTGRES-CUTOVER-CHECKLIST.md`](./docs/POSTGRES-CUTOVER-CHECKLIST.md). Cutover is blocked until Supabase credentials are provided.
 
-## Deploy on Vercel
+Staging env template: [`env.staging.example`](./env.staging.example)  
+Credential request: `../project/DEPLOY-003-CREDENTIAL-REQUEST.md`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploy / security
+
+- Vercel staging: [`docs/VERCEL-STAGING-CHECKLIST.md`](./docs/VERCEL-STAGING-CHECKLIST.md)  
+- Staging runbook (blocked on credentials): [`docs/DEPLOY-002-STAGING-RUNBOOK.md`](./docs/DEPLOY-002-STAGING-RUNBOOK.md)  
+- Go-live: [`docs/GO-LIVE-CHECKLIST.md`](./docs/GO-LIVE-CHECKLIST.md)  
+- Security: [`docs/SECURITY.md`](./docs/SECURITY.md) · CSP/HSTS: [`docs/CSP-HSTS-PLAN.md`](./docs/CSP-HSTS-PLAN.md)  
+
+## QA
+
+Manual regression: [`docs/QA-REGRESSION-CHECKLIST.md`](./docs/QA-REGRESSION-CHECKLIST.md).  
+Interactive sign-off: [`docs/QA-003-INTERACTIVE-SIGNOFF.md`](./docs/QA-003-INTERACTIVE-SIGNOFF.md).  
+Operator runbook: [`docs/OPERATOR-RUNBOOK.md`](./docs/OPERATOR-RUNBOOK.md).  
+Latest smoke log: `../project/QA-002-DEFECT-LOG.md`.
+
+Set `NEXT_PUBLIC_SITE_URL` for correct Open Graph absolute URLs.
+
+## Optional integrations
+
+| Env | Effect |
+|---|---|
+| `RESEND_API_KEY` | Buyer confirmation + sales alert on quote/inquiry |
+| `NEXT_PUBLIC_SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY` | Admin product image upload to Supabase Storage |
+| `SALES_INBOX_EMAIL` | Sales alert recipient (default `sales@tgetradecoltd.com`) |
+
+Without Resend/Supabase Storage keys, forms and local/URL images still work (email logs; seed SVGs for demo).
+
+## Scripts
+
+| Script | Purpose |
+|---|---|
+| `npm run dev` | Dev server |
+| `npm run build` | Production build |
+| `npm run lint` | ESLint |
+| `npm run db:migrate` | Prisma migrate |
+| `npm run db:seed` | Seed categories/products/images/admin |
+
+## Quality notes
+
+- No invented certifications or prices in UI  
+- Honeypot on RFQ / contact / partner forms  
+- Skip link + focus-visible styles present  

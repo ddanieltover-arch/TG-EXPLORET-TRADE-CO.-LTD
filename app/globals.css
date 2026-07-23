@@ -1,26 +1,86 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* TG Exploret design tokens — frozen Skill Phase 3 */
+  --tg-color-primary: #0b3d2e;
+  --tg-color-primary-hover: #145c45;
+  --tg-color-secondary: #c4a35a;
+  --tg-color-secondary-strong: #a68534;
+  --tg-color-accent: #ffffff;
+  --tg-color-bg: #f5f7f6;
+  --tg-color-surface: #fbfcfb;
+  --tg-color-text: #10241c;
+  --tg-color-text-muted: #5c6b64;
+  --tg-color-border: #d5ddd8;
+  --tg-color-error: #b42318;
+  --tg-color-success: #1f7a4c;
+  --tg-space-2: 0.5rem;
+  --tg-space-4: 1rem;
+  --tg-space-5: 1.5rem;
+  --tg-space-6: 2rem;
+  --tg-space-8: 3rem;
+  --tg-space-10: 5rem;
+  --tg-radius-md: 0.5rem;
+  --tg-header-height: 4.5rem;
+  --tg-container: 75rem;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-tg-primary: var(--tg-color-primary);
+  --color-tg-primary-hover: var(--tg-color-primary-hover);
+  --color-tg-secondary: var(--tg-color-secondary);
+  --color-tg-bg: var(--tg-color-bg);
+  --color-tg-surface: var(--tg-color-surface);
+  --color-tg-text: var(--tg-color-text);
+  --color-tg-muted: var(--tg-color-text-muted);
+  --color-tg-border: var(--tg-color-border);
+  --color-tg-error: var(--tg-color-error);
+  --color-tg-success: var(--tg-color-success);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-source-serif);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--tg-color-bg);
+  color: var(--tg-color-text);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-weight: 600;
+}
+
+:focus-visible {
+  outline: 2px solid var(--tg-color-primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--tg-color-secondary) 55%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--tg-color-primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
 }

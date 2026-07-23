@@ -4,23 +4,45 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/prepare-prisma-deploy.mjs && prisma generate --schema=prisma/schema.deploy.prisma && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:migrate": "prisma migrate dev",
+    "db:seed": "prisma db seed",
+    "db:sync:staging": "node scripts/staging-db-sync.mjs",
+    "qa:interactive": "npx tsx scripts/qa-interactive.ts",
+    "qa:lighthouse": "node scripts/lighthouse-baseline.mjs"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.4.0",
+    "@prisma/client": "^6.19.2",
+    "@supabase/supabase-js": "^2.110.8",
+    "bcryptjs": "^3.0.3",
+    "lucide-react": "^1.25.0",
     "next": "16.2.11",
+    "next-auth": "^5.0.0-beta.32",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "react-hook-form": "^7.82.0",
+    "resend": "^6.18.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^20.19.43",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "chrome-launcher": "^1.2.1",
     "eslint": "^9",
     "eslint-config-next": "16.2.11",
+    "lighthouse": "^13.4.1",
+    "prisma": "^6.19.2",
     "tailwindcss": "^4",
+    "tsx": "^4.23.1",
     "typescript": "^5"
+  },
+  "prisma": {
+    "seed": "npx tsx prisma/seed.ts"
   }
 }
