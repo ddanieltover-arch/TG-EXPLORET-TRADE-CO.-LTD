@@ -1,4 +1,5 @@
 import { PublishStatus } from "@prisma/client";
+import { safePublicQuery } from "@/lib/safePublicQuery";
 import { prisma } from "@/server/db";
 
 export async function listCertificationsAdmin() {
@@ -8,10 +9,15 @@ export async function listCertificationsAdmin() {
 }
 
 export async function listPublishedCertifications() {
-  return prisma.certification.findMany({
-    where: { status: PublishStatus.PUBLISHED },
-    orderBy: [{ sortOrder: "asc" }, { name: "asc" }],
-  });
+  return safePublicQuery(
+    "certifications:published",
+    () =>
+      prisma.certification.findMany({
+        where: { status: PublishStatus.PUBLISHED },
+        orderBy: [{ sortOrder: "asc" }, { name: "asc" }],
+      }),
+    [],
+  );
 }
 
 export async function getCertificationAdmin(id: string) {

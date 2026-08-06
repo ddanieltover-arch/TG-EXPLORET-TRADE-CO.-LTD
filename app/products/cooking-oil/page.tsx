@@ -11,7 +11,7 @@ export const metadata: Metadata = pageMetadata({
     "Refined and specialty edible oils for food manufacturing, retail packing, and export — request a quote for commercial terms.",
   path: PRODUCT_CATEGORIES.cookingOil.href,
 });
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export default async function CookingOilHubPage() {
   const products = await getPublishedProductsByCategory(PRODUCT_CATEGORIES.cookingOil.slug);

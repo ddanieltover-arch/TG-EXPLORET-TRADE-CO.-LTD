@@ -11,7 +11,7 @@ export const metadata: Metadata = pageMetadata({
     "Thai jasmine, parboiled, basmati, white, glutinous, and specialty rice varieties from TG Export Trade — request a quote for commercial terms.",
   path: "/products/rice",
 });
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export default async function RiceHubPage() {
   const products = await getPublishedProductsByCategory(PRODUCT_CATEGORIES.rice.slug);

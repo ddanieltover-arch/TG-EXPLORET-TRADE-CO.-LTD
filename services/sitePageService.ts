@@ -1,4 +1,5 @@
 import { PublishStatus } from "@prisma/client";
+import { safePublicQuery } from "@/lib/safePublicQuery";
 import { prisma } from "@/server/db";
 
 export async function listSitePagesAdmin() {
@@ -6,9 +7,14 @@ export async function listSitePagesAdmin() {
 }
 
 export async function getPublishedSitePage(slug: string) {
-  return prisma.sitePage.findFirst({
-    where: { slug, status: PublishStatus.PUBLISHED },
-  });
+  return safePublicQuery(
+    `sitePage:${slug}`,
+    () =>
+      prisma.sitePage.findFirst({
+        where: { slug, status: PublishStatus.PUBLISHED },
+      }),
+    null,
+  );
 }
 
 export async function getSitePageAdmin(slug: string) {

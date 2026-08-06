@@ -10,7 +10,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/export-markets",
 });
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 const fallback = {
   title: "Export markets and shipment terms",

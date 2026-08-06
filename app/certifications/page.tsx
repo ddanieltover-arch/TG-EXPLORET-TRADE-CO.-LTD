@@ -10,7 +10,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/certifications",
 });
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export default async function CertificationsPage() {
   const certs = await listPublishedCertifications();

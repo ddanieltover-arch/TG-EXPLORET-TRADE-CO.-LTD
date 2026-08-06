@@ -5,6 +5,8 @@ import type { Metadata } from "next";
 import { PRODUCT_CATEGORIES } from "@/lib/brand";
 import { getPublishedProduct } from "@/services/productService";
 
+export const dynamic = "force-dynamic";
+
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

@@ -9,7 +9,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/about",
 });
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 const fallback = {
   title: `About ${COMPANY_LEGAL_NAME}`,
