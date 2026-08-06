@@ -6,15 +6,21 @@ import { getPublishedSitePage } from "@/services/sitePageService";
 export const metadata: Metadata = pageMetadata({
   title: "Export Markets",
   description:
-    "International buyers of Thai sugar and rice — Incoterms discussion (FOB, CIF, EXW, CNF) and clear product scope.",
+    "Incoterms (FOB, CIF, EXW, CNF), document expectations, and quotation guidance for edible cooking oil and rice buyers. Destination lists publish when confirmed.",
   path: "/export-markets",
 });
 
 export const revalidate = 60;
 
 const fallback = {
-  title: "Export markets",
-  body: `We support international buyers with clear product scope and Incoterms discussion (FOB, CIF, EXW, CNF). Destination lists publish when confirmed by the business.`,
+  title: "Export markets and shipment terms",
+  body: `TG Export Trade supports international buyers of edible cooking oils and rice with clear product scope and structured quotation discussions.
+
+Incoterms commonly discussed with buyers include FOB, CIF, EXW, and CNF. The appropriate term for a shipment depends on destination, packing, and logistics arrangements confirmed with sales.
+
+Documentation typically requested for food commodity imports may include commercial invoice, packing list, bill of lading, and — where applicable — certificates of analysis or origin. Exact document sets vary by destination market and are confirmed per order.
+
+A public list of destination countries will be published when the business confirms markets it actively serves. Until then, include your destination country or port in the quotation request so we can advise feasibility.`,
 };
 
 function paragraphs(body: string) {

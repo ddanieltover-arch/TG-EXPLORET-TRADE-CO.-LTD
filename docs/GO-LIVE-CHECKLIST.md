@@ -1,13 +1,13 @@
 # LAUNCH-001 — Go-live checklist
 
-> Production launch for `tgetradecoltd.com`. Complete **after** staging smoke (DEPLOY-002) and interactive QA (QA-003).
+> Production launch for `tgeptrade.com`. Complete **after** staging smoke (DEPLOY-002) and interactive QA (QA-003).
 
 ## Domain & DNS
 
-- [ ] Confirm registrar access for `tgetradecoltd.com`  
+- [ ] Confirm registrar access for `tgeptrade.com`  
 - [ ] Add Vercel DNS records (A/CNAME as instructed by Vercel)  
 - [ ] Wait for TLS certificate issued  
-- [ ] `https://tgetradecoltd.com` loads without cert warnings  
+- [ ] `https://tgeptrade.com` loads without cert warnings  
 - [ ] WWW redirect policy agreed (www → apex or reverse)  
 
 ## Environment (Production)
@@ -16,7 +16,7 @@
 - [ ] `AUTH_SECRET` unique (not staging)  
 - [ ] `AUTH_URL` + `NEXT_PUBLIC_SITE_URL` = production URL  
 - [ ] `RESEND_*` + verified sending domain  
-- [ ] `SALES_INBOX_EMAIL=sales@tgetradecoltd.com`  
+- [ ] `SALES_INBOX_EMAIL=sales@tgeptrade.com`  
 - [ ] `CLOUDINARY_*` production cloud  
 - [ ] No seed passwords in production env after first login  
 

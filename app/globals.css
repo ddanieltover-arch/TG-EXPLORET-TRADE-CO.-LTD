@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  /* TG Exploret design tokens — frozen Skill Phase 3 */
-  --tg-color-primary: #0b3d2e;
-  --tg-color-primary-hover: #145c45;
-  --tg-color-secondary: #c4a35a;
+  /* TG Export Trade design tokens — navy + gold aligned to logo */
+  --tg-color-primary: #0a2f5c;
+  --tg-color-primary-hover: #163a72;
+  --tg-color-secondary: #c9a24a;
   --tg-color-secondary-strong: #a68534;
   --tg-color-accent: #ffffff;
-  --tg-color-bg: #f5f7f6;
-  --tg-color-surface: #fbfcfb;
-  --tg-color-text: #10241c;
-  --tg-color-text-muted: #5c6b64;
-  --tg-color-border: #d5ddd8;
+  --tg-color-bg: #f4f6f9;
+  --tg-color-surface: #fafbfc;
+  --tg-color-text: #0e1a2e;
+  --tg-color-text-muted: #5a6578;
+  --tg-color-border: #d4dae3;
   --tg-color-error: #b42318;
   --tg-color-success: #1f7a4c;
   --tg-space-2: 0.5rem;

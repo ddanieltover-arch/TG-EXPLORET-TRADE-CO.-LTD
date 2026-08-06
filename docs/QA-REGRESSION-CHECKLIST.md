@@ -1,12 +1,12 @@
 # QA-001 — Manual regression checklist (Sprint 13)
 
 > Run after `npm run build` and with `npm run dev` (or staging).  
-> Seed admin: `sales@tgetradecoltd.com` / `ChangeMeAdmin123!`
+> Seed admin: `sales@tgeptrade.com` / `ChangeMeAdmin123!`
 
 ## Public
 
 - [ ] Home loads brand (dark green / gold), header + footer
-- [ ] `/products/sugar` and `/products/rice` list published products
+- [ ] `/products/cooking-oil` and `/products/rice` list published products
 - [ ] Product leaf shows gallery, specs, packaging, RFQ CTA
 - [ ] `/request-quote` submits → success + row in `/admin/quotes`
 - [ ] `/contact` submits → row in `/admin/inquiries`

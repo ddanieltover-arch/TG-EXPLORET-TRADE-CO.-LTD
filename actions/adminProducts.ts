@@ -23,7 +23,7 @@ function revalidateProductPaths(productId: string) {
   revalidatePath("/admin/products");
   revalidatePath(`/admin/products/${productId}`);
   revalidatePath("/products");
-  revalidatePath("/products/sugar");
+  revalidatePath("/products/cooking-oil");
   revalidatePath("/products/rice");
 }
 

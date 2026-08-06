@@ -5,7 +5,7 @@
 
 ## Prerequisites
 
-1. Supabase project created for TG EXPLORET  
+1. Supabase project created for TG EXPORT TRADE  
 2. Connection string from **Project Settings → Database** (prefer the pooled URI for serverless)  
 3. `AUTH_SECRET` and Resend / Cloudinary secrets ready for the staging environment  
 

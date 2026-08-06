@@ -1,7 +1,7 @@
 # QA-003 — Interactive form & admin sign-off
 
 > Human QA after Sprint 14 smoke.  
-> Seed: `sales@tgetradecoltd.com` / `ChangeMeAdmin123!`  
+> Seed: `sales@tgeptrade.com` / `ChangeMeAdmin123!`  
 > Prefer `npm run build && npm run start -- -p 3014` (avoid port conflicts).
 
 ## Public forms

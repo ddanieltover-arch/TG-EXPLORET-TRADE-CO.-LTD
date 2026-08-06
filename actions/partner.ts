@@ -46,7 +46,7 @@ async function handlePartner(
   } catch {
     return {
       ok: false,
-      message: "We could not submit your application. Please email sales@tgetradecoltd.com.",
+      message: "We could not submit your application. Please email sales@tgeptrade.com.",
     };
   }
 }

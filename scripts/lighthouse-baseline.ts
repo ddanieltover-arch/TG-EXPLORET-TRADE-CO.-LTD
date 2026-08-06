@@ -13,7 +13,7 @@ const outDir = join(process.cwd(), "lighthouse-reports");
 const pages = [
   { id: "home", path: "/" },
   { id: "products", path: "/products" },
-  { id: "pdp", path: "/products/sugar/icumsa-45-white-refined" },
+  { id: "pdp", path: "/products/cooking-oil/rbdw-sunflower-oil" },
   { id: "rfq", path: "/request-quote" },
 ];
 

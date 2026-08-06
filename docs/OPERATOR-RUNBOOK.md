@@ -1,6 +1,6 @@
 # DOCS-001 — Admin operator runbook
 
-How to run day-to-day content and sales workflows for TG Exploret Trade.
+How to run day-to-day content and sales workflows for TG Export Trade.
 
 ## Login
 
@@ -37,7 +37,7 @@ How to run day-to-day content and sales workflows for TG Exploret Trade.
 3. Add/remove specifications and packaging  
 4. Images: attach URL always; Supabase Storage upload if `NEXT_PUBLIC_SUPABASE_URL` + service role set  
 5. Set **Published** only when content is client-approved  
-6. Public path: `/products/{sugar|rice}/{slug}`
+6. Public path: `/products/{cooking-oil|rice}/{slug}`
 
 ## Certifications
 

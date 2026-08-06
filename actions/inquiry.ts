@@ -42,7 +42,7 @@ export async function createInquiryAction(
   } catch {
     return {
       ok: false,
-      message: "We could not send your message. Please email sales@tgetradecoltd.com.",
+      message: "We could not send your message. Please email sales@tgeptrade.com.",
     };
   }
 }

@@ -1,21 +1,27 @@
 import type { Metadata } from "next";
+import { COMPANY_EMAIL, COMPANY_LEGAL_NAME } from "@/lib/brand";
 import { pageMetadata } from "@/lib/seo";
 import { getPublishedSitePage } from "@/services/sitePageService";
 
 export const metadata: Metadata = pageMetadata({
   title: "About",
-  description:
-    "TG Exploret Trade Co., Ltd — Thailand sugar and rice exporter established in 2018.",
+  description: `${COMPANY_LEGAL_NAME} — Thailand edible cooking oils and rice exporter established in 2018.`,
   path: "/about",
 });
 
 export const revalidate = 60;
 
 const fallback = {
-  title: "About TG Exploret Trade Co., Ltd",
-  body: `TG Exploret Trade Co., Ltd is a Thailand-based company established in 2018. We focus on sugar and rice for wholesale and export buyers who need clarity on grade, packaging, and shipment coordination.
+  title: `About ${COMPANY_LEGAL_NAME}`,
+  body: `${COMPANY_LEGAL_NAME} is a Thailand-based company established in 2018. We supply edible cooking oils and rice to wholesale and export buyers who need clear grade information, practical packaging options, and coordinated shipment discussions.
 
-Contact: sales@tgetradecoltd.com`,
+Our commercial focus is dual-core: refined and specialty edible oils for retail, foodservice, and industrial programmes, alongside rice varieties and broken grades suited to importers, distributors, and food manufacturers. We do not dilute that focus with unrelated commodity lines.
+
+Buyers work with us through structured quotation requests — product, volume, destination, and preferred Incoterms — so sales conversations start with usable commercial context rather than a generic enquiry form.
+
+Quality and food-safety certifications appear on this website only after the business confirms which documents are held. Until then, we invite buyers to ask sales which certificates can be provided for a given shipment.
+
+Contact: ${COMPANY_EMAIL}`,
 };
 
 function paragraphs(body: string) {
@@ -35,13 +41,13 @@ export default async function AboutPage() {
       <h1 className="font-display text-4xl text-tg-primary">{title}</h1>
       {paragraphs(body).map((p) => (
         <p key={p.slice(0, 40)} className="mt-4 text-tg-muted whitespace-pre-line">
-          {p.includes("sales@tgetradecoltd.com") ? (
+          {p.includes(COMPANY_EMAIL) ? (
             <>
-              {p.split("sales@tgetradecoltd.com")[0]}
-              <a className="underline" href="mailto:sales@tgetradecoltd.com">
-                sales@tgetradecoltd.com
+              {p.split(COMPANY_EMAIL)[0]}
+              <a className="underline" href={`mailto:${COMPANY_EMAIL}`}>
+                {COMPANY_EMAIL}
               </a>
-              {p.split("sales@tgetradecoltd.com")[1]}
+              {p.split(COMPANY_EMAIL)[1]}
             </>
           ) : (
             p

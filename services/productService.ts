@@ -8,7 +8,10 @@ export async function getPublishedProductsByCategory(categorySlug: string) {
       category: { slug: categorySlug },
     },
     orderBy: { name: "asc" },
-    include: { category: true },
+    include: {
+      category: true,
+      images: { orderBy: { sortOrder: "asc" } },
+    },
   });
 }
 

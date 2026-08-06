@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Edible cooking oil packaging placeholder">
+  <defs>
+    <linearGradient id="os" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#10241C"/>
+      <stop offset="100%" stop-color="#0B3D2E"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#os)"/>
+  <circle cx="300" cy="280" r="140" fill="#C4A35A" fill-opacity="0.25"/>
+  <text x="80" y="780" fill="#FBFCFB" font-family="Georgia, serif" font-size="48">Oil packaging</text>
+  <text x="80" y="840" fill="#C4A35A" font-family="system-ui,sans-serif" font-size="28">Placeholder  replace with client photo</text>
+</svg>

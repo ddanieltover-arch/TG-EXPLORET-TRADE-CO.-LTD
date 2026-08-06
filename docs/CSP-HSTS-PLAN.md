@@ -13,7 +13,7 @@ See `next.config.ts` and `docs/SECURITY.md`:
 
 ## Content-Security-Policy (draft)
 
-Recommended starting CSP for TG Exploret (Next.js App Router + Cloudinary + Resend-hosted assets if any):
+Recommended starting CSP for TG Export Trade (Next.js App Router + Cloudinary + Resend-hosted assets if any):
 
 ```http
 Content-Security-Policy:
@@ -56,7 +56,7 @@ Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 | Step | Gate |
 |---|---|
 | 1. Staging HTTPS works | Vercel cert issued |
-| 2. Production custom domain (`tgetradecoltd.com`) HTTPS | DNS + Vercel |
+| 2. Production custom domain (`tgeptrade.com`) HTTPS | DNS + Vercel |
 | 3. Add HSTS header in `next.config.ts` (or Vercel) | After 24h stable HTTPS |
 | 4. Optional HSTS preload submission | After client approves |
 

@@ -48,7 +48,7 @@ export async function createQuoteAction(
   } catch {
     return {
       ok: false,
-      message: "We could not save your request. Please try again or email sales@tgetradecoltd.com.",
+      message: "We could not save your request. Please try again or email sales@tgeptrade.com.",
     };
   }
 }

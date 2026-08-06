@@ -1,8 +1,9 @@
 import { Resend } from "resend";
+import { COMPANY_DISPLAY_NAME, COMPANY_EMAIL, COMPANY_LEGAL_NAME, COMPANY_SHORT_NAME } from "@/lib/brand";
 
-const salesInbox = process.env.SALES_INBOX_EMAIL ?? "sales@tgetradecoltd.com";
+const salesInbox = process.env.SALES_INBOX_EMAIL ?? COMPANY_EMAIL;
 const fromAddress =
-  process.env.RESEND_FROM_EMAIL ?? "TG Exploret Trade <onboarding@resend.dev>";
+  process.env.RESEND_FROM_EMAIL ?? `${COMPANY_SHORT_NAME} <onboarding@resend.dev>`;
 
 function getClient() {
   const key = process.env.RESEND_API_KEY;
@@ -49,7 +50,7 @@ export async function sendQuoteConfirmation(input: {
     html: `<p>Dear ${input.contactName},</p>
 <p>We received your quotation request <strong>${input.referenceCode}</strong>.</p>
 <p>Our sales team will follow up shortly. For urgent matters, email ${salesInbox}.</p>
-<p>TG EXPLORET TRADE CO., LTD</p>`,
+<p>${COMPANY_DISPLAY_NAME}</p>`,
     text: `Dear ${input.contactName}, we received quotation request ${input.referenceCode}.`,
   });
 
@@ -67,10 +68,10 @@ export async function sendInquiryConfirmation(input: {
 }) {
   await sendEmail({
     to: input.to,
-    subject: "We received your message — TG Exploret Trade",
+    subject: `We received your message — ${COMPANY_SHORT_NAME}`,
     html: `<p>Dear ${input.contactName},</p>
-<p>Thank you for contacting TG Exploret Trade Co., Ltd. Our team will respond using this email address.</p>
-<p>TG EXPLORET TRADE CO., LTD</p>`,
+<p>Thank you for contacting ${COMPANY_LEGAL_NAME}. Our team will respond using this email address.</p>
+<p>${COMPANY_DISPLAY_NAME}</p>`,
   });
 
   await sendEmail({

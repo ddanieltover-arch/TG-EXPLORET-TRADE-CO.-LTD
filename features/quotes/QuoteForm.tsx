@@ -23,8 +23,8 @@ export function QuoteForm() {
         <p className="mt-2 text-sm text-tg-muted">
           Our sales team will follow up using the email you provided. For urgent matters,
           contact{" "}
-          <a className="underline" href="mailto:sales@tgetradecoltd.com">
-            sales@tgetradecoltd.com
+          <a className="underline" href="mailto:sales@tgeptrade.com">
+            sales@tgeptrade.com
           </a>
           .
         </p>
@@ -82,7 +82,7 @@ export function QuoteForm() {
           label="Product"
           name="productLabel"
           required
-          placeholder="e.g. ICUMSA 45 / Thai Jasmine Rice"
+          placeholder="e.g. RBDW Sunflower Oil / Jasmine Rice (Thai Hom Mali)"
           error={state.fieldErrors?.productLabel?.[0]}
         />
         <Field

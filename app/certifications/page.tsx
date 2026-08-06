@@ -6,7 +6,7 @@ import { listPublishedCertifications } from "@/services/certificationService";
 export const metadata: Metadata = pageMetadata({
   title: "Certifications",
   description:
-    "Confirmed quality and trade certifications for TG Exploret Trade Co., Ltd. Unverified badges are not published.",
+    "Confirmed quality and trade certifications for TG Export Trade Company Limited. Unverified badges are not published.",
   path: "/certifications",
 });
 

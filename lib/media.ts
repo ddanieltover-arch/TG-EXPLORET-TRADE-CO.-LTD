@@ -28,11 +28,24 @@ function getServiceClient(): SupabaseClient {
   });
 }
 
-/** Local placeholder path (replace with Supabase Storage / client photos in prod). */
+/** Local catalogue image path used when a product has no uploaded media yet. */
 export function demoProductImage(seed: string) {
-  return seed.toLowerCase().includes("rice")
-    ? "/media/products/rice-primary.svg"
-    : "/media/products/sugar-primary.svg";
+  const key = seed.toLowerCase();
+  if (key.includes("rice")) return "/media/products/rice-jasmine.webp";
+  if (key.includes("olive")) return "/media/products/oil-olive.webp";
+  if (key.includes("coconut")) return "/media/products/oil-coconut.webp";
+  if (key.includes("sesame")) return "/media/products/oil-sesame.webp";
+  if (key.includes("palm")) return "/media/products/oil-palm.webp";
+  if (key.includes("corn")) return "/media/products/oil-corn.webp";
+  if (key.includes("soy")) return "/media/products/oil-soybean.webp";
+  if (key.includes("canola") || key.includes("rapeseed")) {
+    return "/media/products/oil-canola.webp";
+  }
+  if (key.includes("groundnut") || key.includes("peanut")) {
+    return "/media/products/oil-groundnut.webp";
+  }
+  if (key.includes("sunflower")) return "/media/products/oil-sunflower.webp";
+  return "/media/products/oil-vegetable.webp";
 }
 
 export type UploadedImage = {

@@ -1,7 +1,7 @@
 # QA-003d — Human browser CMS/UI sign-off
 
 > Complete in a real browser before public launch.  
-> Seed: `sales@tgetradecoltd.com` / `ChangeMeAdmin123!`  
+> Seed: `sales@tgeptrade.com` / `ChangeMeAdmin123!`  
 > Prefer `npm run build && npm run start -- -p 3018`
 
 Use checklist: [`QA-003-INTERACTIVE-SIGNOFF.md`](./QA-003-INTERACTIVE-SIGNOFF.md)

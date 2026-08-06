@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
 
-const siteName = "TG Exploret Trade Co., Ltd";
-const defaultTitle = "TG Exploret Trade Co., Ltd | Thai Sugar & Rice Export";
+import {
+  COMPANY_LEGAL_NAME,
+  COMPANY_SHORT_NAME,
+} from "@/lib/brand";
+
+const siteName = COMPANY_LEGAL_NAME;
+const defaultTitle = `${COMPANY_LEGAL_NAME} | Edible Oils & Rice Export`;
 const defaultDescription =
-  "Export-grade sugar and rice from Thailand. Clear specifications and responsive quotation for international buyers.";
+  "Export-grade edible cooking oils and rice. Clear specifications and responsive quotation for international buyers.";
 
 export function siteUrl() {
   return (
@@ -17,7 +22,7 @@ export const rootMetadata: Metadata = {
   metadataBase: new URL(siteUrl()),
   title: {
     default: defaultTitle,
-    template: "%s | TG Exploret Trade",
+    template: `%s | ${COMPANY_SHORT_NAME}`,
   },
   description: defaultDescription,
   applicationName: siteName,
@@ -50,7 +55,7 @@ export function pageMetadata(input: {
     title: input.title,
     description: input.description,
     openGraph: {
-      title: `${input.title} | TG Exploret Trade`,
+      title: `${input.title} | ${COMPANY_SHORT_NAME}`,
       description: input.description,
       url,
       siteName,
@@ -58,7 +63,7 @@ export function pageMetadata(input: {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${input.title} | TG Exploret Trade`,
+      title: `${input.title} | ${COMPANY_SHORT_NAME}`,
       description: input.description,
     },
   };

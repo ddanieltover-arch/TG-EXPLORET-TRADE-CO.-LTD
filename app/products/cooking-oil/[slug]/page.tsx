@@ -2,13 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { PRODUCT_CATEGORIES } from "@/lib/brand";
 import { getPublishedProduct } from "@/services/productService";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const product = await getPublishedProduct("sugar", slug);
+  const product = await getPublishedProduct(PRODUCT_CATEGORIES.cookingOil.slug, slug);
   if (!product) return { title: "Product" };
   return {
     title: product.name,
@@ -16,9 +17,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function SugarProductPage({ params }: Props) {
+export default async function CookingOilProductPage({ params }: Props) {
   const { slug } = await params;
-  const product = await getPublishedProduct("sugar", slug);
+  const product = await getPublishedProduct(PRODUCT_CATEGORIES.cookingOil.slug, slug);
   if (!product) notFound();
 
   const primary = product.images.find((i) => i.isPrimary) ?? product.images[0];
@@ -40,8 +41,8 @@ export default async function SugarProductPage({ params }: Props) {
           </li>
           <li aria-hidden="true">/</li>
           <li>
-            <Link href="/products/sugar" className="hover:underline">
-              Sugar
+            <Link href={PRODUCT_CATEGORIES.cookingOil.href} className="hover:underline">
+              {PRODUCT_CATEGORIES.cookingOil.name}
             </Link>
           </li>
           <li aria-hidden="true">/</li>

@@ -4,7 +4,7 @@
 
 ## Create project
 
-- [ ] Vercel account / team for TG EXPLORET  
+- [ ] Vercel account / team for TG EXPORT TRADE  
 - [ ] New project linked to git repo (or CLI deploy)  
 - [ ] Framework preset: Next.js  
 - [ ] Root directory: `tg-exploret-web` (if monorepo)  
@@ -49,7 +49,7 @@
 
 ## Custom domain (later)
 
-- [ ] `tgetradecoltd.com` DNS at registrar  
+- [ ] `tgeptrade.com` DNS at registrar  
 - [ ] Vercel domain + TLS  
 - [ ] Update `NEXT_PUBLIC_SITE_URL` / `AUTH_URL`  
 
