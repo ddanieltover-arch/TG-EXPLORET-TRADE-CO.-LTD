@@ -893,12 +893,12 @@ async function main() {
   await prisma.sitePage.upsert({
     where: { slug: "about" },
     update: {
-      title: "About TG Export Trade Company Limited",
-      body: `TG Export Trade Company Limited is a Thailand-based company established in 2018. We supply edible cooking oils and rice to wholesale and export buyers who need clear grade information, practical packaging options, and coordinated shipment discussions.
+      title: "Trusted wholesale supply of rice and refined cooking oils",
+      body: `TG Export Trade Company Limited is a Thailand-based company established in 2018. We supply refined edible cooking oils and rice to wholesale and export buyers who need clear grade information, practical packaging options, and coordinated shipment discussions.
 
-Our commercial focus is dual-core: refined and specialty edible oils for retail, foodservice, and industrial programmes, alongside rice varieties and broken grades suited to importers, distributors, and food manufacturers. We do not dilute that focus with unrelated commodity lines.
+Our commercial focus is dual-core: refined and specialty edible oils for retail, foodservice, and industrial programmes, alongside rice varieties and broken grades suited to importers, distributors, and food manufacturers. We do not dilute that focus with unrelated commodity lines such as sugar, fertilizer, or other multi-commodity ranges.
 
-Buyers work with us through structured quotation requests — product, volume, destination, and preferred Incoterms — so sales conversations start with usable commercial context rather than a generic enquiry form.
+From inquiry to shipment discussions, we emphasise transparent communication, consistent grade expectations, and documentation support aligned to destination requirements. Buyers work with us through structured quotation requests — product, volume, destination, and preferred Incoterms — so sales conversations start with usable commercial context.
 
 Quality and food-safety certifications appear on this website only after the business confirms which documents are held. Until then, we invite buyers to ask sales which certificates can be provided for a given shipment.
 
@@ -907,12 +907,12 @@ Contact: sales@tgeptrade.com`,
     },
     create: {
       slug: "about",
-      title: "About TG Export Trade Company Limited",
-      body: `TG Export Trade Company Limited is a Thailand-based company established in 2018. We supply edible cooking oils and rice to wholesale and export buyers who need clear grade information, practical packaging options, and coordinated shipment discussions.
+      title: "Trusted wholesale supply of rice and refined cooking oils",
+      body: `TG Export Trade Company Limited is a Thailand-based company established in 2018. We supply refined edible cooking oils and rice to wholesale and export buyers who need clear grade information, practical packaging options, and coordinated shipment discussions.
 
-Our commercial focus is dual-core: refined and specialty edible oils for retail, foodservice, and industrial programmes, alongside rice varieties and broken grades suited to importers, distributors, and food manufacturers. We do not dilute that focus with unrelated commodity lines.
+Our commercial focus is dual-core: refined and specialty edible oils for retail, foodservice, and industrial programmes, alongside rice varieties and broken grades suited to importers, distributors, and food manufacturers. We do not dilute that focus with unrelated commodity lines such as sugar, fertilizer, or other multi-commodity ranges.
 
-Buyers work with us through structured quotation requests — product, volume, destination, and preferred Incoterms — so sales conversations start with usable commercial context rather than a generic enquiry form.
+From inquiry to shipment discussions, we emphasise transparent communication, consistent grade expectations, and documentation support aligned to destination requirements. Buyers work with us through structured quotation requests — product, volume, destination, and preferred Incoterms — so sales conversations start with usable commercial context.
 
 Quality and food-safety certifications appear on this website only after the business confirms which documents are held. Until then, we invite buyers to ask sales which certificates can be provided for a given shipment.
 

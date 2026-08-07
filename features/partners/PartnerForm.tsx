@@ -55,6 +55,13 @@ export function PartnerForm({ kind }: { kind: "dealer" | "distributor" }) {
           placeholder={`Tell us about your ${label} network`}
         />
       </div>
+      <p className="text-xs text-tg-muted">
+        We use your details only to review this application. See our{" "}
+        <a href="/privacy" className="underline">
+          Privacy Policy
+        </a>{" "}
+        (draft pending legal review).
+      </p>
       <button
         type="submit"
         disabled={pending}

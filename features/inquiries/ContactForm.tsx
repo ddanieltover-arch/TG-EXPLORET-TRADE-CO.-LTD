@@ -42,7 +42,7 @@ export function ContactForm() {
         <Field label="Contact name *" name="contactName" required error={state.fieldErrors?.contactName?.[0]} />
         <Field label="Business email *" name="email" type="email" required error={state.fieldErrors?.email?.[0]} />
         <Field label="Company" name="companyName" />
-        <Field label="Phone" name="phone" type="tel" />
+        <Field label="Phone / WhatsApp" name="phone" type="tel" />
         <Field label="Country" name="country" />
       </div>
       <div>
@@ -64,6 +64,14 @@ export function ContactForm() {
           </p>
         ) : null}
       </div>
+      <p className="text-xs text-tg-muted">
+        We use your details only to respond to this message. See our{" "}
+        <a href="/privacy" className="underline">
+          Privacy Policy
+        </a>{" "}
+        (draft pending legal review).
+      </p>
+
       <button
         type="submit"
         disabled={pending}

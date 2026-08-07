@@ -84,3 +84,90 @@ h3 {
   left: 0.5rem;
   top: 0.5rem;
 }
+
+/* Scroll reveal — used by components/sections/ScrollReveal */
+.tg-reveal {
+  opacity: 0;
+  transform: translateY(0.75rem);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.tg-reveal--in {
+  opacity: 1;
+  transform: translateY(0);
+  will-change: auto;
+}
+
+/* Homepage hero — content only (image stays static for LCP) */
+.tg-hero-enter {
+  opacity: 0;
+  transform: translateY(0.6rem);
+  animation: tg-hero-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.tg-hero-enter-delay-1 {
+  animation-delay: 0.08s;
+}
+
+.tg-hero-enter-delay-2 {
+  animation-delay: 0.16s;
+}
+
+.tg-hero-enter-delay-3 {
+  animation-delay: 0.24s;
+}
+
+@keyframes tg-hero-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tg-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+
+  .tg-hero-enter,
+  .tg-hero-enter-delay-1,
+  .tg-hero-enter-delay-2,
+  .tg-hero-enter-delay-3 {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+/* Homepage product carousel — seamless infinite marquee */
+@keyframes tg-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.tg-marquee-track {
+  animation: tg-marquee 55s linear infinite;
+  will-change: transform;
+}
+
+.tg-marquee:hover .tg-marquee-track,
+.tg-marquee:focus-within .tg-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tg-marquee-track {
+    animation: none;
+    will-change: auto;
+  }
+}

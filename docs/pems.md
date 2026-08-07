@@ -1,8 +1,8 @@
 # Pulse Engineering Memory System (PEMS) — Project Record
 
 **PEMS Version:** 1.0  
-**Last Updated:** 2026-08-05  
-**Updated By:** Senior Full Stack Engineer (rebrand)
+**Last Updated:** 2026-08-06  
+**Updated By:** Senior Full Stack Engineer (Manufacturing Process page — rice + oil)
 
 ---
 
@@ -12,14 +12,14 @@
 |---|---|
 | Project | TG Export Trade Company Limited — enterprise export website |
 | Current version | 0.1.0 (`tg-exploret-web` / package `tg-export-trade-web`) |
-| Current sprint / phase | Launch-blocked; content harvest from 5 reference sites applied 2026-08-05 |
+| Current sprint / phase | Launch-blocked; homepage section templates + sticky quote shipped 2026-08-06 |
 | Architecture (one line) | Next.js App Router + Prisma CMS + Auth.js admin + Resend + Supabase Storage |
 | Tech stack (one line) | Next.js, TypeScript, Tailwind, Prisma (SQLite local / Postgres staging), Auth.js, Resend, Supabase |
 | Design system | TG tokens in `globals.css` (primary green / gold secondary) |
 | Primary risks | Domain/email cutover to tgeptrade.com; staging credentials; content photos |
 | Open decisions | Real product photos; certifications list; export market destinations; rice SKU keep/drop |
-| Recent changes | Rebrand; oils+rice catalogue; reference content harvest → original Batch 1 copy + seed |
-| Next priorities | Client fact-gate sign-off; human QA; staging deploy when credentials ready |
+| Recent changes | Operations photography populated across site (homepage sections except hero; About, Manufacturing, QC, Sustainability, Export Markets, Products, Ordering, Contact) |
+| Next priorities | Nav IA cleanup (Company dropdown) recommended — header is dense; staging deploy; client fact-gate |
 
 ---
 
@@ -114,6 +114,16 @@ Follow Pulse Engineering Framework unless noted. Package folder remains `tg-expl
 |---|---|
 | Identity + product catalogue rebrand | Done |
 | Reference site content harvest → original Batch 1 | Done — see `deliverables/content-harvest/` |
+| About page redesign from UFI / Mahanakorn / Global Win / FREEM About refs | Done — rice + refined cooking oil only; no sugar/fertilizer/etc. |
+| Contact page redesign from FREEM / Global Win / Mahanakorn / UFI Contact refs | Done — email + RFQ channels only (no invented phone/address); rice + oil focus |
+| Privacy policy redesign from Global Win / FREEM / Mahanakorn Privacy refs | Done — B2B enquiry model (not retail checkout); counsel review still required |
+| Sustainability page from FREEM / Mahanakorn Sustainability refs | Done — rice + refined oil only; no unverified cert/SDG badges; nav + sitemap wired |
+| Quality Control page from FREEM / Mahanakorn / UFI Quality refs | Done — rice + oil checks only (no sugar/fertilizer); cert claims deferred to `/certifications` |
+| Ordering Procedure page from FREEM / Mahanakorn / UFI Ordering refs | Done — 6-step rice + oil export path; TT/LC as typical not absolute; nav + sitemap wired |
+| Manufacturing Process page from UFI Manufacturing ref | Done — dual pathways (rice milling + oil RBD); no sugar process copy |
+| Legal drafts + sitemap/robots | Done — `/privacy` `/terms` `/cookies`; counsel review still required |
+| TAT/WP skill-slice template pass | Done — gap map in `docs/template-skill-slice-gap-map.md` |
+| Modern brand template skill | Done — `tg-export-trade-modern-brand-templates/` |
 | Client fact gate (certs, MOQ, markets, photos) | Open — `03-client-fact-gate.md` |
 | Staging deploy | Blocked / pending |
 | Human UI QA | Pending |
@@ -122,7 +132,9 @@ Follow Pulse Engineering Framework unless noted. Package folder remains `tg-expl
 
 ## 9. Reusable Assets
 
-- `lib/brand.ts` — company identity + category slugs  
+- `lib/brand.ts` — company identity + category slugs + WhatsApp href helper  
+- `components/organisms/FloatingActions.tsx` — site-wide WhatsApp + back-to-top  
+- `components/sections/*` — homepage section primitives + StickyQuoteCTA  
 - Product hub/leaf pattern under `app/products/*`  
 - Seed catalogue for oils + Thai Jasmine Hom Mali rice  
 

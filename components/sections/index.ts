@@ -1,0 +1,11 @@
+export { HeroSection } from "@/components/sections/HeroSection";
+export { CategoryShowcase } from "@/components/sections/CategoryShowcase";
+export { ProductCarousel } from "@/components/sections/ProductCarousel";
+export { TrustPrinciples } from "@/components/sections/TrustPrinciples";
+export { AboutTeaser } from "@/components/sections/AboutTeaser";
+export { QualityProcess } from "@/components/sections/QualityProcess";
+export { PackagingTeaser } from "@/components/sections/PackagingTeaser";
+export { MarketsTeaser } from "@/components/sections/MarketsTeaser";
+export { CtaBand } from "@/components/sections/CtaBand";
+export { ScrollReveal } from "@/components/sections/ScrollReveal";
+export { StickyQuoteCTA } from "@/components/sections/StickyQuoteCTA";

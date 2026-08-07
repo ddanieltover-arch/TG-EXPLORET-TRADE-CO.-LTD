@@ -14,7 +14,6 @@ const statuses = Object.values(PublishStatus);
 
 function revalidateCertPaths() {
   revalidatePath("/admin/certifications");
-  revalidatePath("/certifications");
 }
 
 export async function createCertificationAction(formData: FormData) {

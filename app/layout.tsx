@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope, Source_Serif_4 } from "next/font/google";
+import { FloatingActions } from "@/components/organisms/FloatingActions";
 import { SiteFooter } from "@/components/organisms/SiteFooter";
 import { SiteHeader } from "@/components/organisms/SiteHeader";
 import { rootMetadata } from "@/lib/seo";
@@ -41,6 +42,7 @@ export default function RootLayout({
           {children}
         </main>
         <SiteFooter />
+        <FloatingActions />
       </body>
     </html>
   );
