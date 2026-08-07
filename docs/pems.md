@@ -1,8 +1,8 @@
 # Pulse Engineering Memory System (PEMS) — Project Record
 
 **PEMS Version:** 1.0  
-**Last Updated:** 2026-08-06  
-**Updated By:** Senior Full Stack Engineer (Manufacturing Process page — rice + oil)
+**Last Updated:** 2026-08-07  
+**Updated By:** Senior Full Stack Engineer (Motion & UX enhancement — Level 2 + selective L3)
 
 ---
 
@@ -12,14 +12,14 @@
 |---|---|
 | Project | TG Export Trade Company Limited — enterprise export website |
 | Current version | 0.1.0 (`tg-exploret-web` / package `tg-export-trade-web`) |
-| Current sprint / phase | Launch-blocked; homepage section templates + sticky quote shipped 2026-08-06 |
+| Current sprint / phase | Launch-blocked; motion/UX polish shipped 2026-08-07 |
 | Architecture (one line) | Next.js App Router + Prisma CMS + Auth.js admin + Resend + Supabase Storage |
 | Tech stack (one line) | Next.js, TypeScript, Tailwind, Prisma (SQLite local / Postgres staging), Auth.js, Resend, Supabase |
-| Design system | TG tokens in `globals.css` (primary green / gold secondary) |
+| Design system | TG tokens in `globals.css` (navy + gold) + motion tokens / interactive primitives |
 | Primary risks | Domain/email cutover to tgeptrade.com; staging credentials; content photos |
 | Open decisions | Real product photos; certifications list; export market destinations; rice SKU keep/drop |
-| Recent changes | Operations photography populated across site (homepage sections except hero; About, Manufacturing, QC, Sustainability, Export Markets, Products, Ordering, Contact) |
-| Next priorities | Nav IA cleanup (Company dropdown) recommended — header is dense; staging deploy; client fact-gate |
+| Recent changes | Motion UX enhancement: CSS motion tokens, shared CTA/card classes, ScrollReveal across marketing pages, L3 atmospheres on Home/About/QC/Manufacturing |
+| Next priorities | Nav IA cleanup (Company dropdown) recommended — header is dense; staging deploy; client fact-gate; human UI QA |
 
 ---
 
@@ -80,8 +80,9 @@
 | Field | Value |
 |---|---|
 | Brand / product name | TG Export Trade Company Limited |
-| Color tokens | Primary green / gold secondary (existing TG system) |
+| Color tokens | Primary navy / gold secondary (existing TG system) |
 | Typography | Source Serif 4 (display) + Manrope (body) |
+| Motion | CSS-first; `--tg-ease-*` / `--tg-duration-*`; `ScrollReveal`; `prefers-reduced-motion` in `globals.css` |
 
 ---
 
@@ -121,6 +122,7 @@ Follow Pulse Engineering Framework unless noted. Package folder remains `tg-expl
 | Quality Control page from FREEM / Mahanakorn / UFI Quality refs | Done — rice + oil checks only (no sugar/fertilizer); cert claims deferred to `/certifications` |
 | Ordering Procedure page from FREEM / Mahanakorn / UFI Ordering refs | Done — 6-step rice + oil export path; TT/LC as typical not absolute; nav + sitemap wired |
 | Manufacturing Process page from UFI Manufacturing ref | Done — dual pathways (rice milling + oil RBD); no sugar process copy |
+| Motion & UX enhancement (skill pass) | Done — Level 2 marketing + shared chrome; Level 3 Home/About/QC/Manufacturing; no new animation libs |
 | Legal drafts + sitemap/robots | Done — `/privacy` `/terms` `/cookies`; counsel review still required |
 | TAT/WP skill-slice template pass | Done — gap map in `docs/template-skill-slice-gap-map.md` |
 | Modern brand template skill | Done — `tg-export-trade-modern-brand-templates/` |
@@ -134,7 +136,8 @@ Follow Pulse Engineering Framework unless noted. Package folder remains `tg-expl
 
 - `lib/brand.ts` — company identity + category slugs + WhatsApp href helper  
 - `components/organisms/FloatingActions.tsx` — site-wide WhatsApp + back-to-top  
-- `components/sections/*` — homepage section primitives + StickyQuoteCTA  
+- `components/sections/*` — homepage section primitives + StickyQuoteCTA + ScrollReveal  
+- `app/globals.css` — design + motion tokens; `.tg-btn-*`, `.tg-card-interactive`, `.tg-surface-premium*`  
 - Product hub/leaf pattern under `app/products/*`  
 - Seed catalogue for oils + Thai Jasmine Hom Mali rice  
 

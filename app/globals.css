@@ -23,6 +23,14 @@
   --tg-radius-md: 0.5rem;
   --tg-header-height: 4.5rem;
   --tg-container: 75rem;
+
+  /* Motion tokens */
+  --tg-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --tg-ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+  --tg-duration-fast: 180ms;
+  --tg-duration-med: 300ms;
+  --tg-duration-slow: 600ms;
+  --tg-duration-hero: 700ms;
 }
 
 @theme inline {
@@ -85,14 +93,200 @@ h3 {
   top: 0.5rem;
 }
 
+/* ——— Shared interactive primitives ——— */
+
+.tg-nav-link {
+  position: relative;
+  transition: color var(--tg-duration-fast) var(--tg-ease-out);
+}
+
+.tg-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 100%;
+  height: 1.5px;
+  background: var(--tg-color-secondary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--tg-duration-med) var(--tg-ease-out);
+}
+
+.tg-nav-link:hover::after,
+.tg-nav-link:focus-visible::after,
+.tg-nav-link[aria-current="page"]::after,
+.tg-nav-link[data-active="true"]::after {
+  transform: scaleX(1);
+}
+
+.tg-btn-primary {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--tg-radius-md);
+  background: var(--tg-color-primary);
+  padding-inline: 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  transition:
+    background-color var(--tg-duration-med) var(--tg-ease-out),
+    transform var(--tg-duration-fast) var(--tg-ease-out),
+    box-shadow var(--tg-duration-med) var(--tg-ease-out);
+}
+
+.tg-btn-primary:hover {
+  background: var(--tg-color-primary-hover);
+  box-shadow: 0 8px 24px rgba(10, 47, 92, 0.18);
+}
+
+.tg-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.tg-btn-secondary {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--tg-radius-md);
+  background: var(--tg-color-secondary);
+  padding-inline: 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--tg-color-text);
+  transition:
+    background-color var(--tg-duration-med) var(--tg-ease-out),
+    transform var(--tg-duration-fast) var(--tg-ease-out),
+    box-shadow var(--tg-duration-med) var(--tg-ease-out);
+}
+
+.tg-btn-secondary:hover {
+  background: color-mix(in srgb, var(--tg-color-secondary) 90%, #fff);
+  box-shadow: 0 8px 24px rgba(201, 162, 74, 0.28);
+}
+
+.tg-btn-secondary:active {
+  transform: scale(0.98);
+}
+
+.tg-btn-ghost {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--tg-radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.05);
+  padding-inline: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  backdrop-filter: blur(4px);
+  transition:
+    border-color var(--tg-duration-med) var(--tg-ease-out),
+    background-color var(--tg-duration-med) var(--tg-ease-out),
+    transform var(--tg-duration-fast) var(--tg-ease-out);
+}
+
+.tg-btn-ghost:hover {
+  border-color: var(--tg-color-secondary);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.tg-btn-ghost:active {
+  transform: scale(0.98);
+}
+
+.tg-card-interactive {
+  transition:
+    transform var(--tg-duration-med) var(--tg-ease-out),
+    box-shadow var(--tg-duration-med) var(--tg-ease-out),
+    border-color var(--tg-duration-med) var(--tg-ease-out);
+}
+
+.tg-card-interactive:hover,
+.tg-card-interactive:focus-within {
+  border-color: var(--tg-color-secondary);
+  box-shadow: 0 12px 40px rgba(10, 47, 92, 0.1);
+  transform: translateY(-0.2rem);
+}
+
+.tg-img-zoom {
+  transition: transform var(--tg-duration-slow) var(--tg-ease-out);
+}
+
+.group:hover .tg-img-zoom,
+.group:focus-within .tg-img-zoom {
+  transform: scale(1.04);
+}
+
+.tg-link-arrow {
+  display: inline-block;
+  transition: transform var(--tg-duration-med) var(--tg-ease-out);
+}
+
+.group:hover .tg-link-arrow,
+.group:focus-within .tg-link-arrow {
+  transform: translateX(0.2rem);
+}
+
+/* Level 3 section atmosphere shells */
+.tg-surface-premium {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.tg-surface-premium::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 55% at 12% 0%, rgba(201, 162, 74, 0.1), transparent 55%),
+    radial-gradient(ellipse 55% 45% at 95% 80%, rgba(10, 47, 92, 0.06), transparent 50%);
+}
+
+.tg-surface-premium-dark {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.tg-surface-premium-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 10%, rgba(201, 162, 74, 0.14), transparent 50%),
+    radial-gradient(ellipse 50% 40% at 10% 90%, rgba(255, 255, 255, 0.04), transparent 45%);
+}
+
+.tg-gold-rule {
+  height: 1px;
+  width: 4rem;
+  background: var(--tg-color-secondary);
+  transform-origin: left;
+}
+
 /* Scroll reveal — used by components/sections/ScrollReveal */
 .tg-reveal {
   opacity: 0;
   transform: translateY(0.75rem);
   transition:
-    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity var(--tg-duration-slow) var(--tg-ease-out),
+    transform var(--tg-duration-slow) var(--tg-ease-out);
   will-change: opacity, transform;
+}
+
+.tg-reveal--fade {
+  transform: none;
 }
 
 .tg-reveal--in {
@@ -105,7 +299,7 @@ h3 {
 .tg-hero-enter {
   opacity: 0;
   transform: translateY(0.6rem);
-  animation: tg-hero-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: tg-hero-in var(--tg-duration-hero) var(--tg-ease-out) forwards;
 }
 
 .tg-hero-enter-delay-1 {
@@ -120,11 +314,31 @@ h3 {
   animation-delay: 0.24s;
 }
 
+.tg-hero-enter-delay-4 {
+  animation-delay: 0.36s;
+}
+
 @keyframes tg-hero-in {
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes tg-scroll-cue {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateY(0.35rem);
+    opacity: 1;
+  }
+}
+
+.tg-scroll-cue {
+  animation: tg-scroll-cue 1.8s var(--tg-ease-in-out) infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -138,10 +352,32 @@ h3 {
   .tg-hero-enter,
   .tg-hero-enter-delay-1,
   .tg-hero-enter-delay-2,
-  .tg-hero-enter-delay-3 {
+  .tg-hero-enter-delay-3,
+  .tg-hero-enter-delay-4 {
     opacity: 1;
     transform: none;
     animation: none;
+  }
+
+  .tg-scroll-cue {
+    animation: none;
+    opacity: 0.7;
+  }
+
+  .tg-card-interactive:hover,
+  .tg-card-interactive:focus-within {
+    transform: none;
+  }
+
+  .group:hover .tg-img-zoom,
+  .group:focus-within .tg-img-zoom {
+    transform: none;
+  }
+
+  .tg-btn-primary:active,
+  .tg-btn-secondary:active,
+  .tg-btn-ghost:active {
+    transform: none;
   }
 }
 
@@ -169,5 +405,36 @@ h3 {
   .tg-marquee-track {
     animation: none;
     will-change: auto;
+  }
+}
+
+/* Panel expand for menus — opacity/transform only */
+.tg-panel {
+  opacity: 0;
+  transform: translateY(-0.35rem);
+  pointer-events: none;
+  visibility: hidden;
+  transition:
+    opacity var(--tg-duration-med) var(--tg-ease-out),
+    transform var(--tg-duration-med) var(--tg-ease-out),
+    visibility 0s linear var(--tg-duration-med);
+}
+
+.tg-panel--open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  visibility: visible;
+  transition:
+    opacity var(--tg-duration-med) var(--tg-ease-out),
+    transform var(--tg-duration-med) var(--tg-ease-out),
+    visibility 0s linear 0s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tg-panel,
+  .tg-panel--open {
+    transition: none;
+    transform: none;
   }
 }

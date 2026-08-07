@@ -31,8 +31,8 @@ const ACTIONS = [
 
 export function TrustPrinciples() {
   return (
-    <section className="border-y border-tg-border bg-tg-bg/60 px-4 py-20 md:px-6 md:py-24">
-      <div className="mx-auto max-w-[var(--tg-container)]">
+    <section className="tg-surface-premium border-y border-tg-border bg-tg-bg/60 px-4 py-20 md:px-6 md:py-24">
+      <div className="relative mx-auto max-w-[var(--tg-container)]">
         <ScrollReveal>
           <p className="text-xs font-semibold tracking-[0.16em] text-tg-secondary uppercase">
             How we work
@@ -40,6 +40,7 @@ export function TrustPrinciples() {
           <h2 className="mt-3 font-display text-3xl text-tg-primary md:text-4xl">
             Built for commercial evaluation
           </h2>
+          <div className="tg-gold-rule mt-4" aria-hidden />
           <p className="mt-4 max-w-2xl leading-relaxed text-tg-muted">
             We publish what buyers can verify — and leave unconfirmed claims off the public
             site.
@@ -54,8 +55,8 @@ export function TrustPrinciples() {
                 <li
                   className={
                     featured
-                      ? "flex h-full flex-col border border-tg-primary bg-tg-primary p-6 text-white transition duration-300 hover:border-tg-secondary md:p-7"
-                      : "flex h-full flex-col border border-tg-border bg-tg-surface p-6 transition duration-300 hover:border-tg-secondary md:p-7"
+                      ? "flex h-full flex-col border border-tg-primary bg-tg-primary p-6 text-white transition-[border-color,transform] duration-[var(--tg-duration-med)] ease-[var(--tg-ease-out)] hover:border-tg-secondary md:p-7"
+                      : "tg-card-interactive flex h-full flex-col border border-tg-border bg-tg-surface p-6 md:p-7"
                   }
                 >
                   <span
@@ -97,8 +98,8 @@ export function TrustPrinciples() {
                 href={action.href}
                 className={
                   action.variant === "primary"
-                    ? "inline-flex min-h-11 items-center justify-center rounded-[var(--tg-radius-md)] bg-tg-primary px-5 text-sm font-semibold text-white transition hover:bg-tg-secondary hover:text-tg-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tg-secondary"
-                    : "inline-flex min-h-11 items-center justify-center rounded-[var(--tg-radius-md)] border border-tg-primary bg-transparent px-5 text-sm font-semibold text-tg-primary transition hover:bg-tg-primary hover:text-tg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tg-secondary"
+                    ? "tg-btn-primary hover:bg-tg-secondary hover:text-tg-primary"
+                    : "inline-flex min-h-11 items-center justify-center rounded-[var(--tg-radius-md)] border border-tg-primary bg-transparent px-5 text-sm font-semibold text-tg-primary transition-[background-color,color,transform] duration-[var(--tg-duration-med)] ease-[var(--tg-ease-out)] hover:bg-tg-primary hover:text-tg-secondary active:scale-[0.98]"
                 }
               >
                 {action.label}

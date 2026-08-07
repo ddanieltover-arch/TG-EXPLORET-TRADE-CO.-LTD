@@ -134,11 +134,19 @@ export default function QualityControlPage() {
           className="absolute inset-0 bg-gradient-to-r from-[#061a33]/95 via-[#0a2f5c]/88 to-[#0a2f5c]/55"
           aria-hidden
         />
+        <div
+          className="absolute inset-0 opacity-35"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 80% 15%, #c9a24a33, transparent 42%)",
+          }}
+          aria-hidden
+        />
         <div className="relative mx-auto max-w-[var(--tg-container)] px-4 py-20 md:px-6 md:py-28">
           <p className="text-xs font-semibold tracking-[0.16em] text-tg-secondary uppercase">
             {COMPANY_TAGLINE}
           </p>
-          <div className="mt-5 h-px w-14 bg-tg-secondary" aria-hidden />
+          <div className="tg-gold-rule mt-5" aria-hidden />
           <h1 className="mt-6 max-w-3xl font-display text-4xl leading-tight md:text-5xl">
             Quality Control
           </h1>
@@ -148,16 +156,10 @@ export default function QualityControlPage() {
             publish unverified certification badges.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <Link
-              href="/request-quote"
-              className="inline-flex min-h-11 items-center rounded-[var(--tg-radius-md)] bg-tg-secondary px-6 text-sm font-semibold text-tg-text transition hover:bg-tg-secondary/90"
-            >
+            <Link href="/request-quote" className="tg-btn-secondary px-6">
               Request a Quote
             </Link>
-            <Link
-              href="/manufacturing-process"
-              className="inline-flex min-h-11 items-center rounded-[var(--tg-radius-md)] border border-white/35 bg-white/5 px-6 text-sm font-semibold text-white transition hover:border-tg-secondary hover:bg-white/10"
-            >
+            <Link href="/manufacturing-process" className="tg-btn-ghost">
               Manufacturing process
             </Link>
           </div>
@@ -173,7 +175,8 @@ export default function QualityControlPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[var(--tg-container)] px-4 py-20 md:px-6 md:py-24">
+      <section className="tg-surface-premium px-4 py-20 md:px-6 md:py-24">
+        <div className="relative mx-auto max-w-[var(--tg-container)]">
         <ScrollReveal>
           <p className="text-xs font-semibold tracking-[0.16em] text-tg-secondary uppercase">
             Export workflow
@@ -181,7 +184,7 @@ export default function QualityControlPage() {
           <h2 className="mt-3 font-display text-3xl text-tg-primary md:text-4xl">
             Assurance at every stage
           </h2>
-          <div className="mt-4 h-px w-14 bg-tg-secondary" aria-hidden />
+          <div className="tg-gold-rule mt-4" aria-hidden />
         </ScrollReveal>
         <div className="mt-12 space-y-12">
           {stages.map((stage, index) => (
@@ -212,10 +215,11 @@ export default function QualityControlPage() {
             </ScrollReveal>
           ))}
         </div>
+        </div>
       </section>
 
-      <section className="border-y border-tg-border bg-tg-surface px-4 py-20 md:px-6 md:py-24">
-        <div className="mx-auto max-w-[var(--tg-container)]">
+      <section className="tg-surface-premium border-y border-tg-border bg-tg-surface px-4 py-20 md:px-6 md:py-24">
+        <div className="relative mx-auto max-w-[var(--tg-container)]">
           <ScrollReveal>
             <p className="text-xs font-semibold tracking-[0.16em] text-tg-secondary uppercase">
               Product focus
@@ -232,14 +236,14 @@ export default function QualityControlPage() {
               <ScrollReveal key={item.href} delayMs={index * 70}>
                 <Link
                   href={item.href}
-                  className="group block overflow-hidden border border-tg-border bg-tg-bg transition duration-300 hover:border-tg-secondary"
+                  className="tg-card-interactive group block overflow-hidden border border-tg-border bg-tg-bg"
                 >
                   <div className="relative aspect-[16/10]">
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                      className="tg-img-zoom object-cover"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
@@ -249,7 +253,7 @@ export default function QualityControlPage() {
                     <p className="mt-3 text-sm leading-relaxed text-tg-muted">{item.body}</p>
                     <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-tg-primary">
                       View catalogue
-                      <span className="transition-transform group-hover:translate-x-1" aria-hidden>
+                      <span className="tg-link-arrow" aria-hidden>
                         →
                       </span>
                     </span>
@@ -317,7 +321,7 @@ export default function QualityControlPage() {
                 <li>
                   <Link
                     href={link.href}
-                    className="block h-full border border-tg-border bg-white p-6 transition hover:border-tg-secondary"
+                    className="tg-card-interactive block h-full border border-tg-border bg-white p-6"
                   >
                     <h3 className="font-display text-xl text-tg-primary">{link.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-tg-muted">

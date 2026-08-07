@@ -10,7 +10,7 @@ import {
 } from "@/lib/brand";
 
 const navLinkClass =
-  "text-sm font-medium text-tg-text transition hover:text-tg-primary";
+  "tg-nav-link text-sm font-medium text-tg-text hover:text-tg-primary";
 
 export function SiteHeader() {
   return (
@@ -22,7 +22,7 @@ export function SiteHeader() {
           </p>
           <a
             href={`mailto:${COMPANY_EMAIL}`}
-            className="text-white/85 transition hover:text-tg-secondary"
+            className="text-white/85 transition-[color] duration-[var(--tg-duration-fast)] ease-[var(--tg-ease-out)] hover:text-tg-secondary"
           >
             {COMPANY_EMAIL}
           </a>
@@ -32,7 +32,7 @@ export function SiteHeader() {
       <div className="relative mx-auto flex h-[var(--tg-header-height)] max-w-[var(--tg-container)] items-center justify-between gap-4 px-4 md:px-6">
         <Link
           href="/"
-          className="flex min-w-0 items-center gap-2.5"
+          className="flex min-w-0 items-center gap-2.5 transition-[opacity] duration-[var(--tg-duration-fast)] ease-[var(--tg-ease-out)] hover:opacity-90"
           aria-label={`${COMPANY_LEGAL_NAME} — home`}
         >
           <Image
@@ -69,7 +69,7 @@ export function SiteHeader() {
         <div className="flex shrink-0 items-center gap-2">
           <Link
             href="/request-quote"
-            className="inline-flex min-h-11 items-center rounded-[var(--tg-radius-md)] bg-tg-primary px-3 text-sm font-semibold text-white transition hover:bg-tg-primary-hover sm:px-5"
+            className="tg-btn-primary px-3 sm:px-5"
           >
             <span className="sm:hidden">Quote</span>
             <span className="hidden sm:inline">Request a Quote</span>

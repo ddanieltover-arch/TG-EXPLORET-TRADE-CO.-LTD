@@ -94,8 +94,8 @@ function StepCard({
 
 export function QualityProcess() {
   return (
-    <section className="border-y border-tg-border bg-tg-surface px-4 py-20 md:px-6 md:py-24">
-      <div className="mx-auto max-w-[var(--tg-container)]">
+    <section className="tg-surface-premium border-y border-tg-border bg-tg-surface px-4 py-20 md:px-6 md:py-24">
+      <div className="relative mx-auto max-w-[var(--tg-container)]">
         <div className="grid items-stretch gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
           <div>
             <ScrollReveal>
@@ -105,6 +105,7 @@ export function QualityProcess() {
               <h2 className="mt-3 font-display text-3xl text-tg-primary md:text-4xl">
                 From enquiry to shipment discussion
               </h2>
+              <div className="tg-gold-rule mt-4" aria-hidden />
               <p className="mt-4 max-w-2xl leading-relaxed text-tg-muted">
                 A practical path focused on clarity at each step. Certification documents are
                 listed publicly only after the business confirms them.
@@ -121,12 +122,12 @@ export function QualityProcess() {
           </div>
 
           <ScrollReveal delayMs={50} className="h-full min-h-[16rem] lg:min-h-[22rem]">
-            <div className="relative h-full min-h-[16rem] overflow-hidden border border-tg-border lg:min-h-[22rem]">
+            <div className="group relative h-full min-h-[16rem] overflow-hidden border border-tg-border lg:min-h-[22rem]">
               <Image
                 src="/media/operations/container-ship-port.png"
                 alt="Container ship at port — export logistics from enquiry through shipment"
                 fill
-                className="object-cover object-center"
+                className="tg-img-zoom object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 loading="lazy"
               />

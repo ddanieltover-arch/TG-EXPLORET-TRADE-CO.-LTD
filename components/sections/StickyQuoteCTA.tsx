@@ -47,10 +47,7 @@ export function StickyQuoteCTA({
             )}
           </p>
         </div>
-        <Link
-          href={href}
-          className="inline-flex min-h-11 w-full shrink-0 items-center justify-center rounded-[var(--tg-radius-md)] bg-tg-secondary px-5 text-sm font-semibold text-tg-text transition hover:bg-tg-secondary/90 sm:w-auto"
-        >
+        <Link href={href} className="tg-btn-secondary w-full shrink-0 sm:w-auto">
           Request a Quote
         </Link>
       </div>

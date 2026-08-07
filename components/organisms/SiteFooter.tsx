@@ -33,10 +33,7 @@ export function SiteFooter() {
             Edible cooking oils and rice for international buyers. Quote-led wholesale supply
             from {COMPANY_ORIGIN}.
           </p>
-          <Link
-            href="/request-quote"
-            className="mt-6 inline-flex min-h-11 items-center rounded-[var(--tg-radius-md)] bg-tg-secondary px-5 text-sm font-semibold text-tg-text transition hover:bg-tg-secondary/90"
-          >
+          <Link href="/request-quote" className="tg-btn-secondary mt-6">
             Request a Quote
           </Link>
         </div>
@@ -51,52 +48,82 @@ export function SiteFooter() {
           <nav aria-labelledby="footer-explore-heading">
             <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2.5 text-sm text-white/85 lg:grid-cols-1 xl:grid-cols-2">
               <li>
-                <Link href={PRODUCT_CATEGORIES.cookingOil.href} className="hover:text-tg-secondary">
+                <Link
+                  href={PRODUCT_CATEGORIES.cookingOil.href}
+                  className="transition-[color] duration-[var(--tg-duration-fast)] ease-[var(--tg-ease-out)] hover:text-tg-secondary"
+                >
                   {PRODUCT_CATEGORIES.cookingOil.name}
                 </Link>
               </li>
               <li>
-                <Link href={PRODUCT_CATEGORIES.rice.href} className="hover:text-tg-secondary">
+                <Link
+                  href={PRODUCT_CATEGORIES.rice.href}
+                  className="transition-[color] duration-[var(--tg-duration-fast)] ease-[var(--tg-ease-out)] hover:text-tg-secondary"
+                >
                   {PRODUCT_CATEGORIES.rice.name}
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-tg-secondary">
+                <Link
+                  href="/about"
+                  className="transition-[color] duration-[var(--tg-duration-fast)] ease-[var(--tg-ease-out)] hover:text-tg-secondary"
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/sustainability" className="hover:text-tg-secondary">
+                <Link
+                  href="/sustainability"
+                  className="transition-[color] duration-[var(--tg-duration-fast)] ease-[var(--tg-ease-out)] hover:text-tg-secondary"
+                >
                   Sustainability
                 </Link>
               </li>
               <li>
-                <Link href="/quality-control" className="hover:text-tg-secondary">
+                <Link
+                  href="/quality-control"
+                  className="transition-[color] duration-[var(--tg-duration-fast)] ease-[var(--tg-ease-out)] hover:text-tg-secondary"
+                >
                   Quality Control
                 </Link>
               </li>
               <li>
-                <Link href="/ordering-procedure" className="hover:text-tg-secondary">
+                <Link
+                  href="/ordering-procedure"
+                  className="transition-[color] duration-[var(--tg-duration-fast)] ease-[var(--tg-ease-out)] hover:text-tg-secondary"
+                >
                   Ordering Procedure
                 </Link>
               </li>
               <li>
-                <Link href="/export-markets" className="hover:text-tg-secondary">
+                <Link
+                  href="/export-markets"
+                  className="transition-[color] duration-[var(--tg-duration-fast)] ease-[var(--tg-ease-out)] hover:text-tg-secondary"
+                >
                   Export Markets
                 </Link>
               </li>
               <li>
-                <Link href="/dealer-registration" className="hover:text-tg-secondary">
+                <Link
+                  href="/dealer-registration"
+                  className="transition-[color] duration-[var(--tg-duration-fast)] ease-[var(--tg-ease-out)] hover:text-tg-secondary"
+                >
                   Dealer registration
                 </Link>
               </li>
               <li>
-                <Link href="/manufacturing-process" className="hover:text-tg-secondary">
+                <Link
+                  href="/manufacturing-process"
+                  className="transition-[color] duration-[var(--tg-duration-fast)] ease-[var(--tg-ease-out)] hover:text-tg-secondary"
+                >
                   Manufacturing Process
                 </Link>
               </li>
               <li>
-                <Link href="/distributor-registration" className="hover:text-tg-secondary">
+                <Link
+                  href="/distributor-registration"
+                  className="transition-[color] duration-[var(--tg-duration-fast)] ease-[var(--tg-ease-out)] hover:text-tg-secondary"
+                >
                   Distributor registration
                 </Link>
               </li>
@@ -109,13 +136,19 @@ export function SiteFooter() {
             Contact
           </p>
           <p className="mt-4 text-sm text-white/85">
-            <a href={`mailto:${COMPANY_EMAIL}`} className="hover:text-tg-secondary">
+            <a
+              href={`mailto:${COMPANY_EMAIL}`}
+              className="transition-[color] duration-[var(--tg-duration-fast)] ease-[var(--tg-ease-out)] hover:text-tg-secondary"
+            >
               {COMPANY_EMAIL}
             </a>
           </p>
           <p className="mt-1 text-sm text-white/65">{COMPANY_ORIGIN}</p>
           <p className="mt-3">
-            <Link href="/contact" className="text-sm font-semibold text-white hover:text-tg-secondary">
+            <Link
+              href="/contact"
+              className="text-sm font-semibold text-white transition-[color] duration-[var(--tg-duration-fast)] ease-[var(--tg-ease-out)] hover:text-tg-secondary"
+            >
               Contact page →
             </Link>
           </p>
@@ -131,17 +164,26 @@ export function SiteFooter() {
           <nav aria-labelledby="footer-legal-heading">
             <ul className="mt-4 space-y-2.5 text-sm text-white/85">
               <li>
-                <Link href="/privacy" className="hover:text-tg-secondary">
+                <Link
+                  href="/privacy"
+                  className="transition-[color] duration-[var(--tg-duration-fast)] ease-[var(--tg-ease-out)] hover:text-tg-secondary"
+                >
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="hover:text-tg-secondary">
+                <Link
+                  href="/terms"
+                  className="transition-[color] duration-[var(--tg-duration-fast)] ease-[var(--tg-ease-out)] hover:text-tg-secondary"
+                >
                   Terms of Use
                 </Link>
               </li>
               <li>
-                <Link href="/cookies" className="hover:text-tg-secondary">
+                <Link
+                  href="/cookies"
+                  className="transition-[color] duration-[var(--tg-duration-fast)] ease-[var(--tg-ease-out)] hover:text-tg-secondary"
+                >
                   Cookie Policy
                 </Link>
               </li>

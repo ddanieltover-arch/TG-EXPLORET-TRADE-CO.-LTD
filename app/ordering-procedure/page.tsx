@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ScrollReveal } from "@/components/sections/ScrollReveal";
 import {
   COMPANY_LEGAL_NAME,
   COMPANY_SHORT_NAME,
@@ -129,6 +130,21 @@ const related = [
   },
 ] as const;
 
+const productCategories = [
+  {
+    href: PRODUCT_CATEGORIES.cookingOil.href,
+    title: PRODUCT_CATEGORIES.cookingOil.name,
+    image: "/media/operations/cooking-oils-assortment.png",
+    body: "Refined oils for retail, foodservice, and industrial programmes.",
+  },
+  {
+    href: PRODUCT_CATEGORIES.rice.href,
+    title: PRODUCT_CATEGORIES.rice.name,
+    image: "/media/operations/tg-basmati-warehouse.png",
+    body: "Jasmine, white, parboiled, glutinous, basmati, cargo, and specialty grades.",
+  },
+] as const;
+
 export default function OrderingProcedurePage() {
   return (
     <>
@@ -190,97 +206,91 @@ export default function OrderingProcedurePage() {
       </section>
 
       <section className="mx-auto max-w-[var(--tg-container)] px-4 py-16 md:px-6 md:py-20">
-        <p className="text-sm font-semibold tracking-wide text-tg-secondary">Streamlined process</p>
-        <h2 className="mt-2 font-display text-3xl text-tg-primary md:text-4xl">
-          Six steps to your order
-        </h2>
+        <ScrollReveal>
+          <p className="text-sm font-semibold tracking-wide text-tg-secondary">Streamlined process</p>
+          <h2 className="mt-2 font-display text-3xl text-tg-primary md:text-4xl">
+            Six steps to your order
+          </h2>
+        </ScrollReveal>
         <ol className="mt-10 space-y-12">
           {steps.map((step, index) => (
-            <li
-              key={step.title}
-              className="grid gap-6 border-t border-tg-border pt-10 first:border-t-0 first:pt-0 md:grid-cols-[4rem_0.85fr_1.15fr]"
-            >
-              <p className="font-display text-3xl text-tg-secondary" aria-hidden>
-                {index + 1}
-              </p>
-              <div>
-                <h3 className="font-display text-2xl text-tg-primary">{step.title}</h3>
-                <p className="mt-3 text-tg-muted">{step.body}</p>
-              </div>
-              <ul className="list-disc space-y-2 pl-5 text-sm text-tg-muted">
-                {step.bullets.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </li>
+            <ScrollReveal key={step.title} delayMs={index * 40}>
+              <li
+                className={`grid gap-6 border-tg-border md:grid-cols-[4rem_0.85fr_1.15fr] ${
+                  index === 0 ? "pt-0" : "border-t pt-10"
+                }`}
+              >
+                <p className="font-display text-3xl text-tg-secondary" aria-hidden>
+                  {index + 1}
+                </p>
+                <div>
+                  <h3 className="font-display text-2xl text-tg-primary">{step.title}</h3>
+                  <p className="mt-3 text-tg-muted">{step.body}</p>
+                </div>
+                <ul className="list-disc space-y-2 pl-5 text-sm text-tg-muted">
+                  {step.bullets.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </li>
+            </ScrollReveal>
           ))}
         </ol>
       </section>
 
       <section className="border-y border-tg-border bg-tg-surface px-4 py-16 md:px-6 md:py-20">
         <div className="mx-auto max-w-[var(--tg-container)]">
-          <p className="text-sm font-semibold tracking-wide text-tg-secondary">Why order with us</p>
-          <h2 className="mt-2 font-display text-3xl text-tg-primary md:text-4xl">
-            Built for wholesale export buyers
-          </h2>
+          <ScrollReveal>
+            <p className="text-sm font-semibold tracking-wide text-tg-secondary">Why order with us</p>
+            <h2 className="mt-2 font-display text-3xl text-tg-primary md:text-4xl">
+              Built for wholesale export buyers
+            </h2>
+          </ScrollReveal>
           <ul className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {whyOrder.map((item) => (
-              <li key={item.title}>
-                <h3 className="font-display text-xl text-tg-primary">{item.title}</h3>
-                <p className="mt-2 text-sm text-tg-muted">{item.body}</p>
-              </li>
+            {whyOrder.map((item, index) => (
+              <ScrollReveal key={item.title} delayMs={index * 40}>
+                <li>
+                  <h3 className="font-display text-xl text-tg-primary">{item.title}</h3>
+                  <p className="mt-2 text-sm text-tg-muted">{item.body}</p>
+                </li>
+              </ScrollReveal>
             ))}
           </ul>
           <div className="mt-12 grid gap-6 md:grid-cols-2">
-            <Link
-              href={PRODUCT_CATEGORIES.cookingOil.href}
-              className="group overflow-hidden border border-tg-border bg-tg-bg transition hover:border-tg-secondary"
-            >
-              <div className="relative aspect-[16/10]">
-                <Image
-                  src="/media/operations/cooking-oils-assortment.png"
-                  alt={PRODUCT_CATEGORIES.cookingOil.name}
-                  fill
-                  className="object-cover transition duration-300 group-hover:scale-[1.02]"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="font-display text-2xl text-tg-primary">
-                  {PRODUCT_CATEGORIES.cookingOil.name}
-                </h3>
-                <p className="mt-2 text-sm text-tg-muted">
-                  Refined oils for retail, foodservice, and industrial programmes.
-                </p>
-              </div>
-            </Link>
-            <Link
-              href={PRODUCT_CATEGORIES.rice.href}
-              className="group overflow-hidden border border-tg-border bg-tg-bg transition hover:border-tg-secondary"
-            >
-              <div className="relative aspect-[16/10]">
-                <Image
-                  src="/media/operations/tg-basmati-warehouse.png"
-                  alt={PRODUCT_CATEGORIES.rice.name}
-                  fill
-                  className="object-cover transition duration-300 group-hover:scale-[1.02]"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="font-display text-2xl text-tg-primary">{PRODUCT_CATEGORIES.rice.name}</h3>
-                <p className="mt-2 text-sm text-tg-muted">
-                  Jasmine, white, parboiled, glutinous, basmati, cargo, and specialty grades.
-                </p>
-              </div>
-            </Link>
+            {productCategories.map((item, index) => (
+              <ScrollReveal key={item.href} delayMs={index * 70}>
+                <Link
+                  href={item.href}
+                  className="tg-card-interactive group block overflow-hidden border border-tg-border bg-tg-bg"
+                >
+                  <div className="relative aspect-[16/10]">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="tg-img-zoom object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="inline-flex items-center gap-2 font-display text-2xl text-tg-primary">
+                      {item.title}
+                      <span className="tg-link-arrow text-base font-semibold" aria-hidden>
+                        →
+                      </span>
+                    </h3>
+                    <p className="mt-2 text-sm text-tg-muted">{item.body}</p>
+                  </div>
+                </Link>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-[var(--tg-container)] px-4 py-16 md:px-6 md:py-20">
         <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-start">
-          <div>
+          <ScrollReveal>
             <p className="text-sm font-semibold tracking-wide text-tg-secondary">
               Documents typically involved
             </p>
@@ -301,61 +311,63 @@ export default function OrderingProcedurePage() {
                 Export markets &amp; Incoterms
               </Link>
             </p>
-          </div>
-          <div className="relative aspect-[4/5] overflow-hidden border border-tg-border">
-            <Image
-              src="/media/operations/port-operations-safety.png"
-              alt="Port logistics coordination supporting clear commercial documentation for export"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 40vw"
-            />
-          </div>
+          </ScrollReveal>
+          <ScrollReveal delayMs={60}>
+            <div className="relative aspect-[4/5] overflow-hidden border border-tg-border">
+              <Image
+                src="/media/operations/port-operations-safety.png"
+                alt="Port logistics coordination supporting clear commercial documentation for export"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+              />
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="mx-auto max-w-[var(--tg-container)] px-4 pb-16 md:px-6 md:pb-20">
-        <p className="text-sm font-semibold tracking-wide text-tg-secondary">Related</p>
-        <h2 className="mt-2 font-display text-3xl text-tg-primary">You may also find helpful</h2>
+        <ScrollReveal>
+          <p className="text-sm font-semibold tracking-wide text-tg-secondary">Related</p>
+          <h2 className="mt-2 font-display text-3xl text-tg-primary">You may also find helpful</h2>
+        </ScrollReveal>
         <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-          {related.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="block h-full border border-tg-border bg-tg-surface p-5 transition hover:border-tg-secondary"
-              >
-                <h3 className="font-display text-xl text-tg-primary">{link.title}</h3>
-                <p className="mt-2 text-sm text-tg-muted">{link.description}</p>
-              </Link>
-            </li>
+          {related.map((link, index) => (
+            <ScrollReveal key={link.href} delayMs={index * 40}>
+              <li>
+                <Link
+                  href={link.href}
+                  className="tg-card-interactive block h-full border border-tg-border bg-tg-surface p-5"
+                >
+                  <h3 className="font-display text-xl text-tg-primary">{link.title}</h3>
+                  <p className="mt-2 text-sm text-tg-muted">{link.description}</p>
+                </Link>
+              </li>
+            </ScrollReveal>
           ))}
         </ul>
       </section>
 
       <section className="bg-tg-primary px-4 py-14 text-white md:px-6">
-        <div className="mx-auto flex max-w-[var(--tg-container)] flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-          <div>
-            <h2 className="font-display text-3xl">Ready to place your enquiry?</h2>
-            <p className="mt-2 max-w-xl text-white/80">
-              Share product, quantity, destination, and preferred Incoterms — we will respond with
-              a formal quotation path for rice or refined cooking oils.
-            </p>
+        <ScrollReveal>
+          <div className="mx-auto flex max-w-[var(--tg-container)] flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+            <div>
+              <h2 className="font-display text-3xl">Ready to place your enquiry?</h2>
+              <p className="mt-2 max-w-xl text-white/80">
+                Share product, quantity, destination, and preferred Incoterms — we will respond with
+                a formal quotation path for rice or refined cooking oils.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/request-quote" className="tg-btn-secondary">
+                Request a Quote
+              </Link>
+              <Link href="/contact" className="tg-btn-ghost">
+                Contact us
+              </Link>
+            </div>
           </div>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="/request-quote"
-              className="inline-flex min-h-11 items-center rounded-[var(--tg-radius-md)] bg-tg-secondary px-5 text-sm font-semibold text-tg-text hover:bg-tg-secondary/90"
-            >
-              Request a Quote
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex min-h-11 items-center rounded-[var(--tg-radius-md)] border border-white/40 px-5 text-sm font-semibold text-white hover:bg-white/10"
-            >
-              Contact us
-            </Link>
-          </div>
-        </div>
+        </ScrollReveal>
       </section>
     </>
   );

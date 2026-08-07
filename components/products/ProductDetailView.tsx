@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ScrollReveal } from "@/components/sections/ScrollReveal";
 import { StickyQuoteCTA } from "@/components/sections/StickyQuoteCTA";
 import { QuoteRequestButton } from "@/features/quotes/QuoteRequestModal";
 
@@ -76,12 +77,12 @@ export function ProductDetailView({
         <div className="mt-8 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
           <div>
             {primary ? (
-              <div className="relative aspect-[4/3] overflow-hidden border border-tg-border bg-tg-bg">
+              <div className="group relative aspect-[4/3] overflow-hidden border border-tg-border bg-tg-bg">
                 <Image
                   src={primary.url}
                   alt={primary.alt}
                   fill
-                  className="object-cover"
+                  className="tg-img-zoom object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
@@ -117,7 +118,7 @@ export function ProductDetailView({
             ) : null}
           </div>
 
-          <div>
+          <ScrollReveal>
             <p className="text-xs font-semibold tracking-[0.16em] text-tg-secondary uppercase">
               Export grade
             </p>
@@ -156,82 +157,84 @@ export function ProductDetailView({
                 Share volume, destination, and preferred Incoterms for a sales response. Spot
                 prices are not published on this site.
               </p>
-              <QuoteRequestButton
-                productLabel={name}
-                className="mt-5 inline-flex min-h-11 items-center rounded-[var(--tg-radius-md)] bg-tg-secondary px-5 text-sm font-semibold text-tg-text transition hover:bg-tg-secondary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              >
+              <QuoteRequestButton productLabel={name} className="tg-btn-secondary mt-5">
                 Request a Quote
               </QuoteRequestButton>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
 
         {specifications.length > 0 ? (
           <section className="mt-16">
-            <p className="text-xs font-semibold tracking-[0.16em] text-tg-secondary uppercase">
-              Technical data
-            </p>
-            <h2 className="mt-3 font-display text-2xl text-tg-primary md:text-3xl">
-              Specifications
-            </h2>
-            <div className="mt-4 h-px w-12 bg-tg-secondary" aria-hidden />
-            <div className="mt-6 overflow-x-auto border border-tg-border">
-              <table className="min-w-full text-left text-sm">
-                <caption className="sr-only">Product specifications for {name}</caption>
-                <thead className="bg-tg-primary text-white">
-                  <tr>
-                    <th className="px-4 py-3.5 font-medium">Parameter</th>
-                    <th className="px-4 py-3.5 font-medium">Value</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {specifications.map((spec, index) => (
-                    <tr
-                      key={spec.id}
-                      className={
-                        index % 2 === 0
-                          ? "border-t border-tg-border bg-tg-surface"
-                          : "border-t border-tg-border bg-white"
-                      }
-                    >
-                      <th scope="row" className="px-4 py-3.5 font-medium text-tg-primary">
-                        {spec.label}
-                      </th>
-                      <td className="px-4 py-3.5 font-mono text-xs text-tg-text md:text-sm">
-                        {spec.value}
-                        {spec.unit ? ` ${spec.unit}` : ""}
-                      </td>
+            <ScrollReveal>
+              <p className="text-xs font-semibold tracking-[0.16em] text-tg-secondary uppercase">
+                Technical data
+              </p>
+              <h2 className="mt-3 font-display text-2xl text-tg-primary md:text-3xl">
+                Specifications
+              </h2>
+              <div className="mt-4 h-px w-12 bg-tg-secondary" aria-hidden />
+            </ScrollReveal>
+            <ScrollReveal delayMs={40}>
+              <div className="mt-6 overflow-x-auto border border-tg-border">
+                <table className="min-w-full text-left text-sm">
+                  <caption className="sr-only">Product specifications for {name}</caption>
+                  <thead className="bg-tg-primary text-white">
+                    <tr>
+                      <th className="px-4 py-3.5 font-medium">Parameter</th>
+                      <th className="px-4 py-3.5 font-medium">Value</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                  </thead>
+                  <tbody>
+                    {specifications.map((spec, index) => (
+                      <tr
+                        key={spec.id}
+                        className={
+                          index % 2 === 0
+                            ? "border-t border-tg-border bg-tg-surface"
+                            : "border-t border-tg-border bg-white"
+                        }
+                      >
+                        <th scope="row" className="px-4 py-3.5 font-medium text-tg-primary">
+                          {spec.label}
+                        </th>
+                        <td className="px-4 py-3.5 font-mono text-xs text-tg-text md:text-sm">
+                          {spec.value}
+                          {spec.unit ? ` ${spec.unit}` : ""}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </ScrollReveal>
           </section>
         ) : null}
 
         {packaging.length > 0 ? (
           <section className="mt-12">
-            <p className="text-xs font-semibold tracking-[0.16em] text-tg-secondary uppercase">
-              Packing
-            </p>
-            <h2 className="mt-3 font-display text-2xl text-tg-primary md:text-3xl">
-              Packaging options
-            </h2>
-            <div className="mt-4 h-px w-12 bg-tg-secondary" aria-hidden />
+            <ScrollReveal>
+              <p className="text-xs font-semibold tracking-[0.16em] text-tg-secondary uppercase">
+                Packing
+              </p>
+              <h2 className="mt-3 font-display text-2xl text-tg-primary md:text-3xl">
+                Packaging options
+              </h2>
+              <div className="mt-4 h-px w-12 bg-tg-secondary" aria-hidden />
+            </ScrollReveal>
             <ul className="mt-6 grid gap-4 sm:grid-cols-2">
-              {packaging.map((pack) => (
-                <li
-                  key={pack.id}
-                  className="border border-tg-border bg-tg-surface px-5 py-4"
-                >
-                  <p className="font-display text-lg text-tg-primary">{pack.name}</p>
-                  {pack.sizeLabel ? (
-                    <p className="mt-1 text-sm text-tg-muted">{pack.sizeLabel}</p>
-                  ) : null}
-                  {pack.notes ? (
-                    <p className="mt-2 text-xs leading-relaxed text-tg-muted">{pack.notes}</p>
-                  ) : null}
-                </li>
+              {packaging.map((pack, index) => (
+                <ScrollReveal key={pack.id} delayMs={index * 40}>
+                  <li className="border border-tg-border bg-tg-surface px-5 py-4">
+                    <p className="font-display text-lg text-tg-primary">{pack.name}</p>
+                    {pack.sizeLabel ? (
+                      <p className="mt-1 text-sm text-tg-muted">{pack.sizeLabel}</p>
+                    ) : null}
+                    {pack.notes ? (
+                      <p className="mt-2 text-xs leading-relaxed text-tg-muted">{pack.notes}</p>
+                    ) : null}
+                  </li>
+                </ScrollReveal>
               ))}
             </ul>
             <p className="mt-4 text-sm text-tg-muted">

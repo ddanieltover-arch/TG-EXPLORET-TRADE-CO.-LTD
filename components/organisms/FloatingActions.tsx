@@ -62,7 +62,7 @@ export function FloatingActions() {
   };
 
   const fabBase =
-    "pointer-events-auto inline-flex h-12 w-12 items-center justify-center rounded-full transition-[background-color,color,box-shadow] duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tg-secondary";
+    "pointer-events-auto inline-flex h-12 w-12 items-center justify-center rounded-full transition-[background-color,color,box-shadow,transform,opacity] duration-[var(--tg-duration-med)] ease-[var(--tg-ease-out)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tg-secondary active:scale-[0.96]";
 
   return (
     <div
@@ -92,7 +92,9 @@ export function FloatingActions() {
         type="button"
         onClick={scrollToTop}
         className={`${fabBase} bg-tg-secondary text-tg-primary shadow-[0_6px_20px_rgba(201,162,74,0.35)] hover:bg-tg-primary hover:text-tg-secondary hover:shadow-[0_6px_20px_rgba(10,47,92,0.28)] ${
-          showTop ? "opacity-100" : "pointer-events-none opacity-0"
+          showTop
+            ? "translate-y-0 opacity-100"
+            : "pointer-events-none translate-y-2 opacity-0"
         }`}
         aria-label="Back to top"
         title="Back to top"

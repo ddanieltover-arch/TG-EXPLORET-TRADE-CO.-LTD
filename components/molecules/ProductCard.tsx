@@ -21,7 +21,7 @@ export function ProductCard({
   categoryLabel,
 }: ProductCardProps) {
   return (
-    <li className="group flex flex-col overflow-hidden border border-tg-border bg-tg-surface transition duration-300 hover:border-tg-secondary hover:shadow-[0_12px_40px_rgba(10,47,92,0.08)]">
+    <li className="tg-card-interactive group flex flex-col overflow-hidden border border-tg-border bg-tg-surface">
       <Link href={href} className="flex flex-1 flex-col">
         <div className="relative aspect-[4/3] overflow-hidden bg-tg-bg">
           {imageUrl ? (
@@ -29,7 +29,7 @@ export function ProductCard({
               src={imageUrl}
               alt={imageAlt || name}
               fill
-              className="object-cover transition duration-500 group-hover:scale-[1.04]"
+              className="tg-img-zoom object-cover"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               loading="lazy"
             />
@@ -60,10 +60,7 @@ export function ProductCard({
           )}
           <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-tg-primary">
             View specifications
-            <span
-              className="transition-transform duration-300 group-hover:translate-x-0.5"
-              aria-hidden
-            >
+            <span className="tg-link-arrow" aria-hidden>
               →
             </span>
           </span>

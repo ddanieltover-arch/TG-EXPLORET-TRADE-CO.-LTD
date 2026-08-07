@@ -108,16 +108,10 @@ export default async function ExportMarketsPage() {
             market list.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <Link
-              href="/request-quote"
-              className="inline-flex min-h-11 items-center rounded-[var(--tg-radius-md)] bg-tg-secondary px-6 text-sm font-semibold text-tg-text transition hover:bg-tg-secondary/90"
-            >
+            <Link href="/request-quote" className="tg-btn-secondary px-6">
               Request a Quote
             </Link>
-            <Link
-              href="/ordering-procedure"
-              className="inline-flex min-h-11 items-center rounded-[var(--tg-radius-md)] border border-white/35 bg-white/5 px-6 text-sm font-semibold text-white transition hover:border-tg-secondary hover:bg-white/10"
-            >
+            <Link href="/ordering-procedure" className="tg-btn-ghost">
               Ordering procedure
             </Link>
           </div>

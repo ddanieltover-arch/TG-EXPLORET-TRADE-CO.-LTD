@@ -7,6 +7,8 @@ type ScrollRevealProps = {
   className?: string;
   /** Delay in ms before reveal once in view */
   delayMs?: number;
+  /** fade-up (default) or fade-only for dense copy blocks */
+  variant?: "fade-up" | "fade";
 };
 
 /**
@@ -17,6 +19,7 @@ export function ScrollReveal({
   children,
   className = "",
   delayMs = 0,
+  variant = "fade-up",
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -51,10 +54,12 @@ export function ScrollReveal({
     return () => observer.disconnect();
   }, [reduced]);
 
+  const variantClass = variant === "fade" ? "tg-reveal--fade" : "";
+
   return (
     <div
       ref={ref}
-      className={`tg-reveal ${visible || reduced ? "tg-reveal--in" : ""} ${className}`}
+      className={`tg-reveal ${variantClass} ${visible || reduced ? "tg-reveal--in" : ""} ${className}`}
       style={delayMs && visible && !reduced ? { transitionDelay: `${delayMs}ms` } : undefined}
     >
       {children}

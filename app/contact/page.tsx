@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ScrollReveal } from "@/components/sections/ScrollReveal";
 import { ContactForm } from "@/features/inquiries/ContactForm";
 import {
   COMPANY_EMAIL,
@@ -56,6 +57,21 @@ const nextSteps = [
     step: "3",
     title: "Sales follow-up",
     body: "We respond with availability, clarification questions, or next steps — typically within 1–2 business days.",
+  },
+] as const;
+
+const catalogue = [
+  {
+    href: PRODUCT_CATEGORIES.cookingOil.href,
+    title: PRODUCT_CATEGORIES.cookingOil.name,
+    image: "/media/operations/cooking-oils-assortment.png",
+    body: "Refined oils for retail, foodservice, and industrial programmes.",
+  },
+  {
+    href: PRODUCT_CATEGORIES.rice.href,
+    title: PRODUCT_CATEGORIES.rice.name,
+    image: "/media/operations/tg-basmati-warehouse.png",
+    body: "Jasmine, white, parboiled, glutinous, basmati, cargo, and specialty grades.",
   },
 ] as const;
 
@@ -122,42 +138,46 @@ export default function ContactPage() {
       </section>
 
       <section className="mx-auto max-w-[var(--tg-container)] px-4 py-16 md:px-6 md:py-20">
-        <p className="text-sm font-semibold tracking-wide text-tg-secondary">Reach our team</p>
-        <h2 className="mt-2 font-display text-3xl text-tg-primary md:text-4xl">
-          Pick the channel that fits
-        </h2>
-        <p className="mt-3 max-w-2xl text-tg-muted">
-          For product quotes and volume orders, email or the form below is usually fastest. Use the
-          quotation form when you already have commercial details ready.
-        </p>
+        <ScrollReveal>
+          <p className="text-sm font-semibold tracking-wide text-tg-secondary">Reach our team</p>
+          <h2 className="mt-2 font-display text-3xl text-tg-primary md:text-4xl">
+            Pick the channel that fits
+          </h2>
+          <p className="mt-3 max-w-2xl text-tg-muted">
+            For product quotes and volume orders, email or the form below is usually fastest. Use the
+            quotation form when you already have commercial details ready.
+          </p>
+        </ScrollReveal>
         <ul className="mt-10 grid gap-6 md:grid-cols-3">
-          {channels.map((channel) => (
-            <li key={channel.title} className="border border-tg-border bg-tg-surface p-6">
-              <h3 className="font-display text-xl text-tg-primary">{channel.title}</h3>
-              {channel.external ? (
-                <a
-                  href={channel.href}
-                  className="mt-2 block text-sm font-semibold text-tg-primary underline break-all"
-                >
-                  {channel.detail}
-                </a>
-              ) : (
-                <Link
-                  href={channel.href}
-                  className="mt-2 block text-sm font-semibold text-tg-primary underline"
-                >
-                  {channel.detail}
-                </Link>
-              )}
-              <p className="mt-2 text-sm text-tg-muted">{channel.note}</p>
-            </li>
+          {channels.map((channel, index) => (
+            <ScrollReveal key={channel.title} delayMs={index * 40}>
+              <li className="tg-card-interactive border border-tg-border bg-tg-surface p-6">
+                <h3 className="font-display text-xl text-tg-primary">{channel.title}</h3>
+                {channel.external ? (
+                  <a
+                    href={channel.href}
+                    className="mt-2 block text-sm font-semibold text-tg-primary underline break-all"
+                  >
+                    {channel.detail}
+                  </a>
+                ) : (
+                  <Link
+                    href={channel.href}
+                    className="mt-2 block text-sm font-semibold text-tg-primary underline"
+                  >
+                    {channel.detail}
+                  </Link>
+                )}
+                <p className="mt-2 text-sm text-tg-muted">{channel.note}</p>
+              </li>
+            </ScrollReveal>
           ))}
         </ul>
       </section>
 
       <section className="border-y border-tg-border bg-tg-surface px-4 py-16 md:px-6 md:py-20">
         <div className="mx-auto grid max-w-[var(--tg-container)] gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-          <div>
+          <ScrollReveal>
             <p className="text-sm font-semibold tracking-wide text-tg-secondary">Send a message</p>
             <h2 className="mt-2 font-display text-3xl text-tg-primary md:text-4xl">
               Tell us what you need
@@ -191,84 +211,72 @@ export default function ContactPage() {
                 sizes="(max-width: 1024px) 100vw, 40vw"
               />
             </div>
-          </div>
-          <div className="border border-tg-border bg-tg-bg p-6 md:p-8">
-            <ContactForm />
-          </div>
+          </ScrollReveal>
+          <ScrollReveal delayMs={60}>
+            <div className="border border-tg-border bg-tg-bg p-6 md:p-8">
+              <ContactForm />
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="mx-auto max-w-[var(--tg-container)] px-4 py-16 md:px-6 md:py-20">
-        <p className="text-sm font-semibold tracking-wide text-tg-secondary">Looking for a grade?</p>
-        <h2 className="mt-2 font-display text-3xl text-tg-primary md:text-4xl">
-          Explore our dual catalogue
-        </h2>
-        <p className="mt-3 max-w-2xl text-tg-muted">
-          Specs and packing notes sit on each product page. Start there, then request a quote with
-          volume and destination.
-        </p>
+        <ScrollReveal>
+          <p className="text-sm font-semibold tracking-wide text-tg-secondary">Looking for a grade?</p>
+          <h2 className="mt-2 font-display text-3xl text-tg-primary md:text-4xl">
+            Explore our dual catalogue
+          </h2>
+          <p className="mt-3 max-w-2xl text-tg-muted">
+            Specs and packing notes sit on each product page. Start there, then request a quote with
+            volume and destination.
+          </p>
+        </ScrollReveal>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
-          <Link
-            href={PRODUCT_CATEGORIES.cookingOil.href}
-            className="group overflow-hidden border border-tg-border bg-tg-surface transition hover:border-tg-secondary"
-          >
-            <div className="relative aspect-[16/10]">
-              <Image
-                src="/media/operations/cooking-oils-assortment.png"
-                alt={PRODUCT_CATEGORIES.cookingOil.name}
-                fill
-                className="object-cover transition duration-300 group-hover:scale-[1.02]"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="font-display text-2xl text-tg-primary">
-                {PRODUCT_CATEGORIES.cookingOil.name}
-              </h3>
-              <p className="mt-2 text-sm text-tg-muted">
-                Refined oils for retail, foodservice, and industrial programmes.
-              </p>
-            </div>
-          </Link>
-          <Link
-            href={PRODUCT_CATEGORIES.rice.href}
-            className="group overflow-hidden border border-tg-border bg-tg-surface transition hover:border-tg-secondary"
-          >
-            <div className="relative aspect-[16/10]">
-              <Image
-                src="/media/operations/tg-basmati-warehouse.png"
-                alt={PRODUCT_CATEGORIES.rice.name}
-                fill
-                className="object-cover transition duration-300 group-hover:scale-[1.02]"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="font-display text-2xl text-tg-primary">{PRODUCT_CATEGORIES.rice.name}</h3>
-              <p className="mt-2 text-sm text-tg-muted">
-                Jasmine, white, parboiled, glutinous, basmati, cargo, and specialty grades.
-              </p>
-            </div>
-          </Link>
+          {catalogue.map((item, index) => (
+            <ScrollReveal key={item.href} delayMs={index * 70}>
+              <Link
+                href={item.href}
+                className="tg-card-interactive group block overflow-hidden border border-tg-border bg-tg-surface"
+              >
+                <div className="relative aspect-[16/10]">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="tg-img-zoom object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="inline-flex items-center gap-2 font-display text-2xl text-tg-primary">
+                    {item.title}
+                    <span className="tg-link-arrow text-base font-semibold" aria-hidden>
+                      →
+                    </span>
+                  </h3>
+                  <p className="mt-2 text-sm text-tg-muted">{item.body}</p>
+                </div>
+              </Link>
+            </ScrollReveal>
+          ))}
         </div>
       </section>
 
       <section className="bg-tg-primary px-4 py-14 text-white md:px-6">
-        <div className="mx-auto flex max-w-[var(--tg-container)] flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-          <div>
-            <h2 className="font-display text-3xl">Ready for a commercial quotation?</h2>
-            <p className="mt-2 max-w-xl text-white/80">
-              Share product, quantity, destination, and preferred Incoterms so we can reply with
-              usable next steps.
-            </p>
+        <ScrollReveal>
+          <div className="mx-auto flex max-w-[var(--tg-container)] flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+            <div>
+              <h2 className="font-display text-3xl">Ready for a commercial quotation?</h2>
+              <p className="mt-2 max-w-xl text-white/80">
+                Share product, quantity, destination, and preferred Incoterms so we can reply with
+                usable next steps.
+              </p>
+            </div>
+            <Link href="/request-quote" className="tg-btn-secondary">
+              Request a Quote
+            </Link>
           </div>
-          <Link
-            href="/request-quote"
-            className="inline-flex min-h-11 items-center rounded-[var(--tg-radius-md)] bg-tg-secondary px-5 text-sm font-semibold text-tg-text hover:bg-tg-secondary/90"
-          >
-            Request a Quote
-          </Link>
-        </div>
+        </ScrollReveal>
       </section>
     </>
   );

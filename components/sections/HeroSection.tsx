@@ -23,15 +23,19 @@ export function HeroSection() {
         aria-hidden
       />
       <div
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-40"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 70% 20%, #c9a24a33, transparent 45%)",
+            "radial-gradient(circle at 72% 18%, #c9a24a40, transparent 42%), radial-gradient(circle at 8% 85%, #ffffff0a, transparent 40%)",
         }}
         aria-hidden
       />
+      <div
+        className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#061a33]/50 to-transparent"
+        aria-hidden
+      />
 
-      <div className="relative mx-auto flex min-h-[min(92vh,54rem)] max-w-[var(--tg-container)] flex-col justify-end px-4 pb-16 pt-28 md:px-6 md:pb-24 md:pt-36">
+      <div className="relative mx-auto flex min-h-[min(92vh,54rem)] max-w-[var(--tg-container)] flex-col justify-end px-4 pb-20 pt-28 md:px-6 md:pb-28 md:pt-36">
         <div className="tg-hero-enter flex items-center gap-3">
           <Image
             src="/brand/logo-mark.png"
@@ -52,7 +56,7 @@ export function HeroSection() {
         </div>
 
         <div
-          className="tg-hero-enter tg-hero-enter-delay-1 mt-8 h-px w-16 origin-left bg-tg-secondary"
+          className="tg-hero-enter tg-hero-enter-delay-1 tg-gold-rule mt-8"
           aria-hidden
         />
 
@@ -70,18 +74,22 @@ export function HeroSection() {
         </div>
 
         <div className="tg-hero-enter tg-hero-enter-delay-3 mt-9 flex flex-wrap gap-3">
-          <Link
-            href="/request-quote"
-            className="inline-flex min-h-11 items-center rounded-[var(--tg-radius-md)] bg-tg-secondary px-6 text-sm font-semibold text-tg-text transition duration-300 hover:bg-tg-secondary/90"
-          >
+          <Link href="/request-quote" className="tg-btn-secondary px-6">
             Request a Quote
           </Link>
-          <Link
-            href="/products"
-            className="inline-flex min-h-11 items-center rounded-[var(--tg-radius-md)] border border-white/35 bg-white/5 px-6 text-sm font-semibold text-white backdrop-blur-sm transition duration-300 hover:border-tg-secondary hover:bg-white/10"
-          >
+          <Link href="/products" className="tg-btn-ghost">
             Explore Products
           </Link>
+        </div>
+
+        <div
+          className="tg-hero-enter tg-hero-enter-delay-4 mt-12 flex flex-col items-start gap-2 md:mt-14"
+          aria-hidden
+        >
+          <span className="tg-scroll-cue text-[0.65rem] font-semibold tracking-[0.18em] text-white/55 uppercase">
+            Scroll
+          </span>
+          <span className="tg-scroll-cue ml-3 h-8 w-px bg-tg-secondary/70" />
         </div>
       </div>
     </section>

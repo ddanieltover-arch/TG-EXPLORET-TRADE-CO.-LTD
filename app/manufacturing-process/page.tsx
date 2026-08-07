@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ScrollReveal } from "@/components/sections/ScrollReveal";
 import {
   COMPANY_LEGAL_NAME,
   COMPANY_SHORT_NAME,
@@ -115,17 +116,18 @@ export default function ManufacturingProcessPage() {
     <>
       <section className="relative overflow-hidden bg-tg-primary text-white">
         <div
-          className="absolute inset-0 opacity-40"
+          className="absolute inset-0 opacity-45"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 18% 24%, #c9a24a55, transparent 42%), radial-gradient(circle at 86% 70%, #163a7288, transparent 48%)",
+              "radial-gradient(circle at 18% 24%, #c9a24a55, transparent 42%), radial-gradient(circle at 86% 70%, #163a7288, transparent 48%), radial-gradient(circle at 50% 100%, #ffffff08, transparent 40%)",
           }}
           aria-hidden
         />
         <div className="relative mx-auto grid max-w-[var(--tg-container)] gap-10 px-4 py-16 md:grid-cols-[1.1fr_0.9fr] md:items-end md:px-6 md:py-24">
           <div>
             <p className="text-sm font-semibold tracking-wide text-tg-secondary">How we produce</p>
-            <h1 className="mt-3 font-display text-4xl leading-tight md:text-5xl">
+            <div className="tg-gold-rule mt-3" aria-hidden />
+            <h1 className="mt-4 font-display text-4xl leading-tight md:text-5xl">
               Manufacturing Process
             </h1>
             <p className="mt-4 max-w-xl text-base text-white/85 md:text-lg">
@@ -137,24 +139,21 @@ export default function ManufacturingProcessPage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/products"
-                className="inline-flex min-h-11 items-center rounded-[var(--tg-radius-md)] bg-white px-5 text-sm font-semibold text-tg-primary hover:bg-tg-bg"
+                className="inline-flex min-h-11 items-center rounded-[var(--tg-radius-md)] bg-white px-5 text-sm font-semibold text-tg-primary transition-[background-color,transform] duration-[var(--tg-duration-med)] ease-[var(--tg-ease-out)] hover:bg-tg-bg active:scale-[0.98]"
               >
                 View products
               </Link>
-              <Link
-                href="/request-quote"
-                className="inline-flex min-h-11 items-center rounded-[var(--tg-radius-md)] border border-tg-secondary px-5 text-sm font-semibold text-white hover:bg-white/10"
-              >
+              <Link href="/request-quote" className="tg-btn-ghost border-tg-secondary">
                 Request a Quote
               </Link>
             </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden border border-white/15">
+          <div className="group relative aspect-[4/3] overflow-hidden border border-white/15">
             <Image
               src="/media/operations/rice-mill-process.png"
               alt="Modern rice mill facility with grain prepared for export programmes"
               fill
-              className="object-cover"
+              className="tg-img-zoom object-cover"
               sizes="(max-width: 768px) 100vw, 40vw"
               priority
             />
@@ -172,15 +171,16 @@ export default function ManufacturingProcessPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[var(--tg-container)] px-4 py-16 md:px-6 md:py-20">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div>
+      <section className="tg-surface-premium px-4 py-16 md:px-6 md:py-20">
+        <div className="relative mx-auto grid max-w-[var(--tg-container)] gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <ScrollReveal>
             <p className="text-sm font-semibold tracking-wide text-tg-secondary">
               {PRODUCT_CATEGORIES.rice.name}
             </p>
             <h2 className="mt-2 font-display text-3xl text-tg-primary md:text-4xl">
               From paddy to export-ready grain
             </h2>
+            <div className="tg-gold-rule mt-3" aria-hidden />
             <p className="mt-3 text-tg-muted">
               Jasmine, white, parboiled, glutinous, basmati, cargo, and specialty grades follow a
               milling pathway tailored to moisture, broken percentage, and appearance targets.
@@ -193,42 +193,51 @@ export default function ManufacturingProcessPage() {
                 Browse rice products
               </Link>
             </p>
-          </div>
+          </ScrollReveal>
           <ol className="space-y-6">
             {riceSteps.map((step, index) => (
-              <li key={step.title} className="grid gap-3 border-t border-tg-border pt-6 first:border-t-0 first:pt-0 sm:grid-cols-[3rem_1fr]">
-                <p className="font-display text-2xl text-tg-secondary" aria-hidden>
-                  {index + 1}
-                </p>
-                <div>
-                  <h3 className="font-display text-xl text-tg-primary">{step.title}</h3>
-                  <p className="mt-2 text-sm text-tg-muted">{step.body}</p>
-                </div>
-              </li>
+              <ScrollReveal key={step.title} delayMs={index * 40}>
+                <li
+                  className={`grid gap-3 border-tg-border sm:grid-cols-[3rem_1fr] ${
+                    index === 0 ? "pt-0" : "border-t pt-6"
+                  }`}
+                >
+                  <p className="font-display text-2xl text-tg-secondary" aria-hidden>
+                    {index + 1}
+                  </p>
+                  <div>
+                    <h3 className="font-display text-xl text-tg-primary">{step.title}</h3>
+                    <p className="mt-2 text-sm text-tg-muted">{step.body}</p>
+                  </div>
+                </li>
+              </ScrollReveal>
             ))}
           </ol>
-        </div>
-        <div className="relative mt-12 aspect-[21/9] overflow-hidden border border-tg-border">
-          <Image
-            src="/media/operations/warehouse-silos-interior.png"
-            alt="Interior grain silos and sack storage after milling and grading"
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
+          <ScrollReveal delayMs={60} className="lg:col-span-2">
+            <div className="group relative mt-4 aspect-[21/9] overflow-hidden border border-tg-border lg:mt-8">
+              <Image
+                src="/media/operations/warehouse-silos-interior.png"
+                alt="Interior grain silos and sack storage after milling and grading"
+                fill
+                className="tg-img-zoom object-cover"
+                sizes="100vw"
+              />
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      <section className="border-y border-tg-border bg-tg-surface px-4 py-16 md:px-6 md:py-20">
-        <div className="mx-auto max-w-[var(--tg-container)]">
+      <section className="tg-surface-premium border-y border-tg-border bg-tg-surface px-4 py-16 md:px-6 md:py-20">
+        <div className="relative mx-auto max-w-[var(--tg-container)]">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <div>
+            <ScrollReveal>
               <p className="text-sm font-semibold tracking-wide text-tg-secondary">
                 {PRODUCT_CATEGORIES.cookingOil.name}
               </p>
               <h2 className="mt-2 font-display text-3xl text-tg-primary md:text-4xl">
                 From feedstock to refined cooking oil
               </h2>
+              <div className="tg-gold-rule mt-3" aria-hidden />
               <p className="mt-3 text-tg-muted">
                 Refined oils for retail, foodservice, and industrial programmes typically pass
                 through refining, bleaching, and deodorising (RBD) stages before packing.
@@ -241,39 +250,44 @@ export default function ManufacturingProcessPage() {
                   Browse cooking oils
                 </Link>
               </p>
-            </div>
+            </ScrollReveal>
             <ol className="space-y-6">
               {oilSteps.map((step, index) => (
-                <li
-                  key={step.title}
-                  className="grid gap-3 border-t border-tg-border pt-6 first:border-t-0 first:pt-0 sm:grid-cols-[3rem_1fr]"
-                >
-                  <p className="font-display text-2xl text-tg-secondary" aria-hidden>
-                    {index + 1}
-                  </p>
-                  <div>
-                    <h3 className="font-display text-xl text-tg-primary">{step.title}</h3>
-                    <p className="mt-2 text-sm text-tg-muted">{step.body}</p>
-                  </div>
-                </li>
+                <ScrollReveal key={step.title} delayMs={index * 40}>
+                  <li
+                    className={`grid gap-3 border-tg-border sm:grid-cols-[3rem_1fr] ${
+                      index === 0 ? "pt-0" : "border-t pt-6"
+                    }`}
+                  >
+                    <p className="font-display text-2xl text-tg-secondary" aria-hidden>
+                      {index + 1}
+                    </p>
+                    <div>
+                      <h3 className="font-display text-xl text-tg-primary">{step.title}</h3>
+                      <p className="mt-2 text-sm text-tg-muted">{step.body}</p>
+                    </div>
+                  </li>
+                </ScrollReveal>
               ))}
             </ol>
           </div>
-          <div className="relative mt-12 aspect-[21/9] overflow-hidden border border-tg-border">
-            <Image
-              src="/media/operations/oil-bottling-line.png"
-              alt="Refined cooking oil bottling line preparing wholesale packing for export"
-              fill
-              className="object-cover"
-              sizes="100vw"
-            />
-          </div>
+          <ScrollReveal delayMs={60}>
+            <div className="group relative mt-12 aspect-[21/9] overflow-hidden border border-tg-border">
+              <Image
+                src="/media/operations/oil-bottling-line.png"
+                alt="Refined cooking oil bottling line preparing wholesale packing for export"
+                fill
+                className="tg-img-zoom object-cover"
+                sizes="100vw"
+              />
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="mx-auto max-w-[var(--tg-container)] px-4 py-16 md:px-6 md:py-20">
         <div className="grid gap-10 lg:grid-cols-[1fr_0.85fr] lg:items-center">
-          <div>
+          <ScrollReveal>
             <p className="text-sm font-semibold tracking-wide text-tg-secondary">Across both lines</p>
             <h2 className="mt-2 font-display text-3xl text-tg-primary md:text-4xl">
               What keeps quality consistent
@@ -286,16 +300,18 @@ export default function ManufacturingProcessPage() {
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="relative aspect-[4/5] overflow-hidden border border-tg-border">
-            <Image
-              src="/media/operations/industrial-facility-night.png"
-              alt="Industrial processing facility supporting refining and export readiness"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 40vw"
-            />
-          </div>
+          </ScrollReveal>
+          <ScrollReveal delayMs={60}>
+            <div className="relative aspect-[4/5] overflow-hidden border border-tg-border">
+              <Image
+                src="/media/operations/industrial-facility-night.png"
+                alt="Industrial processing facility supporting refining and export readiness"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+              />
+            </div>
+          </ScrollReveal>
         </div>
         <p className="mt-8 text-sm text-tg-muted">
           Quality control sits alongside every stage — see our{" "}
@@ -307,47 +323,47 @@ export default function ManufacturingProcessPage() {
       </section>
 
       <section className="mx-auto max-w-[var(--tg-container)] px-4 pb-16 md:px-6 md:pb-20">
-        <p className="text-sm font-semibold tracking-wide text-tg-secondary">Related</p>
-        <h2 className="mt-2 font-display text-3xl text-tg-primary">You may also find helpful</h2>
+        <ScrollReveal>
+          <p className="text-sm font-semibold tracking-wide text-tg-secondary">Related</p>
+          <h2 className="mt-2 font-display text-3xl text-tg-primary">You may also find helpful</h2>
+        </ScrollReveal>
         <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-          {related.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="block h-full border border-tg-border bg-tg-surface p-5 transition hover:border-tg-secondary"
-              >
-                <h3 className="font-display text-xl text-tg-primary">{link.title}</h3>
-                <p className="mt-2 text-sm text-tg-muted">{link.description}</p>
-              </Link>
-            </li>
+          {related.map((link, index) => (
+            <ScrollReveal key={link.href} delayMs={index * 40}>
+              <li>
+                <Link
+                  href={link.href}
+                  className="tg-card-interactive block h-full border border-tg-border bg-tg-surface p-5"
+                >
+                  <h3 className="font-display text-xl text-tg-primary">{link.title}</h3>
+                  <p className="mt-2 text-sm text-tg-muted">{link.description}</p>
+                </Link>
+              </li>
+            </ScrollReveal>
           ))}
         </ul>
       </section>
 
       <section className="bg-tg-primary px-4 py-14 text-white md:px-6">
-        <div className="mx-auto flex max-w-[var(--tg-container)] flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-          <div>
-            <h2 className="font-display text-3xl">Ready to specify a grade?</h2>
-            <p className="mt-2 max-w-xl text-white/80">
-              Browse the catalogue or request a quotation with product, volume, and destination for
-              rice or refined cooking oils.
-            </p>
+        <ScrollReveal>
+          <div className="mx-auto flex max-w-[var(--tg-container)] flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+            <div>
+              <h2 className="font-display text-3xl">Ready to specify a grade?</h2>
+              <p className="mt-2 max-w-xl text-white/80">
+                Browse the catalogue or request a quotation with product, volume, and destination for
+                rice or refined cooking oils.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/request-quote" className="tg-btn-secondary">
+                Request a Quote
+              </Link>
+              <Link href="/contact" className="tg-btn-ghost">
+                Contact sales
+              </Link>
+            </div>
           </div>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="/request-quote"
-              className="inline-flex min-h-11 items-center rounded-[var(--tg-radius-md)] bg-tg-secondary px-5 text-sm font-semibold text-tg-text hover:bg-tg-secondary/90"
-            >
-              Request a Quote
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex min-h-11 items-center rounded-[var(--tg-radius-md)] border border-white/40 px-5 text-sm font-semibold text-white hover:bg-white/10"
-            >
-              Contact sales
-            </Link>
-          </div>
-        </div>
+        </ScrollReveal>
       </section>
     </>
   );

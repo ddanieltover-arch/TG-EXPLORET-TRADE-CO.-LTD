@@ -34,25 +34,30 @@ export function MoreInfoMenu() {
     >
       <button
         type="button"
-        className="inline-flex items-center gap-1 text-sm font-medium text-tg-text transition hover:text-tg-primary"
+        className="tg-nav-link inline-flex items-center gap-1 text-sm font-medium text-tg-text hover:text-tg-primary"
         aria-expanded={open}
         aria-haspopup="true"
         aria-controls={menuId}
+        data-active={open ? "true" : undefined}
         onClick={() => setOpen((v) => !v)}
       >
         More Info
-        <span aria-hidden className={`text-[0.65rem] transition-transform ${open ? "rotate-180" : ""}`}>
+        <span
+          aria-hidden
+          className={`text-[0.65rem] transition-transform duration-[var(--tg-duration-med)] ease-[var(--tg-ease-out)] ${open ? "rotate-180" : ""}`}
+        >
           ▾
         </span>
       </button>
-      {open ? (
+      {/* Outer keeps centering transform; inner owns panel motion */}
+      <div className="absolute left-1/2 top-full z-50 w-[min(22rem,calc(100vw-2rem))] -translate-x-1/2 pt-2">
         <div
           id={menuId}
           role="menu"
           aria-label="More Info"
-          className="absolute left-1/2 top-full z-50 w-[min(22rem,calc(100vw-2rem))] -translate-x-1/2 pt-2"
+          className={open ? "tg-panel--open" : "tg-panel"}
+          aria-hidden={!open}
         >
-          {/* pt-2 keeps a hover bridge so the panel does not close while moving from the trigger */}
           <div className="rounded-[var(--tg-radius-md)] border border-tg-border bg-tg-surface p-3 shadow-[0_12px_40px_rgba(10,47,92,0.1)]">
             <ul className="grid grid-cols-2 gap-x-4 gap-y-1">
               {moreInfoNav.map((item) => (
@@ -60,7 +65,8 @@ export function MoreInfoMenu() {
                   <Link
                     href={item.href}
                     role="menuitem"
-                    className="block rounded px-2 py-2 text-sm font-medium text-tg-text transition hover:bg-tg-bg hover:text-tg-primary"
+                    tabIndex={open ? 0 : -1}
+                    className="block rounded px-2 py-2 text-sm font-medium text-tg-text transition-[background-color,color] duration-[var(--tg-duration-fast)] ease-[var(--tg-ease-out)] hover:bg-tg-bg hover:text-tg-primary"
                     onClick={() => setOpen(false)}
                   >
                     {item.label}
@@ -70,7 +76,7 @@ export function MoreInfoMenu() {
             </ul>
           </div>
         </div>
-      ) : null}
+      </div>
     </div>
   );
 }

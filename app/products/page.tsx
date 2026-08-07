@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { ScrollReveal } from "@/components/sections/ScrollReveal";
 import { StickyQuoteCTA } from "@/components/sections/StickyQuoteCTA";
 import { COMPANY_SHORT_NAME, COMPANY_TAGLINE, PRODUCT_CATEGORIES } from "@/lib/brand";
 import { pageMetadata } from "@/lib/seo";
@@ -45,43 +46,41 @@ export default function ProductsPage() {
 
       <div className="mx-auto max-w-[var(--tg-container)] px-4 py-12 pb-32 md:px-6 md:py-16 md:pb-32">
         <div className="grid gap-8 md:grid-cols-2">
-          {CATEGORIES.map((category) => (
-            <Link
-              key={category.slug}
-              href={category.href}
-              className="group block overflow-hidden border border-tg-border bg-tg-surface transition duration-300 hover:border-tg-secondary"
-            >
-              <div className="relative aspect-[16/10] bg-tg-bg">
-                <Image
-                  src={category.image}
-                  alt={category.name}
-                  fill
-                  className="object-cover transition duration-500 group-hover:scale-[1.03]"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority={category.slug === "cooking-oil"}
-                />
-                <div
-                  className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-tg-primary/40 to-transparent opacity-80"
-                  aria-hidden
-                />
-              </div>
-              <div className="border-t border-tg-border p-8">
-                <div className="h-px w-10 bg-tg-secondary" aria-hidden />
-                <h2 className="mt-4 font-display text-2xl text-tg-primary md:text-[1.65rem]">
-                  {category.name}
-                </h2>
-                <p className="mt-3 text-sm leading-relaxed text-tg-muted">{category.blurb}</p>
-                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-tg-primary">
-                  View catalogue
-                  <span
-                    className="transition-transform duration-300 group-hover:translate-x-1"
+          {CATEGORIES.map((category, index) => (
+            <ScrollReveal key={category.slug} delayMs={index * 90}>
+              <Link
+                href={category.href}
+                className="tg-card-interactive group block overflow-hidden border border-tg-border bg-tg-surface"
+              >
+                <div className="relative aspect-[16/10] bg-tg-bg">
+                  <Image
+                    src={category.image}
+                    alt={category.name}
+                    fill
+                    className="tg-img-zoom object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority={category.slug === "cooking-oil"}
+                  />
+                  <div
+                    className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-tg-primary/40 to-transparent opacity-80"
                     aria-hidden
-                  >
-                    →
+                  />
+                </div>
+                <div className="border-t border-tg-border p-8">
+                  <div className="h-px w-10 bg-tg-secondary" aria-hidden />
+                  <h2 className="mt-4 font-display text-2xl text-tg-primary md:text-[1.65rem]">
+                    {category.name}
+                  </h2>
+                  <p className="mt-3 text-sm leading-relaxed text-tg-muted">{category.blurb}</p>
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-tg-primary">
+                    View catalogue
+                    <span className="tg-link-arrow" aria-hidden>
+                      →
+                    </span>
                   </span>
-                </span>
-              </div>
-            </Link>
+                </div>
+              </Link>
+            </ScrollReveal>
           ))}
         </div>
       </div>

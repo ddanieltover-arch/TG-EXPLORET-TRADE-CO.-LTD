@@ -40,14 +40,14 @@ export function CategoryShowcase() {
           <ScrollReveal key={category.slug} delayMs={index * 90}>
             <Link
               href={category.href}
-              className="group block overflow-hidden border border-tg-border bg-tg-surface transition duration-300 hover:border-tg-secondary"
+              className="tg-card-interactive group block overflow-hidden border border-tg-border bg-tg-surface"
             >
               <div className="relative aspect-[16/10] bg-tg-bg">
                 <Image
                   src={category.image}
                   alt={category.name}
                   fill
-                  className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                  className="tg-img-zoom object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority={category.priority}
                 />
@@ -64,10 +64,7 @@ export function CategoryShowcase() {
                 <p className="mt-3 text-sm leading-relaxed text-tg-muted">{category.blurb}</p>
                 <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-tg-primary">
                   View catalogue
-                  <span
-                    className="transition-transform duration-300 group-hover:translate-x-1"
-                    aria-hidden
-                  >
+                  <span className="tg-link-arrow" aria-hidden>
                     →
                   </span>
                 </span>

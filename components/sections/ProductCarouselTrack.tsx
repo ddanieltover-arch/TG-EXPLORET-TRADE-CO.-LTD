@@ -83,7 +83,7 @@ export function ProductCarouselTrack({ products }: ProductCarouselTrackProps) {
           >
             <Link
               href={product.href}
-              className="group relative z-0 flex h-full flex-col overflow-hidden border border-tg-border bg-tg-surface transition-[transform,box-shadow,border-color] duration-300 ease-out hover:z-10 hover:-translate-y-2 hover:scale-[1.04] hover:border-tg-secondary hover:shadow-[0_18px_44px_rgba(10,47,92,0.18)] focus-visible:z-10 focus-visible:-translate-y-2 focus-visible:scale-[1.04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tg-secondary"
+              className="group relative z-0 flex h-full flex-col overflow-hidden border border-tg-border bg-tg-surface transition-[transform,box-shadow,border-color] duration-[var(--tg-duration-med)] ease-[var(--tg-ease-out)] hover:z-10 hover:-translate-y-2 hover:scale-[1.04] hover:border-tg-secondary hover:shadow-[0_18px_44px_rgba(10,47,92,0.18)] focus-visible:z-10 focus-visible:-translate-y-2 focus-visible:scale-[1.04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tg-secondary"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-tg-bg">
                 {product.imageUrl ? (
@@ -91,7 +91,7 @@ export function ProductCarouselTrack({ products }: ProductCarouselTrackProps) {
                     src={product.imageUrl}
                     alt={product.imageAlt}
                     fill
-                    className="object-cover transition duration-500 group-hover:scale-[1.04]"
+                    className="tg-img-zoom object-cover"
                     sizes="280px"
                     loading="lazy"
                   />
@@ -113,10 +113,7 @@ export function ProductCarouselTrack({ products }: ProductCarouselTrackProps) {
                 </h3>
                 <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-tg-primary">
                   View specs
-                  <span
-                    className="transition-transform duration-300 group-hover:translate-x-0.5"
-                    aria-hidden
-                  >
+                  <span className="tg-link-arrow" aria-hidden>
                     →
                   </span>
                 </span>
