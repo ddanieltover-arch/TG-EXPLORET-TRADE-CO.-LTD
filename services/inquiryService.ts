@@ -30,9 +30,18 @@ export async function createInquiry(
     await sendInquiryConfirmation({
       to: inquiry.email,
       contactName: inquiry.contactName,
+      companyName: inquiry.companyName,
+      phone: inquiry.phone,
+      country: inquiry.country,
+      message: inquiry.message,
     });
   } catch (error) {
-    console.error("[email] inquiry confirmation failed after persist", error);
+    // Form already saved — do not fail the request, but log loudly for Vercel/Resend triage.
+    console.error("[email] inquiry confirmation failed after persist", {
+      inquiryId: inquiry.id,
+      to: inquiry.email,
+      error: error instanceof Error ? error.message : error,
+    });
   }
 
   return inquiry;

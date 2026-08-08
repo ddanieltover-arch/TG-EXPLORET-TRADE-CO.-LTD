@@ -45,10 +45,13 @@ export async function createQuoteAction(
       message: "Your quotation request has been received.",
       referenceCode: quote.referenceCode,
     };
-  } catch {
+  } catch (error) {
+    const detail = error instanceof Error ? error.message : String(error);
+    console.error("[createQuoteAction]", detail.split("\n")[0]);
     return {
       ok: false,
-      message: "We could not save your request. Please try again or email sales@tgeptrade.com.",
+      message:
+        "We could not save your request. Please try again or email sales@tgeptrade.com.",
     };
   }
 }

@@ -1,12 +1,20 @@
 import { Resend } from "resend";
-import { COMPANY_DISPLAY_NAME, COMPANY_EMAIL, COMPANY_LEGAL_NAME, COMPANY_SHORT_NAME } from "@/lib/brand";
+import { COMPANY_EMAIL, COMPANY_SHORT_NAME } from "@/lib/brand";
+import {
+  buyerInquiryReceivedEmail,
+  buyerPartnerReceivedEmail,
+  buyerQuoteReceivedEmail,
+  salesInquiryAlertEmail,
+  salesPartnerAlertEmail,
+  salesQuoteAlertEmail,
+} from "@/lib/email/templates";
 
 const salesInbox = process.env.SALES_INBOX_EMAIL ?? COMPANY_EMAIL;
 const fromAddress =
   process.env.RESEND_FROM_EMAIL ?? `${COMPANY_SHORT_NAME} <onboarding@resend.dev>`;
 
 function getClient() {
-  const key = process.env.RESEND_API_KEY;
+  const key = process.env.RESEND_API_KEY?.trim();
   if (!key) return null;
   return new Resend(key);
 }
@@ -16,10 +24,15 @@ export async function sendEmail(opts: {
   subject: string;
   html: string;
   text?: string;
+  replyTo?: string | string[];
 }) {
   const client = getClient();
   if (!client) {
-    console.info("[email] skipped (no RESEND_API_KEY)", opts.subject, opts.to);
+    console.error(
+      "[email] skipped (missing RESEND_API_KEY on this environment)",
+      opts.subject,
+      opts.to,
+    );
     return { skipped: true as const };
   }
 
@@ -29,12 +42,28 @@ export async function sendEmail(opts: {
     subject: opts.subject,
     html: opts.html,
     text: opts.text,
+    replyTo: opts.replyTo ?? salesInbox,
   });
 
   if (result.error) {
-    console.error("[email] send failed", result.error);
-    return { skipped: false as const, error: result.error };
+    console.error("[email] send failed", {
+      from: fromAddress,
+      to: opts.to,
+      subject: opts.subject,
+      error: result.error,
+    });
+    throw new Error(
+      typeof result.error === "object" && result.error && "message" in result.error
+        ? String((result.error as { message?: string }).message)
+        : "Resend rejected the email",
+    );
   }
+
+  console.info("[email] sent", {
+    id: result.data?.id,
+    to: opts.to,
+    subject: opts.subject,
+  });
 
   return { skipped: false as const, id: result.data?.id };
 }
@@ -43,42 +72,64 @@ export async function sendQuoteConfirmation(input: {
   to: string;
   contactName: string;
   referenceCode: string;
+  companyName?: string | null;
+  phone?: string | null;
+  country?: string | null;
+  productLabel?: string | null;
+  quantityText?: string | null;
+  destination?: string | null;
+  incoterm?: string | null;
+  message?: string | null;
 }) {
+  const buyer = buyerQuoteReceivedEmail(input);
   await sendEmail({
     to: input.to,
-    subject: `Quotation request received — ${input.referenceCode}`,
-    html: `<p>Dear ${input.contactName},</p>
-<p>We received your quotation request <strong>${input.referenceCode}</strong>.</p>
-<p>Our sales team will follow up shortly. For urgent matters, email ${salesInbox}.</p>
-<p>${COMPANY_DISPLAY_NAME}</p>`,
-    text: `Dear ${input.contactName}, we received quotation request ${input.referenceCode}.`,
+    subject: buyer.subject,
+    html: buyer.html,
+    text: buyer.text,
+    replyTo: salesInbox,
   });
 
+  const sales = salesQuoteAlertEmail({
+    ...input,
+    email: input.to,
+  });
   await sendEmail({
     to: salesInbox,
-    subject: `New RFQ ${input.referenceCode}`,
-    html: `<p>New quotation request <strong>${input.referenceCode}</strong> from ${input.contactName} (${input.to}).</p>
-<p>Review in admin: /admin/quotes</p>`,
+    subject: sales.subject,
+    html: sales.html,
+    text: sales.text,
+    replyTo: input.to,
   });
 }
 
 export async function sendInquiryConfirmation(input: {
   to: string;
   contactName: string;
+  companyName?: string | null;
+  phone?: string | null;
+  country?: string | null;
+  message: string;
 }) {
+  const buyer = buyerInquiryReceivedEmail(input);
   await sendEmail({
     to: input.to,
-    subject: `We received your message — ${COMPANY_SHORT_NAME}`,
-    html: `<p>Dear ${input.contactName},</p>
-<p>Thank you for contacting ${COMPANY_LEGAL_NAME}. Our team will respond using this email address.</p>
-<p>${COMPANY_DISPLAY_NAME}</p>`,
+    subject: buyer.subject,
+    html: buyer.html,
+    text: buyer.text,
+    replyTo: salesInbox,
   });
 
+  const sales = salesInquiryAlertEmail({
+    ...input,
+    email: input.to,
+  });
   await sendEmail({
     to: salesInbox,
-    subject: `New inquiry from ${input.contactName}`,
-    html: `<p>New contact/inquiry from ${input.contactName} (${input.to}).</p>
-<p>Review in admin: /admin/inquiries</p>`,
+    subject: sales.subject,
+    html: sales.html,
+    text: sales.text,
+    replyTo: input.to,
   });
 }
 
@@ -86,17 +137,27 @@ export async function sendPartnerApplicationAlert(input: {
   type: "dealer" | "distributor";
   companyName: string;
   email: string;
+  contactName?: string | null;
+  phone?: string | null;
+  country?: string | null;
+  marketsServed?: string | null;
+  message?: string | null;
 }) {
+  const buyer = buyerPartnerReceivedEmail(input);
   await sendEmail({
     to: input.email,
-    subject: `${input.type === "dealer" ? "Dealer" : "Distributor"} application received`,
-    html: `<p>Thank you. We received your ${input.type} application for <strong>${input.companyName}</strong>. Our team will review it shortly.</p>`,
+    subject: buyer.subject,
+    html: buyer.html,
+    text: buyer.text,
+    replyTo: salesInbox,
   });
 
+  const sales = salesPartnerAlertEmail(input);
   await sendEmail({
     to: salesInbox,
-    subject: `New ${input.type} application — ${input.companyName}`,
-    html: `<p>New ${input.type} application from ${input.companyName} (${input.email}).</p>
-<p>Review in admin: /admin/${input.type === "dealer" ? "dealers" : "distributors"}</p>`,
+    subject: sales.subject,
+    html: sales.html,
+    text: sales.text,
+    replyTo: input.email,
   });
 }

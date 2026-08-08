@@ -1,6 +1,7 @@
 import { Incoterm, QuoteStatus } from "@prisma/client";
-import { prisma } from "@/server/db";
+import { withDbRetry } from "@/lib/dbRetry";
 import type { QuoteRequestInput } from "@/lib/validation/quote";
+import { prisma } from "@/server/db";
 import { sendQuoteConfirmation } from "@/services/emailService";
 
 function buildReferenceCode() {
@@ -17,27 +18,53 @@ export async function createQuoteRequest(input: QuoteRequestInput) {
     throw new Error("Rejected");
   }
 
-  const referenceCode = buildReferenceCode();
   const incoterm = input.incoterm
     ? Incoterm[input.incoterm as keyof typeof Incoterm]
     : undefined;
 
-  const quote = await prisma.quoteRequest.create({
-    data: {
-      referenceCode,
-      companyName: input.companyName,
-      contactName: input.contactName,
-      email: input.email,
-      phone: input.phone || null,
-      country: input.country,
-      productLabel: input.productLabel,
-      quantityText: input.quantityText,
-      destination: input.destination,
-      incoterm: incoterm ?? null,
-      targetDate: input.targetDate ? new Date(input.targetDate) : null,
-      message: input.message || null,
-      status: QuoteStatus.NEW,
-    },
+  // Retry on pooler blips; regenerate reference if a rare unique collision occurs.
+  const quote = await withDbRetry("quote:create", async () => {
+    try {
+      return await prisma.quoteRequest.create({
+        data: {
+          referenceCode: buildReferenceCode(),
+          companyName: input.companyName,
+          contactName: input.contactName,
+          email: input.email,
+          phone: input.phone || null,
+          country: input.country,
+          productLabel: input.productLabel,
+          quantityText: input.quantityText,
+          destination: input.destination,
+          incoterm: incoterm ?? null,
+          targetDate: input.targetDate ? new Date(input.targetDate) : null,
+          message: input.message || null,
+          status: QuoteStatus.NEW,
+        },
+      });
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      if (/Unique constraint|P2002/i.test(message)) {
+        return prisma.quoteRequest.create({
+          data: {
+            referenceCode: buildReferenceCode(),
+            companyName: input.companyName,
+            contactName: input.contactName,
+            email: input.email,
+            phone: input.phone || null,
+            country: input.country,
+            productLabel: input.productLabel,
+            quantityText: input.quantityText,
+            destination: input.destination,
+            incoterm: incoterm ?? null,
+            targetDate: input.targetDate ? new Date(input.targetDate) : null,
+            message: input.message || null,
+            status: QuoteStatus.NEW,
+          },
+        });
+      }
+      throw error;
+    }
   });
 
   try {
@@ -45,6 +72,14 @@ export async function createQuoteRequest(input: QuoteRequestInput) {
       to: quote.email,
       contactName: quote.contactName,
       referenceCode: quote.referenceCode,
+      companyName: quote.companyName,
+      phone: quote.phone,
+      country: quote.country,
+      productLabel: quote.productLabel,
+      quantityText: quote.quantityText,
+      destination: quote.destination,
+      incoterm: quote.incoterm,
+      message: quote.message,
     });
   } catch (error) {
     console.error("[email] quote confirmation failed after persist", error);

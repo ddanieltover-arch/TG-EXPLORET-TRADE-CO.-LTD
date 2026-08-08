@@ -24,6 +24,11 @@ export async function createDealerApplication(input: PartnerApplicationInput) {
       type: "dealer",
       companyName: app.companyName,
       email: app.email,
+      contactName: app.contactName,
+      phone: app.phone,
+      country: app.country,
+      marketsServed: app.marketsServed,
+      message: app.message,
     });
   } catch (error) {
     console.error("[email] dealer application alert failed", error);
@@ -53,6 +58,11 @@ export async function createDistributorApplication(input: PartnerApplicationInpu
       type: "distributor",
       companyName: app.companyName,
       email: app.email,
+      contactName: app.contactName,
+      phone: app.phone,
+      country: app.country,
+      marketsServed: app.marketsServed,
+      message: app.message,
     });
   } catch (error) {
     console.error("[email] distributor application alert failed", error);
