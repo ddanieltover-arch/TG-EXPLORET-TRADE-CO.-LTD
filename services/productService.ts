@@ -1,9 +1,14 @@
 import { PublishStatus } from "@prisma/client";
+import {
+  getFallbackProduct,
+  getFallbackProductsByCategory,
+  getFallbackProductsForCarousel,
+} from "@/lib/catalogueFallback";
 import { safePublicQuery } from "@/lib/safePublicQuery";
 import { prisma } from "@/server/db";
 
 export async function getPublishedProductsByCategory(categorySlug: string) {
-  return safePublicQuery(
+  const products = await safePublicQuery(
     `products:${categorySlug}`,
     () =>
       prisma.product.findMany({
@@ -19,10 +24,20 @@ export async function getPublishedProductsByCategory(categorySlug: string) {
       }),
     [],
   );
+
+  if (products.length > 0) return products;
+
+  const fallback = getFallbackProductsByCategory(categorySlug);
+  if (fallback.length > 0) {
+    console.warn(
+      `[productService] using catalogue fallback for category "${categorySlug}" (${fallback.length} SKUs)`,
+    );
+  }
+  return fallback;
 }
 
 export async function getPublishedProduct(categorySlug: string, productSlug: string) {
-  return safePublicQuery(
+  const product = await safePublicQuery(
     `product:${categorySlug}/${productSlug}`,
     () =>
       prisma.product.findFirst({
@@ -40,11 +55,21 @@ export async function getPublishedProduct(categorySlug: string, productSlug: str
       }),
     null,
   );
+
+  if (product) return product;
+
+  const fallback = getFallbackProduct(categorySlug, productSlug);
+  if (fallback) {
+    console.warn(
+      `[productService] using catalogue fallback for product "${categorySlug}/${productSlug}"`,
+    );
+  }
+  return fallback;
 }
 
 /** Published products across categories for homepage carousel. */
 export async function getPublishedProductsForCarousel(limit = 12) {
-  return safePublicQuery(
+  const products = await safePublicQuery(
     `products:carousel:${limit}`,
     () =>
       prisma.product.findMany({
@@ -58,11 +83,21 @@ export async function getPublishedProductsForCarousel(limit = 12) {
       }),
     [],
   );
+
+  if (products.length > 0) return products;
+
+  const fallback = getFallbackProductsForCarousel(limit);
+  if (fallback.length > 0) {
+    console.warn(
+      `[productService] using catalogue fallback for carousel (${fallback.length} SKUs)`,
+    );
+  }
+  return fallback;
 }
 
 /** Lightweight list for sitemap generation. */
 export async function listPublishedProductsForSitemap() {
-  return safePublicQuery(
+  const products = await safePublicQuery(
     "products:sitemap",
     () =>
       prisma.product.findMany({
@@ -76,4 +111,12 @@ export async function listPublishedProductsForSitemap() {
       }),
     [],
   );
+
+  if (products.length > 0) return products;
+
+  return getFallbackProductsForCarousel(100).map((product) => ({
+    slug: product.slug,
+    updatedAt: new Date(0),
+    category: { slug: product.category.slug },
+  }));
 }

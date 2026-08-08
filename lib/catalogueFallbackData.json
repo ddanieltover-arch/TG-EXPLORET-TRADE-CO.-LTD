@@ -1,0 +1,2267 @@
+[
+  {
+    "slug": "coconut-oil",
+    "name": "Coconut Oil",
+    "shortDescription": "Coconut oil for food manufacturing, retail, and export buyers.",
+    "description": "Coconut oil for food manufacturing, retail packing, and export. Processing style (RBD or virgin) and packing formats are confirmed with sales at quotation. Store sealed; solidification at cooler temperatures is normal for this oil type.",
+    "originCountry": "Thailand",
+    "categorySlug": "cooking-oil",
+    "categoryName": "Edible Cooking Oil",
+    "images": [
+      {
+        "url": "/media/products/oil-coconut.webp",
+        "alt": "Coconut Oil — bottled product presentation",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/oil-bulk.webp",
+        "alt": "Bulk packing context for Coconut Oil — drums and IBC totes",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "Coconut oil",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Processing",
+        "value": "Confirm at quote (RBD / virgin)",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Application",
+        "value": "Food manufacturing & retail",
+        "unit": null,
+        "sortOrder": 3
+      },
+      {
+        "label": "Storage",
+        "value": "Sealed; may solidify when cool",
+        "unit": null,
+        "sortOrder": 4
+      },
+      {
+        "label": "Origin",
+        "value": "Confirm at quote",
+        "unit": null,
+        "sortOrder": 5
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bottles / jars",
+        "sizeLabel": "0.5–5 L",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Jerry cans / drums",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 2
+      },
+      {
+        "name": "Flexitank / bulk",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 3
+      }
+    ]
+  },
+  {
+    "slug": "high-oleic-sunflower-oil",
+    "name": "High Oleic Sunflower Oil",
+    "shortDescription": "High-oleic sunflower oil for frying stability and wholesale programmes.",
+    "description": "High oleic sunflower oil for retail, foodservice, and industrial buyers who need heat stability and consistent quality. Typical uses include deep frying and packaged foods where oxidative stability matters. Store sealed, away from heat and light. Exact grade, packaging, and Incoterms confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "cooking-oil",
+    "categoryName": "Edible Cooking Oil",
+    "images": [
+      {
+        "url": "/media/products/frem/high-oleic-sunflower-oil.webp",
+        "alt": "High Oleic Sunflower Oil — bottled product presentation",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/oil-bulk.webp",
+        "alt": "Bulk packing context for High Oleic Sunflower Oil — drums and IBC totes",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "High oleic sunflower oil",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Processing",
+        "value": "Confirm at quote (RBD / RBDW)",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Application",
+        "value": "Frying & retail packing",
+        "unit": null,
+        "sortOrder": 3
+      },
+      {
+        "label": "Storage",
+        "value": "Cool, dry, sealed — confirm with sales",
+        "unit": null,
+        "sortOrder": 4
+      },
+      {
+        "label": "Origin",
+        "value": "Confirm at quote",
+        "unit": null,
+        "sortOrder": 5
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bottles",
+        "sizeLabel": "0.5–5 L",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Jerry cans / drums",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 2
+      },
+      {
+        "name": "Flexitank / bulk",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 3
+      }
+    ]
+  },
+  {
+    "slug": "long-life-frying-oil",
+    "name": "Long Life Frying Oil",
+    "shortDescription": "Frying oil formulated for extended commercial frying cycles.",
+    "description": "Long-life frying oil for foodservice and industrial kitchens that run extended fry cycles. Suitability for specific fryer programmes, filter regimes, and packing formats is confirmed with sales at quotation. Store sealed and away from heat; shelf guidance is product-specific.",
+    "originCountry": "Thailand",
+    "categorySlug": "cooking-oil",
+    "categoryName": "Edible Cooking Oil",
+    "images": [
+      {
+        "url": "/media/products/frem/long-life-frying-oil.webp",
+        "alt": "Long Life Frying Oil — bottled product presentation",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/oil-bulk.webp",
+        "alt": "Bulk packing context for Long Life Frying Oil — drums and IBC totes",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "Long life frying oil",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Application",
+        "value": "Commercial frying",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Storage",
+        "value": "Cool, dry, sealed — confirm with sales",
+        "unit": null,
+        "sortOrder": 3
+      },
+      {
+        "label": "Origin",
+        "value": "Confirm at quote",
+        "unit": null,
+        "sortOrder": 4
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bottles",
+        "sizeLabel": "0.5–5 L",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Jerry cans / drums",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 2
+      },
+      {
+        "name": "Flexitank / bulk",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 3
+      }
+    ]
+  },
+  {
+    "slug": "olive-oil",
+    "name": "Olive Oil",
+    "shortDescription": "Olive oil for culinary, retail packing, and wholesale programmes.",
+    "description": "Olive oil for culinary, retail, and wholesale programmes. Grade (extra virgin, virgin, refined, or blended) and packing are confirmed at quotation — spot prices are not published on this site. Store sealed, cool, and away from light.",
+    "originCountry": "Thailand",
+    "categorySlug": "cooking-oil",
+    "categoryName": "Edible Cooking Oil",
+    "images": [
+      {
+        "url": "/media/products/oil-olive.webp",
+        "alt": "Olive Oil — bottled product presentation",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/oil-bulk.webp",
+        "alt": "Bulk packing context for Olive Oil — drums and IBC totes",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "Olive oil",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Grade",
+        "value": "Confirm at quote (EVOO / virgin / refined / blend)",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Application",
+        "value": "Culinary, retail, wholesale",
+        "unit": null,
+        "sortOrder": 3
+      },
+      {
+        "label": "Storage",
+        "value": "Cool, dry, sealed — confirm with sales",
+        "unit": null,
+        "sortOrder": 4
+      },
+      {
+        "label": "Origin",
+        "value": "Confirm at quote",
+        "unit": null,
+        "sortOrder": 5
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bottles",
+        "sizeLabel": "0.25–5 L",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Jerry cans / drums",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 2
+      },
+      {
+        "name": "Flexitank / bulk",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 3
+      }
+    ]
+  },
+  {
+    "slug": "rbd-corn-oil",
+    "name": "RBD Corn Oil",
+    "shortDescription": "RBD corn oil for retail, food manufacturing, and export buyers.",
+    "description": "Refined, bleached, and deodorised corn oil for wholesale, food manufacturing, and export. Common buyer uses include retail bottling and foodservice frying. Commercial terms, packing, and shipment schedule are confirmed at quotation. Store sealed, cool, and away from light.",
+    "originCountry": "Thailand",
+    "categorySlug": "cooking-oil",
+    "categoryName": "Edible Cooking Oil",
+    "images": [
+      {
+        "url": "/media/products/frem/rbd-corn-oil.webp",
+        "alt": "RBD Corn Oil — bottled product presentation",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/oil-bulk.webp",
+        "alt": "Bulk packing context for RBD Corn Oil — drums and IBC totes",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "RBD corn oil",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Processing",
+        "value": "RBD",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Application",
+        "value": "Retail & foodservice",
+        "unit": null,
+        "sortOrder": 3
+      },
+      {
+        "label": "Storage",
+        "value": "Cool, dry, sealed — confirm with sales",
+        "unit": null,
+        "sortOrder": 4
+      },
+      {
+        "label": "Grade",
+        "value": "Confirm at quote",
+        "unit": null,
+        "sortOrder": 5
+      },
+      {
+        "label": "Origin",
+        "value": "Confirm at quote",
+        "unit": null,
+        "sortOrder": 6
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bottles",
+        "sizeLabel": "0.5–5 L",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Jerry cans / drums",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 2
+      },
+      {
+        "name": "Flexitank / bulk",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 3
+      }
+    ]
+  },
+  {
+    "slug": "rbd-groundnut-peanut-oil",
+    "name": "RBD Groundnut / Peanut Oil",
+    "shortDescription": "RBD groundnut (peanut) oil for culinary and wholesale programmes.",
+    "description": "Refined groundnut / peanut oil for importers and distributors supplying culinary and wholesale programmes. Grade, allergen labelling needs, and packaging are confirmed at quotation — spot prices are not published on this site. Store sealed and cool.",
+    "originCountry": "Thailand",
+    "categorySlug": "cooking-oil",
+    "categoryName": "Edible Cooking Oil",
+    "images": [
+      {
+        "url": "/media/products/frem/rbd-groundnut-peanut-oil.webp",
+        "alt": "RBD Groundnut / Peanut Oil — bottled product presentation",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/oil-bulk.webp",
+        "alt": "Bulk packing context for RBD Groundnut / Peanut Oil — drums and IBC totes",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "RBD groundnut / peanut oil",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Processing",
+        "value": "RBD",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Application",
+        "value": "Culinary & wholesale",
+        "unit": null,
+        "sortOrder": 3
+      },
+      {
+        "label": "Storage",
+        "value": "Cool, dry, sealed — confirm with sales",
+        "unit": null,
+        "sortOrder": 4
+      },
+      {
+        "label": "Grade",
+        "value": "Confirm at quote",
+        "unit": null,
+        "sortOrder": 5
+      },
+      {
+        "label": "Origin",
+        "value": "Confirm at quote",
+        "unit": null,
+        "sortOrder": 6
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bottles",
+        "sizeLabel": "0.5–5 L",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Jerry cans / drums",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 2
+      },
+      {
+        "name": "Flexitank / bulk",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 3
+      }
+    ]
+  },
+  {
+    "slug": "rbd-palm-oil-36-39",
+    "name": "RBD Palm Oil (36–39)",
+    "shortDescription": "RBD palm oil in the 36–39 melting-point band for industrial buyers.",
+    "description": "RBD palm oil in the 36–39 melting-point band for food manufacturing and wholesale programmes. Melting profile, packing, and Incoterms are confirmed at quotation. Handle and store according to product temperature guidance from sales — avoid uncontrolled heat cycles.",
+    "originCountry": "Thailand",
+    "categorySlug": "cooking-oil",
+    "categoryName": "Edible Cooking Oil",
+    "images": [
+      {
+        "url": "/media/products/frem/rbd-palm-oil-36-39.webp",
+        "alt": "RBD Palm Oil (36–39) — bottled product presentation",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/oil-bulk.webp",
+        "alt": "Bulk packing context for RBD Palm Oil (36–39) — drums and IBC totes",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "RBD palm oil",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Processing",
+        "value": "RBD",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Melting band",
+        "value": "36–39",
+        "unit": null,
+        "sortOrder": 3
+      },
+      {
+        "label": "Application",
+        "value": "Food manufacturing",
+        "unit": null,
+        "sortOrder": 4
+      },
+      {
+        "label": "Storage",
+        "value": "Per melting profile — confirm with sales",
+        "unit": null,
+        "sortOrder": 5
+      },
+      {
+        "label": "Origin",
+        "value": "Confirm at quote",
+        "unit": null,
+        "sortOrder": 6
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Drums",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Flexitank / bulk",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "slug": "rbd-palm-olein",
+    "name": "RBD Palm Olein",
+    "shortDescription": "RBD palm olein for frying, retail packing, and bulk export.",
+    "description": "RBD palm olein for retail bottling, foodservice frying, and industrial edible-oil programmes. Specifications and packing are confirmed with the sales team at quotation. Store sealed; temperature guidance depends on grade and destination climate.",
+    "originCountry": "Thailand",
+    "categorySlug": "cooking-oil",
+    "categoryName": "Edible Cooking Oil",
+    "images": [
+      {
+        "url": "/media/products/frem/rbd-palm-olein.webp",
+        "alt": "RBD Palm Olein — bottled product presentation",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/oil-bulk.webp",
+        "alt": "Bulk packing context for RBD Palm Olein — drums and IBC totes",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "RBD palm olein",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Processing",
+        "value": "RBD",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Application",
+        "value": "Frying, retail, bulk export",
+        "unit": null,
+        "sortOrder": 3
+      },
+      {
+        "label": "Storage",
+        "value": "Sealed; climate guidance from sales",
+        "unit": null,
+        "sortOrder": 4
+      },
+      {
+        "label": "Grade",
+        "value": "Confirm at quote",
+        "unit": null,
+        "sortOrder": 5
+      },
+      {
+        "label": "Origin",
+        "value": "Confirm at quote",
+        "unit": null,
+        "sortOrder": 6
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bottles",
+        "sizeLabel": "0.5–5 L",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Jerry cans / drums",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 2
+      },
+      {
+        "name": "Flexitank / bulk",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 3
+      }
+    ]
+  },
+  {
+    "slug": "rbd-rapeseed-canola-oil",
+    "name": "RBD Rapeseed / Canola Oil",
+    "shortDescription": "RBD rapeseed (canola) oil for wholesale and foodservice buyers.",
+    "description": "Refined rapeseed / canola oil for wholesale, foodservice, and international trade. Exact grade, packaging, and shipment terms are confirmed at quotation. Store sealed, cool, and away from light.",
+    "originCountry": "Thailand",
+    "categorySlug": "cooking-oil",
+    "categoryName": "Edible Cooking Oil",
+    "images": [
+      {
+        "url": "/media/products/frem/rbd-rapeseed-canola-oil.webp",
+        "alt": "RBD Rapeseed / Canola Oil — bottled product presentation",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/oil-bulk.webp",
+        "alt": "Bulk packing context for RBD Rapeseed / Canola Oil — drums and IBC totes",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "RBD rapeseed / canola oil",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Processing",
+        "value": "RBD",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Application",
+        "value": "Wholesale & foodservice",
+        "unit": null,
+        "sortOrder": 3
+      },
+      {
+        "label": "Storage",
+        "value": "Cool, dry, sealed — confirm with sales",
+        "unit": null,
+        "sortOrder": 4
+      },
+      {
+        "label": "Grade",
+        "value": "Confirm at quote",
+        "unit": null,
+        "sortOrder": 5
+      },
+      {
+        "label": "Origin",
+        "value": "Confirm at quote",
+        "unit": null,
+        "sortOrder": 6
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bottles",
+        "sizeLabel": "0.5–5 L",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Jerry cans / drums",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 2
+      },
+      {
+        "name": "Flexitank / bulk",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 3
+      }
+    ]
+  },
+  {
+    "slug": "rbd-soybean-oil",
+    "name": "RBD Soybean Oil",
+    "shortDescription": "RBD soybean oil for industrial, retail, and export programmes.",
+    "description": "Refined, bleached, and deodorised soybean oil for industrial, retail, and export programmes. Packaging and Incoterms are confirmed at quotation. Store sealed and cool; ask sales about destination-specific packing.",
+    "originCountry": "Thailand",
+    "categorySlug": "cooking-oil",
+    "categoryName": "Edible Cooking Oil",
+    "images": [
+      {
+        "url": "/media/products/frem/rbd-soybean-oil.webp",
+        "alt": "RBD Soybean Oil — bottled product presentation",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/oil-bulk.webp",
+        "alt": "Bulk packing context for RBD Soybean Oil — drums and IBC totes",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "RBD soybean oil",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Processing",
+        "value": "RBD",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Application",
+        "value": "Industrial, retail, export",
+        "unit": null,
+        "sortOrder": 3
+      },
+      {
+        "label": "Storage",
+        "value": "Cool, dry, sealed — confirm with sales",
+        "unit": null,
+        "sortOrder": 4
+      },
+      {
+        "label": "Grade",
+        "value": "Confirm at quote",
+        "unit": null,
+        "sortOrder": 5
+      },
+      {
+        "label": "Origin",
+        "value": "Confirm at quote",
+        "unit": null,
+        "sortOrder": 6
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bottles",
+        "sizeLabel": "0.5–5 L",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Jerry cans / drums",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 2
+      },
+      {
+        "name": "Flexitank / bulk",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 3
+      }
+    ]
+  },
+  {
+    "slug": "rbdw-sunflower-oil",
+    "name": "RBDW Sunflower Oil",
+    "shortDescription": "RBDW sunflower oil for bottled and bulk export supply.",
+    "description": "RBDW sunflower oil for bottled and bulk export supply. Grade purity, packing formats, and commercial terms are confirmed at quotation. Typical buyer uses include retail bottles and foodservice. Store sealed, cool, and away from light.",
+    "originCountry": "Thailand",
+    "categorySlug": "cooking-oil",
+    "categoryName": "Edible Cooking Oil",
+    "images": [
+      {
+        "url": "/media/products/frem/rbdw-sunflower-oil.webp",
+        "alt": "RBDW Sunflower Oil — bottled product presentation",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/oil-bulk.webp",
+        "alt": "Bulk packing context for RBDW Sunflower Oil — drums and IBC totes",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "RBDW sunflower oil",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Processing",
+        "value": "RBDW",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Application",
+        "value": "Bottled & bulk export",
+        "unit": null,
+        "sortOrder": 3
+      },
+      {
+        "label": "Storage",
+        "value": "Cool, dry, sealed — confirm with sales",
+        "unit": null,
+        "sortOrder": 4
+      },
+      {
+        "label": "Grade",
+        "value": "Confirm at quote",
+        "unit": null,
+        "sortOrder": 5
+      },
+      {
+        "label": "Origin",
+        "value": "Confirm at quote",
+        "unit": null,
+        "sortOrder": 6
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bottles",
+        "sizeLabel": "0.5–5 L",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Jerry cans / drums",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 2
+      },
+      {
+        "name": "Flexitank / bulk",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 3
+      }
+    ]
+  },
+  {
+    "slug": "sesame-oil",
+    "name": "Sesame Oil",
+    "shortDescription": "Sesame oil for culinary and specialty wholesale programmes.",
+    "description": "Sesame oil for culinary and specialty wholesale programmes. Toasted versus refined grade, allergen labelling needs, and packing are confirmed at quotation. Store sealed and cool, away from light.",
+    "originCountry": "Thailand",
+    "categorySlug": "cooking-oil",
+    "categoryName": "Edible Cooking Oil",
+    "images": [
+      {
+        "url": "/media/products/oil-sesame.webp",
+        "alt": "Sesame Oil — bottled product presentation",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/oil-bulk.webp",
+        "alt": "Bulk packing context for Sesame Oil — drums and IBC totes",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "Sesame oil",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Grade",
+        "value": "Confirm at quote (toasted / refined)",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Application",
+        "value": "Culinary & specialty wholesale",
+        "unit": null,
+        "sortOrder": 3
+      },
+      {
+        "label": "Storage",
+        "value": "Cool, dry, sealed — confirm with sales",
+        "unit": null,
+        "sortOrder": 4
+      },
+      {
+        "label": "Origin",
+        "value": "Confirm at quote",
+        "unit": null,
+        "sortOrder": 5
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bottles",
+        "sizeLabel": "0.25–2 L",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Jerry cans / drums",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "slug": "vegetable-oil",
+    "name": "Vegetable Oil",
+    "shortDescription": "Blended vegetable oil for retail, foodservice, and bulk export.",
+    "description": "Blended vegetable oil for retail bottling, foodservice frying, and bulk export. Blend composition, packing formats, and Incoterms are confirmed at quotation. Store sealed, cool, and away from light.",
+    "originCountry": "Thailand",
+    "categorySlug": "cooking-oil",
+    "categoryName": "Edible Cooking Oil",
+    "images": [
+      {
+        "url": "/media/products/oil-vegetable.webp",
+        "alt": "Vegetable Oil — bottled product presentation",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/oil-bulk.webp",
+        "alt": "Bulk packing context for Vegetable Oil — drums and IBC totes",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "Blended vegetable oil",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Blend",
+        "value": "Confirm at quote",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Application",
+        "value": "Retail, foodservice, bulk export",
+        "unit": null,
+        "sortOrder": 3
+      },
+      {
+        "label": "Storage",
+        "value": "Cool, dry, sealed — confirm with sales",
+        "unit": null,
+        "sortOrder": 4
+      },
+      {
+        "label": "Origin",
+        "value": "Confirm at quote",
+        "unit": null,
+        "sortOrder": 5
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bottles",
+        "sizeLabel": "0.5–5 L",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Jerry cans / drums",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 2
+      },
+      {
+        "name": "Flexitank / bulk",
+        "sizeLabel": "confirm at quote",
+        "notes": null,
+        "sortOrder": 3
+      }
+    ]
+  },
+  {
+    "slug": "1121-sella-basmati-rice",
+    "name": "1121 Sella Basmati Rice",
+    "shortDescription": "Long-grain 1121 Sella basmati for aromatic rice programmes.",
+    "description": "1121 Sella basmati rice for wholesale and foodservice buyers seeking long-grain aromatic rice. Crop year, broken ratio, and packing confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/1121-sella-basmati-rice.webp",
+        "alt": "1121 Sella Basmati Rice — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for 1121 Sella Basmati Rice — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Variety",
+        "value": "1121 Sella basmati",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Grain type",
+        "value": "Long grain",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Moisture",
+        "value": "14 max",
+        "unit": "%",
+        "sortOrder": 3
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bags",
+        "sizeLabel": "1–5 kg",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": null,
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "slug": "arborio-rice",
+    "name": "Arborio Rice",
+    "shortDescription": "Arborio rice for risotto-style and specialty culinary programmes.",
+    "description": "Arborio rice for importers and foodservice distributors. Moisture, purity, and packing confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/arborio-rice.webp",
+        "alt": "Arborio Rice — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for Arborio Rice — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Variety",
+        "value": "Arborio",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Moisture",
+        "value": "14 max",
+        "unit": "%",
+        "sortOrder": 2
+      },
+      {
+        "label": "Broken",
+        "value": "confirm at quote",
+        "unit": null,
+        "sortOrder": 3
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bags",
+        "sizeLabel": "1–5 kg",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": null,
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "slug": "irri-6-long-grain-rice",
+    "name": "IRRI-6 Long Grain Rice",
+    "shortDescription": "IRRI-6 long-grain rice for wholesale and industrial buyers.",
+    "description": "IRRI-6 long-grain rice for export programmes. Grain length, broken ratio, and packing confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/irri-6-long-grain-rice.webp",
+        "alt": "IRRI-6 Long Grain Rice — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for IRRI-6 Long Grain Rice — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Variety",
+        "value": "IRRI-6",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Grain type",
+        "value": "Long grain",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Moisture",
+        "value": "14 max",
+        "unit": "%",
+        "sortOrder": 3
+      },
+      {
+        "label": "Broken",
+        "value": "5 max typical",
+        "unit": "%",
+        "sortOrder": 4
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bags",
+        "sizeLabel": "1–5 kg",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": null,
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "slug": "irri-9-long-grain-rice",
+    "name": "IRRI-9 Long Grain Rice",
+    "shortDescription": "IRRI-9 long-grain rice for wholesale and export buyers.",
+    "description": "IRRI-9 long-grain rice for international trade. Grain length, broken ratio, and packing confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/irri-9-long-grain-rice.webp",
+        "alt": "IRRI-9 Long Grain Rice — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for IRRI-9 Long Grain Rice — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Variety",
+        "value": "IRRI-9",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Grain type",
+        "value": "Long grain",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Moisture",
+        "value": "14 max",
+        "unit": "%",
+        "sortOrder": 3
+      },
+      {
+        "label": "Broken",
+        "value": "5 max typical",
+        "unit": "%",
+        "sortOrder": 4
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bags",
+        "sizeLabel": "1–5 kg",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": null,
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "slug": "japonica-rice",
+    "name": "Japonica Rice",
+    "shortDescription": "Short- to medium-grain japonica rice for specialty markets.",
+    "description": "Japonica rice for buyers who specify short/medium grain and sticky cooking texture. Exact milling and packing confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/japonica-rice.webp",
+        "alt": "Japonica Rice — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for Japonica Rice — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Variety",
+        "value": "Japonica",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Grain type",
+        "value": "Short to medium",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Moisture",
+        "value": "14 max",
+        "unit": "%",
+        "sortOrder": 3
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bags",
+        "sizeLabel": "1–5 kg",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": null,
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "slug": "jasmine-rice-thai-hom-mali",
+    "name": "Jasmine Rice (Thai Hom Mali)",
+    "shortDescription": "Fragrant Thai Hom Mali jasmine rice for retail and foodservice.",
+    "description": "Thai Hom Mali style jasmine rice for wholesale and export. Buyers typically evaluate fragrance, broken ratio, and packing for retail or foodservice programmes. Broken ratio, crop year, and packing are confirmed at quotation. Store in a cool, dry place away from strong odours.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/jasmine-rice-thai-hom-mali.webp",
+        "alt": "Jasmine Rice (Thai Hom Mali) — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for Jasmine Rice (Thai Hom Mali) — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Variety",
+        "value": "Thai Hom Mali (jasmine)",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Grain type",
+        "value": "Long grain",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Moisture",
+        "value": "14 max",
+        "unit": "%",
+        "sortOrder": 3
+      },
+      {
+        "label": "Broken",
+        "value": "confirm at quote",
+        "unit": null,
+        "sortOrder": 4
+      },
+      {
+        "label": "Storage",
+        "value": "Cool, dry — confirm with sales",
+        "unit": null,
+        "sortOrder": 5
+      },
+      {
+        "label": "Origin",
+        "value": "Thailand",
+        "unit": null,
+        "sortOrder": 6
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bags",
+        "sizeLabel": "1–5 kg",
+        "notes": "MOQ confirm at quote",
+        "sortOrder": 1
+      },
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": "MOQ confirm at quote",
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "slug": "parboiled-rice-5-broken",
+    "name": "Parboiled Rice 5% Broken",
+    "shortDescription": "Parboiled rice with up to 5% broken for export programmes.",
+    "description": "Parboiled rice (5% broken basis) for importers and industrial buyers. Specs and packing confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/parboiled-rice-5-broken.webp",
+        "alt": "Parboiled Rice 5% Broken — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for Parboiled Rice 5% Broken — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "Parboiled",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Broken",
+        "value": "5 max",
+        "unit": "%",
+        "sortOrder": 2
+      },
+      {
+        "label": "Moisture",
+        "value": "14 max",
+        "unit": "%",
+        "sortOrder": 3
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bags",
+        "sizeLabel": "1–5 kg",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": null,
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "slug": "quality-brown-rice",
+    "name": "Quality Brown Rice",
+    "shortDescription": "Brown rice with bran retained for health-oriented programmes.",
+    "description": "Quality brown rice for wholesale buyers. Moisture, broken ratio, and packing confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/quality-brown-rice.webp",
+        "alt": "Quality Brown Rice — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for Quality Brown Rice — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "Brown rice",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Moisture",
+        "value": "14 max",
+        "unit": "%",
+        "sortOrder": 2
+      },
+      {
+        "label": "Broken",
+        "value": "5 max typical",
+        "unit": "%",
+        "sortOrder": 3
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bags",
+        "sizeLabel": "1–5 kg",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": null,
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "slug": "thai-brown-jasmine-rice",
+    "name": "Thai Brown Jasmine Rice",
+    "shortDescription": "Brown jasmine rice retaining bran and aromatic character.",
+    "description": "Thai brown jasmine rice for specialty and health-oriented wholesale programmes. Specs and packing confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/thai-brown-jasmine-rice.webp",
+        "alt": "Thai Brown Jasmine Rice — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for Thai Brown Jasmine Rice — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Variety",
+        "value": "Thai brown jasmine",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Grain type",
+        "value": "Long grain",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Colour",
+        "value": "Brown",
+        "unit": null,
+        "sortOrder": 3
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bags",
+        "sizeLabel": "1–5 kg",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": null,
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "slug": "thai-glutinous-rice",
+    "name": "Thai Glutinous Rice",
+    "shortDescription": "Sticky Thai glutinous rice for culinary and wholesale programmes.",
+    "description": "Thai glutinous (sticky) rice for foodservice and retail packing programmes. Specs and packing confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/thai-glutinous-rice.webp",
+        "alt": "Thai Glutinous Rice — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for Thai Glutinous Rice — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Variety",
+        "value": "Glutinous",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Texture",
+        "value": "Sticky when cooked",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Moisture",
+        "value": "14 max",
+        "unit": "%",
+        "sortOrder": 3
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bags",
+        "sizeLabel": "1–5 kg",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": null,
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "slug": "thai-glutinous-rice-25-broken",
+    "name": "Thai Glutinous Rice 25% Broken",
+    "shortDescription": "Glutinous rice with up to 25% broken for value programmes.",
+    "description": "Thai glutinous rice (25% broken) for buyers who accept higher broken content. Packing and commercial terms confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/thai-glutinous-rice-25-broken.webp",
+        "alt": "Thai Glutinous Rice 25% Broken — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for Thai Glutinous Rice 25% Broken — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Variety",
+        "value": "Glutinous",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Broken",
+        "value": "25 max",
+        "unit": "%",
+        "sortOrder": 2
+      },
+      {
+        "label": "Moisture",
+        "value": "14 max",
+        "unit": "%",
+        "sortOrder": 3
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": null,
+        "sortOrder": 1
+      }
+    ]
+  },
+  {
+    "slug": "thai-hom-patum-rice",
+    "name": "Thai Hom Patum Rice",
+    "shortDescription": "Pathum Thani (Hom Patum) aromatic rice for export buyers.",
+    "description": "Thai Hom Patum (Pathum Thani) rice for wholesale programmes. Fragrance profile, broken ratio, and packing confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/thai-hom-patum-rice.webp",
+        "alt": "Thai Hom Patum Rice — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for Thai Hom Patum Rice — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Variety",
+        "value": "Hom Patum / Pathum Thani",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Grain type",
+        "value": "Long grain aromatic",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Moisture",
+        "value": "confirm at quote",
+        "unit": null,
+        "sortOrder": 3
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bags",
+        "sizeLabel": "1–5 kg",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": null,
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "slug": "thai-jasmine-black-cargo-rice",
+    "name": "Thai Jasmine Black Cargo Rice",
+    "shortDescription": "Black cargo jasmine rice with bran retained for specialty markets.",
+    "description": "Thai jasmine black cargo rice for specialty wholesale programmes. Specs and packing confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/thai-jasmine-black-cargo-rice.webp",
+        "alt": "Thai Jasmine Black Cargo Rice — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for Thai Jasmine Black Cargo Rice — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "Black cargo jasmine",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Milling",
+        "value": "Husk removed; bran retained",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Origin",
+        "value": "Thailand",
+        "unit": null,
+        "sortOrder": 3
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bags",
+        "sizeLabel": "1–5 kg",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": null,
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "slug": "thai-jasmine-red-cargo-rice",
+    "name": "Thai Jasmine Red Cargo Rice",
+    "shortDescription": "Red cargo jasmine rice for specialty and health-oriented buyers.",
+    "description": "Thai jasmine red cargo rice for wholesale export. Specs and packing confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/thai-jasmine-red-cargo-rice.webp",
+        "alt": "Thai Jasmine Red Cargo Rice — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for Thai Jasmine Red Cargo Rice — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "Red cargo jasmine",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Grain type",
+        "value": "Long grain",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Origin",
+        "value": "Thailand",
+        "unit": null,
+        "sortOrder": 3
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bags",
+        "sizeLabel": "1–5 kg",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": null,
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "slug": "thai-long-grain-rice",
+    "name": "Thai Long Grain Rice",
+    "shortDescription": "Thai long-grain white rice for general wholesale programmes.",
+    "description": "Thai long-grain rice for importers and distributors. Broken ratio and packing confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/thai-long-grain-rice.webp",
+        "alt": "Thai Long Grain Rice — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for Thai Long Grain Rice — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Grain type",
+        "value": "Long grain",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Colour",
+        "value": "White",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Moisture",
+        "value": "14 max",
+        "unit": "%",
+        "sortOrder": 3
+      },
+      {
+        "label": "Broken",
+        "value": "confirm at quote",
+        "unit": null,
+        "sortOrder": 4
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bags",
+        "sizeLabel": "1–5 kg",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": null,
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "slug": "thai-parboiled-rice",
+    "name": "Thai Parboiled Rice",
+    "shortDescription": "Thai parboiled rice for foodservice and industrial buyers.",
+    "description": "Thai parboiled rice for export programmes. Broken ratio, moisture, and packing confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/thai-parboiled-rice.webp",
+        "alt": "Thai Parboiled Rice — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for Thai Parboiled Rice — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "Parboiled",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Moisture",
+        "value": "14 max",
+        "unit": "%",
+        "sortOrder": 2
+      },
+      {
+        "label": "Broken",
+        "value": "confirm at quote",
+        "unit": null,
+        "sortOrder": 3
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bags",
+        "sizeLabel": "1–5 kg",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": null,
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "slug": "thai-riceberry-rice",
+    "name": "Thai Riceberry Rice",
+    "shortDescription": "Thai Riceberry specialty rice for premium retail programmes.",
+    "description": "Thai Riceberry rice for specialty wholesale and retail packing. Specs and packing confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/thai-riceberry-rice.webp",
+        "alt": "Thai Riceberry Rice — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for Thai Riceberry Rice — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Variety",
+        "value": "Riceberry",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Origin",
+        "value": "Thailand",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Broken",
+        "value": "confirm at quote",
+        "unit": null,
+        "sortOrder": 3
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bags",
+        "sizeLabel": "1–5 kg",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": null,
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "slug": "thai-white-rice-10-broken",
+    "name": "Thai White Rice 10% Broken",
+    "shortDescription": "Thai white long-grain rice with up to 10% broken.",
+    "description": "Thai white rice (10% broken) for wholesale export. Packing and commercial terms confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/thai-white-rice-10-broken.webp",
+        "alt": "Thai White Rice 10% Broken — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for Thai White Rice 10% Broken — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "White rice",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Broken",
+        "value": "10 max",
+        "unit": "%",
+        "sortOrder": 2
+      },
+      {
+        "label": "Moisture",
+        "value": "14 max",
+        "unit": "%",
+        "sortOrder": 3
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": null,
+        "sortOrder": 1
+      }
+    ]
+  },
+  {
+    "slug": "thai-white-rice-100-broken",
+    "name": "Thai White Rice 100% Broken",
+    "shortDescription": "Fully broken Thai white rice for industrial and value programmes.",
+    "description": "Thai white rice 100% broken for buyers specifying full-broken grades. Packing confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/thai-white-rice-100-broken.webp",
+        "alt": "Thai White Rice 100% Broken — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for Thai White Rice 100% Broken — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "White rice broken",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Broken",
+        "value": "100",
+        "unit": "%",
+        "sortOrder": 2
+      },
+      {
+        "label": "Moisture",
+        "value": "confirm at quote",
+        "unit": null,
+        "sortOrder": 3
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": null,
+        "sortOrder": 1
+      }
+    ]
+  },
+  {
+    "slug": "thai-white-rice-100-sortexed",
+    "name": "Thai White Rice 100% Sortexed",
+    "shortDescription": "Sortexed Thai white rice for premium purity programmes.",
+    "description": "Thai white rice 100% sortexed for buyers who specify optical sorting. Specs and packing confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/thai-white-rice-100-sortexed.webp",
+        "alt": "Thai White Rice 100% Sortexed — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for Thai White Rice 100% Sortexed — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "White rice",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Sorting",
+        "value": "100% sortexed",
+        "unit": null,
+        "sortOrder": 2
+      },
+      {
+        "label": "Moisture",
+        "value": "confirm at quote",
+        "unit": null,
+        "sortOrder": 3
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bags",
+        "sizeLabel": "1–5 kg",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": null,
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "slug": "thai-white-rice-25-broken",
+    "name": "Thai White Rice 25% Broken",
+    "shortDescription": "Thai white long-grain rice with up to 25% broken.",
+    "description": "Thai white rice (25% broken) for wholesale programmes. Packing and Incoterms confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/thai-white-rice-25-broken.webp",
+        "alt": "Thai White Rice 25% Broken — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for Thai White Rice 25% Broken — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "White rice",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Broken",
+        "value": "25 max",
+        "unit": "%",
+        "sortOrder": 2
+      },
+      {
+        "label": "Moisture",
+        "value": "14 max",
+        "unit": "%",
+        "sortOrder": 3
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": null,
+        "sortOrder": 1
+      }
+    ]
+  },
+  {
+    "slug": "white-rice-5-broken",
+    "name": "White Rice 5% Broken",
+    "shortDescription": "White rice with up to 5% broken for standard export grades.",
+    "description": "White rice (5% broken) for importers and distributors. Specs and packing confirmed at quotation.",
+    "originCountry": "Thailand",
+    "categorySlug": "rice",
+    "categoryName": "Rice",
+    "images": [
+      {
+        "url": "/media/products/frem/white-rice-5-broken.webp",
+        "alt": "White Rice 5% Broken — uncooked grains shown close up",
+        "isPrimary": true,
+        "sortOrder": 1
+      },
+      {
+        "url": "/media/products/rice-sacks.webp",
+        "alt": "Export packing context for White Rice 5% Broken — woven bags on pallets",
+        "isPrimary": false,
+        "sortOrder": 2
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Type",
+        "value": "White rice",
+        "unit": null,
+        "sortOrder": 1
+      },
+      {
+        "label": "Broken",
+        "value": "5 max",
+        "unit": "%",
+        "sortOrder": 2
+      },
+      {
+        "label": "Moisture",
+        "value": "14 max",
+        "unit": "%",
+        "sortOrder": 3
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Retail bags",
+        "sizeLabel": "1–5 kg",
+        "notes": null,
+        "sortOrder": 1
+      },
+      {
+        "name": "Commercial bags",
+        "sizeLabel": "25–50 kg",
+        "notes": null,
+        "sortOrder": 2
+      }
+    ]
+  }
+]
