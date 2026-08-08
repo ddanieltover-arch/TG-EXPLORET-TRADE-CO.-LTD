@@ -39,7 +39,9 @@ export async function createInquiryAction(
       ok: true,
       message: "Thank you. Our team will respond using the email you provided.",
     };
-  } catch {
+  } catch (error) {
+    const detail = error instanceof Error ? error.message : String(error);
+    console.error("[createInquiryAction]", detail.split("\n")[0]);
     return {
       ok: false,
       message: "We could not send your message. Please email sales@tgeptrade.com.",

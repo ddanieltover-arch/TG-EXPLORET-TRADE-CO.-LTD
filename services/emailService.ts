@@ -25,6 +25,8 @@ export async function sendEmail(opts: {
   html: string;
   text?: string;
   replyTo?: string | string[];
+  /** When true, missing API key or Resend rejection fails hard (used for DB-down fallbacks). */
+  requireDelivery?: boolean;
 }) {
   const client = getClient();
   if (!client) {
@@ -33,6 +35,9 @@ export async function sendEmail(opts: {
       opts.subject,
       opts.to,
     );
+    if (opts.requireDelivery) {
+      throw new Error("RESEND_API_KEY missing — cannot deliver email");
+    }
     return { skipped: true as const };
   }
 
@@ -103,23 +108,17 @@ export async function sendQuoteConfirmation(input: {
   });
 }
 
-export async function sendInquiryConfirmation(input: {
-  to: string;
-  contactName: string;
-  companyName?: string | null;
-  phone?: string | null;
-  country?: string | null;
-  message: string;
-}) {
-  const buyer = buyerInquiryReceivedEmail(input);
-  await sendEmail({
-    to: input.to,
-    subject: buyer.subject,
-    html: buyer.html,
-    text: buyer.text,
-    replyTo: salesInbox,
-  });
-
+export async function sendInquirySalesAlert(
+  input: {
+    to: string;
+    contactName: string;
+    companyName?: string | null;
+    phone?: string | null;
+    country?: string | null;
+    message: string;
+  },
+  options?: { requireDelivery?: boolean },
+) {
   const sales = salesInquiryAlertEmail({
     ...input,
     email: input.to,
@@ -130,7 +129,33 @@ export async function sendInquiryConfirmation(input: {
     html: sales.html,
     text: sales.text,
     replyTo: input.to,
+    requireDelivery: options?.requireDelivery,
   });
+}
+
+export async function sendInquiryConfirmation(
+  input: {
+    to: string;
+    contactName: string;
+    companyName?: string | null;
+    phone?: string | null;
+    country?: string | null;
+    message: string;
+  },
+  options?: { requireDelivery?: boolean },
+) {
+  const requireDelivery = options?.requireDelivery === true;
+  const buyer = buyerInquiryReceivedEmail(input);
+  await sendEmail({
+    to: input.to,
+    subject: buyer.subject,
+    html: buyer.html,
+    text: buyer.text,
+    replyTo: salesInbox,
+    requireDelivery,
+  });
+
+  await sendInquirySalesAlert(input, { requireDelivery });
 }
 
 export async function sendPartnerApplicationAlert(input: {
