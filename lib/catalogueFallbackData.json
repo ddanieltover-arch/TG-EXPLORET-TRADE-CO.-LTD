@@ -10,15 +10,9 @@
     "images": [
       {
         "url": "/media/products/oil-coconut.webp",
-        "alt": "Coconut Oil — bottled product presentation",
+        "alt": "Coconut Oil — glass carafe of oil with fresh coconuts and palm leaves",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/oil-bulk.webp",
-        "alt": "Bulk packing context for Coconut Oil — drums and IBC totes",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -88,12 +82,6 @@
         "alt": "High Oleic Sunflower Oil — bottled product presentation",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/oil-bulk.webp",
-        "alt": "Bulk packing context for High Oleic Sunflower Oil — drums and IBC totes",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -163,12 +151,6 @@
         "alt": "Long Life Frying Oil — bottled product presentation",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/oil-bulk.webp",
-        "alt": "Bulk packing context for Long Life Frying Oil — drums and IBC totes",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -232,12 +214,6 @@
         "alt": "Olive Oil — bottled product presentation",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/oil-bulk.webp",
-        "alt": "Bulk packing context for Olive Oil — drums and IBC totes",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -307,12 +283,6 @@
         "alt": "RBD Corn Oil — bottled product presentation",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/oil-bulk.webp",
-        "alt": "Bulk packing context for RBD Corn Oil — drums and IBC totes",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -388,12 +358,6 @@
         "alt": "RBD Groundnut / Peanut Oil — bottled product presentation",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/oil-bulk.webp",
-        "alt": "Bulk packing context for RBD Groundnut / Peanut Oil — drums and IBC totes",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -469,12 +433,6 @@
         "alt": "RBD Palm Oil (36–39) — bottled product presentation",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/oil-bulk.webp",
-        "alt": "Bulk packing context for RBD Palm Oil (36–39) — drums and IBC totes",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -544,12 +502,6 @@
         "alt": "RBD Palm Olein — bottled product presentation",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/oil-bulk.webp",
-        "alt": "Bulk packing context for RBD Palm Olein — drums and IBC totes",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -625,12 +577,6 @@
         "alt": "RBD Rapeseed / Canola Oil — bottled product presentation",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/oil-bulk.webp",
-        "alt": "Bulk packing context for RBD Rapeseed / Canola Oil — drums and IBC totes",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -706,12 +652,6 @@
         "alt": "RBD Soybean Oil — bottled product presentation",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/oil-bulk.webp",
-        "alt": "Bulk packing context for RBD Soybean Oil — drums and IBC totes",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -787,12 +727,6 @@
         "alt": "RBDW Sunflower Oil — bottled product presentation",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/oil-bulk.webp",
-        "alt": "Bulk packing context for RBDW Sunflower Oil — drums and IBC totes",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -868,12 +802,6 @@
         "alt": "Sesame Oil — bottled product presentation",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/oil-bulk.webp",
-        "alt": "Bulk packing context for Sesame Oil — drums and IBC totes",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -937,12 +865,6 @@
         "alt": "Vegetable Oil — bottled product presentation",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/oil-bulk.webp",
-        "alt": "Bulk packing context for Vegetable Oil — drums and IBC totes",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -1012,12 +934,6 @@
         "alt": "1121 Sella Basmati Rice — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for 1121 Sella Basmati Rice — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -1069,12 +985,6 @@
         "alt": "Arborio Rice — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for Arborio Rice — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -1126,12 +1036,6 @@
         "alt": "IRRI-6 Long Grain Rice — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for IRRI-6 Long Grain Rice — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -1189,12 +1093,6 @@
         "alt": "IRRI-9 Long Grain Rice — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for IRRI-9 Long Grain Rice — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -1252,12 +1150,6 @@
         "alt": "Japonica Rice — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for Japonica Rice — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -1309,12 +1201,6 @@
         "alt": "Jasmine Rice (Thai Hom Mali) — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for Jasmine Rice (Thai Hom Mali) — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -1384,12 +1270,6 @@
         "alt": "Parboiled Rice 5% Broken — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for Parboiled Rice 5% Broken — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -1441,12 +1321,6 @@
         "alt": "Quality Brown Rice — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for Quality Brown Rice — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -1498,12 +1372,6 @@
         "alt": "Thai Brown Jasmine Rice — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for Thai Brown Jasmine Rice — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -1555,12 +1423,6 @@
         "alt": "Thai Glutinous Rice — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for Thai Glutinous Rice — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -1612,12 +1474,6 @@
         "alt": "Thai Glutinous Rice 25% Broken — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for Thai Glutinous Rice 25% Broken — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -1663,12 +1519,6 @@
         "alt": "Thai Hom Patum Rice — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for Thai Hom Patum Rice — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -1720,12 +1570,6 @@
         "alt": "Thai Jasmine Black Cargo Rice — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for Thai Jasmine Black Cargo Rice — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -1777,12 +1621,6 @@
         "alt": "Thai Jasmine Red Cargo Rice — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for Thai Jasmine Red Cargo Rice — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -1834,12 +1672,6 @@
         "alt": "Thai Long Grain Rice — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for Thai Long Grain Rice — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -1897,12 +1729,6 @@
         "alt": "Thai Parboiled Rice — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for Thai Parboiled Rice — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -1954,12 +1780,6 @@
         "alt": "Thai Riceberry Rice — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for Thai Riceberry Rice — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -2011,12 +1831,6 @@
         "alt": "Thai White Rice 10% Broken — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for Thai White Rice 10% Broken — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -2062,12 +1876,6 @@
         "alt": "Thai White Rice 100% Broken — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for Thai White Rice 100% Broken — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -2113,12 +1921,6 @@
         "alt": "Thai White Rice 100% Sortexed — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for Thai White Rice 100% Sortexed — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -2170,12 +1972,6 @@
         "alt": "Thai White Rice 25% Broken — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for Thai White Rice 25% Broken — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [
@@ -2221,12 +2017,6 @@
         "alt": "White Rice 5% Broken — uncooked grains shown close up",
         "isPrimary": true,
         "sortOrder": 1
-      },
-      {
-        "url": "/media/products/rice-sacks.webp",
-        "alt": "Export packing context for White Rice 5% Broken — woven bags on pallets",
-        "isPrimary": false,
-        "sortOrder": 2
       }
     ],
     "specifications": [

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { QuoteStatus } from "@prisma/client";
-import { updateQuoteStatusAction } from "@/actions/adminQuotes";
+import { deleteQuoteAction, updateQuoteStatusAction } from "@/actions/adminQuotes";
+import { AdminDeleteButton } from "@/components/admin/AdminDeleteButton";
 import { AdminNav } from "@/components/admin/AdminNav";
+import { AdminStatusForm } from "@/components/admin/AdminStatusForm";
 import { listQuoteRequests } from "@/services/quoteService";
 
 export const metadata: Metadata = {
@@ -43,6 +45,7 @@ export default async function AdminQuotesPage() {
                 <th className="px-4 py-3 font-medium">Destination</th>
                 <th className="px-4 py-3 font-medium">Status</th>
                 <th className="px-4 py-3 font-medium">Created</th>
+                <th className="px-4 py-3 font-medium">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -63,7 +66,10 @@ export default async function AdminQuotesPage() {
                   <td className="px-4 py-3">{q.productLabel ?? "—"}</td>
                   <td className="px-4 py-3">{q.destination}</td>
                   <td className="px-4 py-3">
-                    <form action={updateQuoteStatusAction} className="flex items-center gap-2">
+                    <AdminStatusForm
+                      action={updateQuoteStatusAction}
+                      successMessage={`Status updated for ${q.referenceCode}`}
+                    >
                       <input type="hidden" name="id" value={q.id} />
                       <input type="hidden" name="version" value={q.version} />
                       <label htmlFor={`status-${q.id}`} className="sr-only">
@@ -81,16 +87,25 @@ export default async function AdminQuotesPage() {
                           </option>
                         ))}
                       </select>
-                      <button
-                        type="submit"
-                        className="rounded bg-tg-primary px-2 py-1 text-xs font-semibold text-white"
-                      >
-                        Save
-                      </button>
-                    </form>
+                    </AdminStatusForm>
                   </td>
-                  <td className="px-4 py-3 text-tg-muted">
+                  <td className="whitespace-nowrap px-4 py-3 text-tg-muted">
                     {q.createdAt.toISOString().slice(0, 10)}
+                  </td>
+                  <td className="whitespace-nowrap px-4 py-3">
+                    <div className="flex flex-nowrap items-center gap-2">
+                      <Link
+                        href={`/admin/quotes/${q.id}`}
+                        className="rounded border border-tg-border px-2 py-1 text-xs font-semibold text-tg-primary transition hover:border-tg-primary"
+                      >
+                        Edit
+                      </Link>
+                      <AdminDeleteButton
+                        action={deleteQuoteAction}
+                        id={q.id}
+                        confirmMessage={`Delete quote ${q.referenceCode}? This cannot be undone.`}
+                      />
+                    </div>
                   </td>
                 </tr>
               ))}

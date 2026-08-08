@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { InquiryStatus } from "@prisma/client";
-import { updateInquiryStatusAction } from "@/actions/adminInquiries";
+import { deleteInquiryAction, updateInquiryStatusAction } from "@/actions/adminInquiries";
+import { AdminDeleteButton } from "@/components/admin/AdminDeleteButton";
 import { AdminNav } from "@/components/admin/AdminNav";
+import { AdminStatusForm } from "@/components/admin/AdminStatusForm";
 import { listInquiries } from "@/services/inquiryService";
 
 export const metadata: Metadata = {
@@ -41,13 +44,19 @@ export default async function AdminInquiriesPage() {
                 <th className="px-4 py-3 font-medium">Message</th>
                 <th className="px-4 py-3 font-medium">Status</th>
                 <th className="px-4 py-3 font-medium">Created</th>
+                <th className="px-4 py-3 font-medium">Actions</th>
               </tr>
             </thead>
             <tbody>
               {inquiries.map((item) => (
                 <tr key={item.id} className="border-b border-tg-border/70 align-top">
                   <td className="px-4 py-3">
-                    <div>{item.contactName}</div>
+                    <Link
+                      href={`/admin/inquiries/${item.id}`}
+                      className="font-semibold text-tg-primary underline"
+                    >
+                      {item.contactName}
+                    </Link>
                     <div className="text-xs text-tg-muted">{item.email}</div>
                     {item.companyName ? (
                       <div className="text-xs text-tg-muted">{item.companyName}</div>
@@ -56,7 +65,10 @@ export default async function AdminInquiriesPage() {
                   <td className="px-4 py-3">{item.source}</td>
                   <td className="max-w-md px-4 py-3 text-tg-muted">{item.message}</td>
                   <td className="px-4 py-3">
-                    <form action={updateInquiryStatusAction} className="flex items-center gap-2">
+                    <AdminStatusForm
+                      action={updateInquiryStatusAction}
+                      successMessage={`Inquiry status updated for ${item.contactName}`}
+                    >
                       <input type="hidden" name="id" value={item.id} />
                       <label htmlFor={`inq-status-${item.id}`} className="sr-only">
                         Status
@@ -73,16 +85,25 @@ export default async function AdminInquiriesPage() {
                           </option>
                         ))}
                       </select>
-                      <button
-                        type="submit"
-                        className="rounded bg-tg-primary px-2 py-1 text-xs font-semibold text-white"
-                      >
-                        Save
-                      </button>
-                    </form>
+                    </AdminStatusForm>
                   </td>
-                  <td className="px-4 py-3 text-tg-muted">
+                  <td className="whitespace-nowrap px-4 py-3 text-tg-muted">
                     {item.createdAt.toISOString().slice(0, 10)}
+                  </td>
+                  <td className="whitespace-nowrap px-4 py-3">
+                    <div className="flex flex-nowrap items-center gap-2">
+                      <Link
+                        href={`/admin/inquiries/${item.id}`}
+                        className="rounded border border-tg-border px-2 py-1 text-xs font-semibold text-tg-primary transition hover:border-tg-primary"
+                      >
+                        Edit
+                      </Link>
+                      <AdminDeleteButton
+                        action={deleteInquiryAction}
+                        id={item.id}
+                        confirmMessage={`Delete inquiry from ${item.contactName}? This cannot be undone.`}
+                      />
+                    </div>
                   </td>
                 </tr>
               ))}

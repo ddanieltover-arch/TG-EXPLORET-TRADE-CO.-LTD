@@ -104,22 +104,19 @@ function productImages(item: SeedProduct, categorySlug: string): CatalogueImage[
   const primary =
     REFERENCE_IMAGE_BY_SLUG[item.slug] ??
     `/media/products/${PRODUCT_IMAGE_BY_SLUG[item.slug] ?? (isRice ? "rice-jasmine" : "oil-vegetable")}.webp`;
-  const context = isRice ? "rice-sacks" : "oil-bulk";
+
+  const alt =
+    item.slug === "coconut-oil"
+      ? "Coconut Oil — glass carafe of oil with fresh coconuts and palm leaves"
+      : isRice
+        ? `${item.name} — uncooked grains shown close up`
+        : `${item.name} — bottled product presentation`;
 
   return [
     {
       url: primary,
-      alt: isRice
-        ? `${item.name} — uncooked grains shown close up`
-        : `${item.name} — bottled product presentation`,
+      alt,
       isPrimary: true,
-    },
-    {
-      url: `/media/products/${context}.webp`,
-      alt: isRice
-        ? `Export packing context for ${item.name} — woven bags on pallets`
-        : `Bulk packing context for ${item.name} — drums and IBC totes`,
-      isPrimary: false,
     },
   ];
 }

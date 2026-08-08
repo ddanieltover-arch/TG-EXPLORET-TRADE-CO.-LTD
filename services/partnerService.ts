@@ -79,6 +79,14 @@ export async function listDistributorApplications() {
   return prisma.distributorApplication.findMany({ orderBy: { createdAt: "desc" }, take: 100 });
 }
 
+export async function getDealerApplicationById(id: string) {
+  return prisma.dealerApplication.findUnique({ where: { id } });
+}
+
+export async function getDistributorApplicationById(id: string) {
+  return prisma.distributorApplication.findUnique({ where: { id } });
+}
+
 export async function countNewPartnerApplications() {
   const [dealers, distributors] = await Promise.all([
     prisma.dealerApplication.count({ where: { status: ApplicationStatus.NEW } }),

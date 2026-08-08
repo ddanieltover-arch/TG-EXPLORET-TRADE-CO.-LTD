@@ -14,15 +14,8 @@ export function MoreInfoMenu() {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(false);
     };
-    const onPointer = (e: MouseEvent) => {
-      if (!rootRef.current?.contains(e.target as Node)) setOpen(false);
-    };
     document.addEventListener("keydown", onKey);
-    document.addEventListener("mousedown", onPointer);
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.removeEventListener("mousedown", onPointer);
-    };
+    return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
   return (
@@ -31,6 +24,12 @@ export function MoreInfoMenu() {
       className="relative"
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
+      onFocus={() => setOpen(true)}
+      onBlur={(event) => {
+        if (!rootRef.current?.contains(event.relatedTarget as Node | null)) {
+          setOpen(false);
+        }
+      }}
     >
       <button
         type="button"
@@ -39,7 +38,13 @@ export function MoreInfoMenu() {
         aria-haspopup="true"
         aria-controls={menuId}
         data-active={open ? "true" : undefined}
-        onClick={() => setOpen((v) => !v)}
+        // Touch / keyboard: tap toggles. Desktop hover still drives open/close.
+        onClick={() => {
+          const coarse =
+            typeof window !== "undefined" &&
+            window.matchMedia("(hover: none), (pointer: coarse)").matches;
+          if (coarse) setOpen((v) => !v);
+        }}
       >
         More Info
         <span
@@ -49,24 +54,23 @@ export function MoreInfoMenu() {
           ▾
         </span>
       </button>
-      {/* Outer keeps centering transform; inner owns panel motion */}
-      <div className="absolute left-1/2 top-full z-50 w-[min(22rem,calc(100vw-2rem))] -translate-x-1/2 pt-2">
+
+      {/* Only mount when open so a closed panel cannot steal hover under the nav */}
+      {open ? (
         <div
           id={menuId}
           role="menu"
           aria-label="More Info"
-          className={open ? "tg-panel--open" : "tg-panel"}
-          aria-hidden={!open}
+          className="absolute left-1/2 top-full z-50 w-[min(22rem,calc(100vw-2rem))] -translate-x-1/2 pt-2"
         >
-          <div className="rounded-[var(--tg-radius-md)] border border-tg-border bg-tg-surface p-3 shadow-[0_12px_40px_rgba(10,47,92,0.1)]">
+          <div className="tg-panel--open rounded-[var(--tg-radius-md)] border border-tg-border bg-tg-surface p-3 shadow-[0_12px_40px_rgba(10,47,92,0.1)]">
             <ul className="grid grid-cols-2 gap-x-4 gap-y-1">
               {moreInfoNav.map((item) => (
                 <li key={item.href} role="none">
                   <Link
                     href={item.href}
                     role="menuitem"
-                    tabIndex={open ? 0 : -1}
-                    className="block rounded px-2 py-2 text-sm font-medium text-tg-text transition-[background-color,color] duration-[var(--tg-duration-fast)] ease-[var(--tg-ease-out)] hover:bg-tg-bg hover:text-tg-primary"
+                    className="block rounded px-2 py-2 text-sm font-medium text-tg-text transition-[background-color,color] duration-[var(--tg-duration-fast)] ease-[var(--tg-ease-out)] hover:bg-tg-primary hover:text-white"
                     onClick={() => setOpen(false)}
                   >
                     {item.label}
@@ -76,7 +80,7 @@ export function MoreInfoMenu() {
             </ul>
           </div>
         </div>
-      </div>
+      ) : null}
     </div>
   );
 }

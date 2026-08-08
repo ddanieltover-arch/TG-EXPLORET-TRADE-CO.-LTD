@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { QuoteStatus } from "@prisma/client";
-import { updateQuoteStatusAction } from "@/actions/adminQuotes";
+import { deleteQuoteAction } from "@/actions/adminQuotes";
+import { AdminDeleteButton } from "@/components/admin/AdminDeleteButton";
 import { AdminNav } from "@/components/admin/AdminNav";
+import { AdminQuoteEditForm } from "@/components/admin/AdminQuoteEditForm";
 import { getQuoteRequestById } from "@/services/quoteService";
 
 type Props = { params: Promise<{ id: string }> };
@@ -15,32 +16,10 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
-const statuses = Object.values(QuoteStatus);
-
 export default async function AdminQuoteDetailPage({ params }: Props) {
   const { id } = await params;
   const quote = await getQuoteRequestById(id);
   if (!quote) notFound();
-
-  const rows: { label: string; value: string }[] = [
-    { label: "Reference", value: quote.referenceCode },
-    { label: "Company", value: quote.companyName },
-    { label: "Contact", value: quote.contactName },
-    { label: "Email", value: quote.email },
-    { label: "Phone", value: quote.phone ?? "—" },
-    { label: "Country", value: quote.country },
-    { label: "Product", value: quote.productLabel ?? quote.product?.name ?? "—" },
-    { label: "Quantity", value: quote.quantityText },
-    { label: "Destination", value: quote.destination },
-    { label: "Incoterm", value: quote.incoterm ?? "—" },
-    {
-      label: "Target date",
-      value: quote.targetDate ? quote.targetDate.toISOString().slice(0, 10) : "—",
-    },
-    { label: "Created", value: quote.createdAt.toISOString() },
-    { label: "Updated", value: quote.updatedAt.toISOString() },
-    { label: "Version", value: String(quote.version) },
-  ];
 
   return (
     <div className="mx-auto max-w-[var(--tg-container)] px-4 py-10 md:px-6">
@@ -53,59 +32,49 @@ export default async function AdminQuoteDetailPage({ params }: Props) {
         <AdminNav current="/admin/quotes" />
       </div>
 
-      <p className="mb-4 text-sm">
-        <Link href="/admin/quotes" className="font-semibold text-tg-primary underline">
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+        <Link href="/admin/quotes" className="text-sm font-semibold text-tg-primary underline">
           ← All quotes
         </Link>
-      </p>
-
-      <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
-        <section className="border border-tg-border bg-tg-surface">
-          <dl className="divide-y divide-tg-border text-sm">
-            {rows.map((r) => (
-              <div key={r.label} className="grid gap-1 px-4 py-3 sm:grid-cols-[10rem_1fr]">
-                <dt className="font-medium text-tg-muted">{r.label}</dt>
-                <dd className="text-tg-text break-words">{r.value}</dd>
-              </div>
-            ))}
-            <div className="grid gap-1 px-4 py-3 sm:grid-cols-[10rem_1fr]">
-              <dt className="font-medium text-tg-muted">Message</dt>
-              <dd className="whitespace-pre-wrap text-tg-text">{quote.message ?? "—"}</dd>
-            </div>
-          </dl>
-        </section>
-
-        <section className="border border-tg-border bg-tg-surface p-6 self-start">
-          <h2 className="font-display text-xl text-tg-primary">Update status</h2>
-          <form action={updateQuoteStatusAction} className="mt-4 space-y-3">
-            <input type="hidden" name="id" value={quote.id} />
-            <input type="hidden" name="version" value={quote.version} />
-            <label className="block text-sm">
-              <span className="font-medium text-tg-muted">Status</span>
-              <select
-                name="status"
-                defaultValue={quote.status}
-                className="mt-1 w-full min-h-10 rounded border border-tg-border bg-white px-3"
-              >
-                {statuses.map((s) => (
-                  <option key={s} value={s}>
-                    {s}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <button
-              type="submit"
-              className="min-h-11 w-full rounded-[var(--tg-radius-md)] bg-tg-primary text-sm font-semibold text-white"
-            >
-              Save status
-            </button>
-          </form>
-          <p className="mt-4 text-xs text-tg-muted">
-            Optimistic concurrency: if another editor saved first, refresh and retry.
-          </p>
-        </section>
+        <AdminDeleteButton
+          action={deleteQuoteAction}
+          id={quote.id}
+          confirmMessage={`Delete quote ${quote.referenceCode}? This cannot be undone.`}
+          hrefAfter="/admin/quotes"
+          className="rounded border border-tg-error/40 px-3 py-2 text-sm font-semibold text-tg-error transition hover:bg-tg-error/5 disabled:opacity-60"
+        />
       </div>
+
+      <section className="border border-tg-border bg-tg-surface p-6">
+        <div className="mb-6 flex flex-wrap items-baseline justify-between gap-2">
+          <h2 className="font-display text-xl text-tg-primary">Edit quote</h2>
+          <p className="text-xs text-tg-muted">
+            Created {quote.createdAt.toISOString().slice(0, 10)} · Version {quote.version}
+          </p>
+        </div>
+        <AdminQuoteEditForm
+          quote={{
+            id: quote.id,
+            version: quote.version,
+            referenceCode: quote.referenceCode,
+            companyName: quote.companyName,
+            contactName: quote.contactName,
+            email: quote.email,
+            phone: quote.phone,
+            country: quote.country,
+            productLabel: quote.productLabel ?? quote.product?.name ?? "",
+            quantityText: quote.quantityText,
+            destination: quote.destination,
+            incoterm: quote.incoterm,
+            targetDate: quote.targetDate,
+            message: quote.message,
+            status: quote.status,
+          }}
+        />
+        <p className="mt-4 text-xs text-tg-muted">
+          Optimistic concurrency: if another editor saved first, refresh and retry.
+        </p>
+      </section>
     </div>
   );
 }

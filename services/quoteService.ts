@@ -2,7 +2,10 @@ import { Incoterm, QuoteStatus } from "@prisma/client";
 import { withDbRetry } from "@/lib/dbRetry";
 import type { QuoteRequestInput } from "@/lib/validation/quote";
 import { prisma } from "@/server/db";
-import { sendQuoteConfirmation } from "@/services/emailService";
+import {
+  sendQuoteConfirmation,
+  sendQuoteSalesAlert,
+} from "@/services/emailService";
 
 function buildReferenceCode() {
   const d = new Date();
@@ -67,22 +70,37 @@ export async function createQuoteRequest(input: QuoteRequestInput) {
     }
   });
 
+  const emailPayload = {
+    to: quote.email,
+    contactName: quote.contactName,
+    referenceCode: quote.referenceCode,
+    companyName: quote.companyName,
+    phone: quote.phone,
+    country: quote.country,
+    productLabel: quote.productLabel,
+    quantityText: quote.quantityText,
+    destination: quote.destination,
+    incoterm: quote.incoterm,
+    message: quote.message,
+  };
+
   try {
-    await sendQuoteConfirmation({
-      to: quote.email,
-      contactName: quote.contactName,
-      referenceCode: quote.referenceCode,
-      companyName: quote.companyName,
-      phone: quote.phone,
-      country: quote.country,
-      productLabel: quote.productLabel,
-      quantityText: quote.quantityText,
-      destination: quote.destination,
-      incoterm: quote.incoterm,
-      message: quote.message,
-    });
+    await sendQuoteConfirmation(emailPayload);
   } catch (error) {
-    console.error("[email] quote confirmation failed after persist", error);
+    console.error("[email] quote confirmation failed after persist", {
+      referenceCode: quote.referenceCode,
+      to: quote.email,
+      error: error instanceof Error ? error.message : error,
+    });
+    // Prefer getting the lead to sales even if the buyer copy fails.
+    try {
+      await sendQuoteSalesAlert(emailPayload, { requireDelivery: true });
+    } catch (salesError) {
+      console.error("[email] quote sales alert also failed", {
+        referenceCode: quote.referenceCode,
+        error: salesError instanceof Error ? salesError.message : salesError,
+      });
+    }
   }
 
   return quote;

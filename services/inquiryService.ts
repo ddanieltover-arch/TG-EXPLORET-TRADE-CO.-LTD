@@ -96,6 +96,10 @@ export async function listInquiries() {
   });
 }
 
+export async function getInquiryById(id: string) {
+  return prisma.inquiry.findUnique({ where: { id } });
+}
+
 export async function countNewInquiries() {
   return prisma.inquiry.count({ where: { status: InquiryStatus.NEW } });
 }
