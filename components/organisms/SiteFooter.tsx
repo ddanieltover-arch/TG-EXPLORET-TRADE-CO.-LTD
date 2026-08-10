@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+  COMPANY_ADDRESS_LINES,
   COMPANY_DISPLAY_NAME,
   COMPANY_EMAIL,
   COMPANY_LEGAL_NAME,
+  COMPANY_MAPS_HREF,
   COMPANY_ORIGIN,
   COMPANY_TAGLINE,
   PRODUCT_CATEGORIES,
@@ -143,7 +145,20 @@ export function SiteFooter() {
               {COMPANY_EMAIL}
             </a>
           </p>
-          <p className="mt-1 text-sm text-white/65">{COMPANY_ORIGIN}</p>
+          <address className="mt-3 not-italic text-sm leading-relaxed text-white/65">
+            <a
+              href={COMPANY_MAPS_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-[color] duration-[var(--tg-duration-fast)] ease-[var(--tg-ease-out)] hover:text-tg-secondary"
+            >
+              {COMPANY_ADDRESS_LINES.map((line) => (
+                <span key={line} className="block">
+                  {line}
+                </span>
+              ))}
+            </a>
+          </address>
           <p className="mt-3">
             <Link
               href="/contact"

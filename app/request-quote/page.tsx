@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 import { QuoteForm } from "@/features/quotes/QuoteForm";
-import { COMPANY_EMAIL, COMPANY_SHORT_NAME, COMPANY_TAGLINE } from "@/lib/brand";
+import {
+  COMPANY_ADDRESS_SINGLE_LINE,
+  COMPANY_EMAIL,
+  COMPANY_SHORT_NAME,
+  COMPANY_TAGLINE,
+} from "@/lib/brand";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -101,6 +106,7 @@ export default function RequestQuotePage() {
             >
               {COMPANY_EMAIL}
             </a>
+            <p className="mt-3 text-sm leading-relaxed text-white/65">{COMPANY_ADDRESS_SINGLE_LINE}</p>
             <p className="mt-6 text-sm">
               <Link
                 href="/export-markets"

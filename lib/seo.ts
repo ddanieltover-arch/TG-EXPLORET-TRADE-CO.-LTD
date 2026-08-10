@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 
 import {
+  COMPANY_ADDRESS,
+  COMPANY_EMAIL,
   COMPANY_LEGAL_NAME,
   COMPANY_SHORT_NAME,
+  COMPANY_WEBSITE,
 } from "@/lib/brand";
 
 const siteName = COMPANY_LEGAL_NAME;
@@ -65,6 +68,25 @@ export function pageMetadata(input: {
       card: "summary_large_image",
       title: `${input.title} | ${COMPANY_SHORT_NAME}`,
       description: input.description,
+    },
+  };
+}
+
+/** Organization JSON-LD for the public site shell. */
+export function organizationJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: COMPANY_LEGAL_NAME,
+    url: COMPANY_WEBSITE,
+    email: COMPANY_EMAIL,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: `${COMPANY_ADDRESS.subdistrict}, ${COMPANY_ADDRESS.district}`,
+      addressLocality: COMPANY_ADDRESS.city,
+      addressRegion: COMPANY_ADDRESS.city,
+      postalCode: COMPANY_ADDRESS.postalCode,
+      addressCountry: "TH",
     },
   };
 }

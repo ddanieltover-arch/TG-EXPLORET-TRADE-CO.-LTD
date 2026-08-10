@@ -1,4 +1,5 @@
 import {
+  COMPANY_ADDRESS_SINGLE_LINE,
   COMPANY_DISPLAY_NAME,
   COMPANY_EMAIL,
   COMPANY_LEGAL_NAME,
@@ -146,6 +147,7 @@ export function renderEmailLayout(opts: {
             <td style="background:${COLORS.primary};padding:22px 28px;border-top:1px solid ${COLORS.border};">
               <p style="margin:0 0 6px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#ffffff;">${escapeHtml(COMPANY_DISPLAY_NAME)}</p>
               <p style="margin:0 0 10px;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:rgba(255,255,255,0.75);">Edible cooking oils &amp; rice export from Thailand</p>
+              <p style="margin:0 0 10px;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.55;color:rgba(255,255,255,0.75);">${escapeHtml(COMPANY_ADDRESS_SINGLE_LINE)}</p>
               <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.6;">
                 <a href="mailto:${escapeHtml(COMPANY_EMAIL)}" style="color:${COLORS.gold};text-decoration:none;">${escapeHtml(COMPANY_EMAIL)}</a>
                 &nbsp;·&nbsp;
@@ -155,7 +157,7 @@ export function renderEmailLayout(opts: {
           </tr>
         </table>
         <p style="margin:16px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:1.5;color:${COLORS.muted};max-width:600px;">
-          © ${new Date().getFullYear()} ${escapeHtml(COMPANY_LEGAL_NAME)}. This message relates to your enquiry with our sales team.
+          © ${new Date().getFullYear()} ${escapeHtml(COMPANY_LEGAL_NAME)}, ${escapeHtml(COMPANY_ADDRESS_SINGLE_LINE)}. This message relates to your enquiry with our sales team.
         </p>
       </td>
     </tr>

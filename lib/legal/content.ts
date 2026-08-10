@@ -1,4 +1,5 @@
 import {
+  COMPANY_ADDRESS_SINGLE_LINE,
   COMPANY_EMAIL,
   COMPANY_LEGAL_NAME,
   COMPANY_ORIGIN,
@@ -41,7 +42,7 @@ export const LEGAL_DOCUMENTS: Record<LegalDocument["slug"], LegalDocument> = {
       {
         heading: "Who we are",
         paragraphs: [
-          `${COMPANY_LEGAL_NAME} (“we”, “us”) operates ${COMPANY_WEBSITE} from ${COMPANY_ORIGIN}. We use personal data only for legitimate business purposes related to export enquiries, partner applications, and website operation.`,
+          `${COMPANY_LEGAL_NAME} (“we”, “us”) operates ${COMPANY_WEBSITE} from ${COMPANY_ORIGIN}. Our office address is ${COMPANY_ADDRESS_SINGLE_LINE}. We use personal data only for legitimate business purposes related to export enquiries, partner applications, and website operation.`,
           `Privacy questions: ${COMPANY_EMAIL}.`,
           reviewNotice,
         ],
@@ -202,7 +203,7 @@ export const LEGAL_DOCUMENTS: Record<LegalDocument["slug"], LegalDocument> = {
         heading: "Governing law",
         paragraphs: [
           "These terms are governed by the laws of Thailand, without prejudice to mandatory consumer or local law rights that may apply to you.",
-          `Contact: ${COMPANY_EMAIL}.`,
+          `Contact: ${COMPANY_EMAIL}. Office: ${COMPANY_ADDRESS_SINGLE_LINE}.`,
         ],
       },
     ],
@@ -251,7 +252,7 @@ export const LEGAL_DOCUMENTS: Record<LegalDocument["slug"], LegalDocument> = {
       {
         heading: "Contact",
         paragraphs: [
-          `Questions about cookies or privacy: ${COMPANY_EMAIL}. See also our Privacy Policy.`,
+          `Questions about cookies or privacy: ${COMPANY_EMAIL}. Office: ${COMPANY_ADDRESS_SINGLE_LINE}. See also our Privacy Policy.`,
         ],
       },
     ],

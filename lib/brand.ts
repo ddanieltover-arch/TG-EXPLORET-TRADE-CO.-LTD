@@ -9,6 +9,29 @@ export const COMPANY_ORIGIN = "Thailand";
 /** Logo tagline — use sparingly in hero/footer; do not invent alternatives. */
 export const COMPANY_TAGLINE = "Connecting Global Markets";
 
+/** Registered / office address (client-confirmed). */
+export const COMPANY_ADDRESS = {
+  subdistrict: "Chomphu",
+  district: "Mueang Lampang District",
+  city: "Lampang",
+  postalCode: "52100",
+  country: "Thailand",
+} as const;
+
+/** Single-line address for emails, legal copy, and metadata. */
+export const COMPANY_ADDRESS_SINGLE_LINE =
+  `${COMPANY_ADDRESS.subdistrict}, ${COMPANY_ADDRESS.district}, ${COMPANY_ADDRESS.city} ${COMPANY_ADDRESS.postalCode}, ${COMPANY_ADDRESS.country}` as const;
+
+/** Multi-line address for footer / contact blocks. */
+export const COMPANY_ADDRESS_LINES = [
+  `${COMPANY_ADDRESS.subdistrict}, ${COMPANY_ADDRESS.district}`,
+  `${COMPANY_ADDRESS.city} ${COMPANY_ADDRESS.postalCode}`,
+  COMPANY_ADDRESS.country,
+] as const;
+
+/** Google Maps search link for the office address. */
+export const COMPANY_MAPS_HREF = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(COMPANY_ADDRESS_SINGLE_LINE)}`;
+
 /**
  * WhatsApp destination (digits only, country code included, no +).
  * Set `NEXT_PUBLIC_WHATSAPP_NUMBER` (e.g. 66812345678) once FG-13 is confirmed.

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { ScrollReveal } from "@/components/sections/ScrollReveal";
 import {
+  COMPANY_ADDRESS,
   COMPANY_EMAIL,
   COMPANY_LEGAL_NAME,
   COMPANY_ORIGIN,
@@ -16,7 +17,7 @@ import { getPublishedSitePage } from "@/services/sitePageService";
 
 export const metadata: Metadata = pageMetadata({
   title: "About",
-  description: `${COMPANY_LEGAL_NAME} — Thailand exporter of edible cooking oils and rice, established in 2018. Dual-core catalogue, structured quotation, Connecting Global Markets.`,
+  description: `${COMPANY_LEGAL_NAME} — Lampang, Thailand exporter of edible cooking oils and rice, established in 2018. Dual-core catalogue, structured quotation, Connecting Global Markets.`,
   path: "/about",
 });
 
@@ -142,7 +143,7 @@ export default async function AboutPage() {
         <div className="relative mx-auto grid max-w-[var(--tg-container)] gap-8 sm:grid-cols-3">
           {[
             { label: "Established", value: "2018" },
-            { label: "Origin", value: COMPANY_ORIGIN },
+            { label: "Based in", value: `${COMPANY_ADDRESS.city}, ${COMPANY_ORIGIN}` },
             { label: "Focus", value: "Oils & rice" },
           ].map((fact, index) => (
             <ScrollReveal key={fact.label} delayMs={index * 50}>

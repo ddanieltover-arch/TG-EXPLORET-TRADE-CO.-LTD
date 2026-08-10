@@ -1,4 +1,9 @@
-import { COMPANY_EMAIL, COMPANY_LEGAL_NAME, COMPANY_SHORT_NAME } from "@/lib/brand";
+import {
+  COMPANY_ADDRESS_SINGLE_LINE,
+  COMPANY_EMAIL,
+  COMPANY_LEGAL_NAME,
+  COMPANY_SHORT_NAME,
+} from "@/lib/brand";
 import { escapeHtml, nl2br } from "@/lib/email/escapeHtml";
 import { absoluteUrl, renderEmailLayout } from "@/lib/email/layout";
 
@@ -46,7 +51,7 @@ export function buyerQuoteReceivedEmail(input: {
       ],
       footerNote: `For urgent matters, contact <a href="mailto:${COMPANY_EMAIL}" style="color:#0a2f5c;">${COMPANY_EMAIL}</a>.`,
     }),
-    text: `Dear ${input.contactName},\n\nWe received your quotation request ${input.referenceCode}. Our sales team will follow up shortly.\n\nBrowse catalogue: ${absoluteUrl("/products")}\nEmail sales: ${COMPANY_EMAIL}`,
+    text: `Dear ${input.contactName},\n\nWe received your quotation request ${input.referenceCode}. Our sales team will follow up shortly.\n\nBrowse catalogue: ${absoluteUrl("/products")}\nEmail sales: ${COMPANY_EMAIL}\nOffice: ${COMPANY_ADDRESS_SINGLE_LINE}`,
   };
 }
 
@@ -125,7 +130,7 @@ export function buyerInquiryReceivedEmail(input: { contactName: string }) {
       ],
       footerNote: `Need a faster reply? Email <a href="mailto:${COMPANY_EMAIL}" style="color:#0a2f5c;">${COMPANY_EMAIL}</a>.`,
     }),
-    text: `Dear ${input.contactName},\n\nThank you for contacting ${COMPANY_LEGAL_NAME}. Our team will respond using this email address.\n\nProducts: ${absoluteUrl("/products")}\nRequest quote: ${absoluteUrl("/request-quote")}`,
+    text: `Dear ${input.contactName},\n\nThank you for contacting ${COMPANY_LEGAL_NAME}. Our team will respond using this email address.\n\nProducts: ${absoluteUrl("/products")}\nRequest quote: ${absoluteUrl("/request-quote")}\nOffice: ${COMPANY_ADDRESS_SINGLE_LINE}`,
   };
 }
 
@@ -207,7 +212,7 @@ export function buyerPartnerReceivedEmail(input: {
         },
       ],
     }),
-    text: `We received your ${label.toLowerCase()} application for ${input.companyName}. Our team will review it shortly.\n\nCatalogue: ${absoluteUrl("/products")}`,
+    text: `We received your ${label.toLowerCase()} application for ${input.companyName}. Our team will review it shortly.\n\nCatalogue: ${absoluteUrl("/products")}\nOffice: ${COMPANY_ADDRESS_SINGLE_LINE}`,
   };
 }
 

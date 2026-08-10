@@ -4,9 +4,10 @@ import Link from "next/link";
 import { ScrollReveal } from "@/components/sections/ScrollReveal";
 import { ContactForm } from "@/features/inquiries/ContactForm";
 import {
+  COMPANY_ADDRESS_LINES,
   COMPANY_EMAIL,
   COMPANY_LEGAL_NAME,
-  COMPANY_ORIGIN,
+  COMPANY_MAPS_HREF,
   COMPANY_SHORT_NAME,
   PRODUCT_CATEGORIES,
 } from "@/lib/brand";
@@ -14,7 +15,7 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   title: "Contact",
-  description: `Contact ${COMPANY_LEGAL_NAME} for wholesale pricing, availability, and export enquiries on refined cooking oils and rice.`,
+  description: `Contact ${COMPANY_LEGAL_NAME} in Lampang, Thailand for wholesale pricing, availability, and export enquiries on refined cooking oils and rice.`,
   path: "/contact",
 });
 
@@ -34,11 +35,11 @@ const channels = [
     external: false,
   },
   {
-    title: "Origin",
-    detail: COMPANY_ORIGIN,
-    note: "Export coordination for rice and refined edible cooking oils",
-    href: "/about",
-    external: false,
+    title: "Office",
+    detailLines: COMPANY_ADDRESS_LINES,
+    note: "Mueang Lampang — export coordination for rice and refined edible cooking oils",
+    href: COMPANY_MAPS_HREF,
+    external: true,
   },
 ] as const;
 
@@ -149,29 +150,43 @@ export default function ContactPage() {
           </p>
         </ScrollReveal>
         <ul className="mt-10 grid gap-6 md:grid-cols-3">
-          {channels.map((channel, index) => (
-            <ScrollReveal key={channel.title} delayMs={index * 40}>
-              <li className="tg-card-interactive border border-tg-border bg-tg-surface p-6">
-                <h3 className="font-display text-xl text-tg-primary">{channel.title}</h3>
-                {channel.external ? (
-                  <a
-                    href={channel.href}
-                    className="mt-2 block text-sm font-semibold text-tg-primary underline break-all"
-                  >
-                    {channel.detail}
-                  </a>
-                ) : (
-                  <Link
-                    href={channel.href}
-                    className="mt-2 block text-sm font-semibold text-tg-primary underline"
-                  >
-                    {channel.detail}
-                  </Link>
-                )}
-                <p className="mt-2 text-sm text-tg-muted">{channel.note}</p>
-              </li>
-            </ScrollReveal>
-          ))}
+          {channels.map((channel, index) => {
+            const detail =
+              "detailLines" in channel ? (
+                <span className="block whitespace-pre-line">
+                  {channel.detailLines.join("\n")}
+                </span>
+              ) : (
+                channel.detail
+              );
+
+            return (
+              <ScrollReveal key={channel.title} delayMs={index * 40}>
+                <li className="tg-card-interactive border border-tg-border bg-tg-surface p-6">
+                  <h3 className="font-display text-xl text-tg-primary">{channel.title}</h3>
+                  {channel.external ? (
+                    <a
+                      href={channel.href}
+                      className="mt-2 block text-sm font-semibold text-tg-primary underline break-all"
+                      {...("detailLines" in channel
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
+                    >
+                      {detail}
+                    </a>
+                  ) : (
+                    <Link
+                      href={channel.href}
+                      className="mt-2 block text-sm font-semibold text-tg-primary underline"
+                    >
+                      {detail}
+                    </Link>
+                  )}
+                  <p className="mt-2 text-sm text-tg-muted">{channel.note}</p>
+                </li>
+              </ScrollReveal>
+            );
+          })}
         </ul>
       </section>
 

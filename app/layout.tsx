@@ -3,7 +3,7 @@ import { Manrope, Source_Serif_4 } from "next/font/google";
 import { FloatingActions } from "@/components/organisms/FloatingActions";
 import { SiteFooter } from "@/components/organisms/SiteFooter";
 import { SiteHeader } from "@/components/organisms/SiteHeader";
-import { rootMetadata } from "@/lib/seo";
+import { organizationJsonLd, rootMetadata } from "@/lib/seo";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -31,9 +31,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const orgLd = organizationJsonLd();
+
   return (
     <html lang="en" className={`${manrope.variable} ${sourceSerif.variable} h-full`}>
       <body className="flex min-h-full flex-col antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }}
+        />
         <a href="#main" className="skip-link">
           Skip to main content
         </a>

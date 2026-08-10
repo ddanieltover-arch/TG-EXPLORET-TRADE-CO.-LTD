@@ -1,8 +1,8 @@
 # Pulse Engineering Memory System (PEMS) — Project Record
 
 **PEMS Version:** 1.0  
-**Last Updated:** 2026-08-07  
-**Updated By:** Senior Full Stack Engineer (Motion & UX enhancement — Level 2 + selective L3)
+**Last Updated:** 2026-08-10  
+**Updated By:** Senior Full Stack Engineer (client office address across site + email)
 
 ---
 
@@ -42,6 +42,7 @@
 - Legal name: TG Export Trade Company Limited  
 - Website: https://www.tgeptrade.com  
 - Sales email: sales@tgeptrade.com  
+- Office address: Chomphu, Mueang Lampang District, Lampang 52100, Thailand  
 - Constants: `tg-exploret-web/lib/brand.ts`
 
 ---
@@ -98,6 +99,7 @@ Follow Pulse Engineering Framework unless noted. Package folder remains `tg-expl
 |---|---|---|---|---|
 | 2026-08-05 | Rebrand to TG Export Trade Company Limited; domain tgeptrade.com; email sales@tgeptrade.com | Client identity update | Keep Exploret naming | All public copy, SEO, env defaults |
 | 2026-08-05 | Replace Sugar category with Edible Cooking Oil (9 SKUs); keep Rice as reference | Client product scope | Keep sugar | Routes `/products/cooking-oil/*`; seed cleanup removes sugar |
+| 2026-08-10 | Publish client office address (Lampang) in brand constants, footer, contact, legal, email footers, Organization JSON-LD | Client-confirmed address; previously omitted to avoid inventing facts | Keep country-only | Trust/legal completeness; Maps link on contact/footer |
 
 ---
 
@@ -116,7 +118,8 @@ Follow Pulse Engineering Framework unless noted. Package folder remains `tg-expl
 | Identity + product catalogue rebrand | Done |
 | Reference site content harvest → original Batch 1 | Done — see `deliverables/content-harvest/` |
 | About page redesign from UFI / Mahanakorn / Global Win / FREEM About refs | Done — rice + refined cooking oil only; no sugar/fertilizer/etc. |
-| Contact page redesign from FREEM / Global Win / Mahanakorn / UFI Contact refs | Done — email + RFQ channels only (no invented phone/address); rice + oil focus |
+| Contact page redesign from FREEM / Global Win / Mahanakorn / UFI Contact refs | Done — email + RFQ + client-confirmed Lampang office address; rice + oil focus |
+| Office address published (footer, contact, legal, email, JSON-LD) | Done — 2026-08-10 client-confirmed |
 | Privacy policy redesign from Global Win / FREEM / Mahanakorn Privacy refs | Done — B2B enquiry model (not retail checkout); counsel review still required |
 | Sustainability page from FREEM / Mahanakorn Sustainability refs | Done — rice + refined oil only; no unverified cert/SDG badges; nav + sitemap wired |
 | Quality Control page from FREEM / Mahanakorn / UFI Quality refs | Done — rice + oil checks only (no sugar/fertilizer); cert claims deferred to `/certifications` |

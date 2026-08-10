@@ -899,7 +899,8 @@ From inquiry to shipment discussions, we emphasise transparent communication, co
 
 Quality and food-safety certifications appear on this website only after the business confirms which documents are held. Until then, we invite buyers to ask sales which certificates can be provided for a given shipment.
 
-Contact: sales@tgeptrade.com`,
+Contact: sales@tgeptrade.com
+Office: Chomphu, Mueang Lampang District, Lampang 52100, Thailand`,
       status: PublishStatus.PUBLISHED,
     },
     create: {
@@ -913,7 +914,8 @@ From inquiry to shipment discussions, we emphasise transparent communication, co
 
 Quality and food-safety certifications appear on this website only after the business confirms which documents are held. Until then, we invite buyers to ask sales which certificates can be provided for a given shipment.
 
-Contact: sales@tgeptrade.com`,
+Contact: sales@tgeptrade.com
+Office: Chomphu, Mueang Lampang District, Lampang 52100, Thailand`,
       status: PublishStatus.PUBLISHED,
     },
   });
