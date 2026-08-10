@@ -149,42 +149,44 @@ export default function ContactPage() {
             quotation form when you already have commercial details ready.
           </p>
         </ScrollReveal>
-        <ul className="mt-10 grid gap-6 md:grid-cols-3">
+        <ul className="mt-10 grid items-stretch gap-6 md:grid-cols-3">
           {channels.map((channel, index) => {
-            const detail =
-              "detailLines" in channel ? (
-                <span className="block whitespace-pre-line">
-                  {channel.detailLines.join("\n")}
-                </span>
-              ) : (
-                channel.detail
-              );
+            const isAddress = "detailLines" in channel;
+            const detail = isAddress ? (
+              <span className="block leading-snug">
+                {channel.detailLines[0]}
+                <br />
+                {channel.detailLines.slice(1).join(", ")}
+              </span>
+            ) : (
+              channel.detail
+            );
 
             return (
-              <ScrollReveal key={channel.title} delayMs={index * 40}>
-                <li className="tg-card-interactive border border-tg-border bg-tg-surface p-6">
-                  <h3 className="font-display text-xl text-tg-primary">{channel.title}</h3>
-                  {channel.external ? (
-                    <a
-                      href={channel.href}
-                      className="mt-2 block text-sm font-semibold text-tg-primary underline break-all"
-                      {...("detailLines" in channel
-                        ? { target: "_blank", rel: "noopener noreferrer" }
-                        : {})}
-                    >
-                      {detail}
-                    </a>
-                  ) : (
-                    <Link
-                      href={channel.href}
-                      className="mt-2 block text-sm font-semibold text-tg-primary underline"
-                    >
-                      {detail}
-                    </Link>
-                  )}
-                  <p className="mt-2 text-sm text-tg-muted">{channel.note}</p>
-                </li>
-              </ScrollReveal>
+              <li key={channel.title} className="h-full min-h-0">
+                <ScrollReveal className="h-full" delayMs={index * 40}>
+                  <div className="tg-card-interactive flex h-full flex-col border border-tg-border bg-tg-surface p-6">
+                    <h3 className="font-display text-xl text-tg-primary">{channel.title}</h3>
+                    {channel.external ? (
+                      <a
+                        href={channel.href}
+                        className={`mt-2 block text-sm font-semibold text-tg-primary underline ${isAddress ? "" : "break-all"}`}
+                        {...(isAddress ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      >
+                        {detail}
+                      </a>
+                    ) : (
+                      <Link
+                        href={channel.href}
+                        className="mt-2 block text-sm font-semibold text-tg-primary underline"
+                      >
+                        {detail}
+                      </Link>
+                    )}
+                    <p className="mt-auto pt-2 text-sm text-tg-muted">{channel.note}</p>
+                  </div>
+                </ScrollReveal>
+              </li>
             );
           })}
         </ul>
